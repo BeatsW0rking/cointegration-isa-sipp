@@ -227,6 +227,7 @@ def screen(
         min_size=rcfg.johansen["min_group_size"],
         max_size=rcfg.johansen["max_group_size"],
         cap_per_cluster=rcfg.candidates["max_groups_per_block"],
+        min_overlap=min(200, rcfg.formation_bars[interval] // 2),
     )
     console.print(f"{len(clusters)} clusters, {len(groups)} candidate groups")
     scfg = SweepConfig(
@@ -343,8 +344,15 @@ def backtest(
     stability_windows: int = typer.Option(
         1, help="Group must also have passed in the N previous rolls"
     ),
+    max_size: int = typer.Option(5, help="Ignore groups with more members than this"),
+    min_edge_multiple: float = typer.Option(
+        0.0, help="Enter only if expected edge >= k x round-trip cost"
+    ),
+    gate: float = typer.Option(-1.0, help="Judge gate probability (default from research.yaml)"),
 ) -> None:
     """Walk-forward long-only backtest of screened groups, per account and variant."""
+    import hashlib
+
     import pandas as pd
 
     from cointisa.backtest.engine import BacktestConfig, run_backtest
@@ -366,7 +374,7 @@ def backtest(
     inv_map = {k: v for k, v in inv_map.items() if v in panel.columns}
     sub = {k: v for k, v in sub.items() if k in panel.columns}
     judge = make_judge(judge_backend)
-    gate = float(rcfg.judge["gate_probability"])
+    gate = float(rcfg.judge["gate_probability"]) if gate < 0 else gate
     selections = build_selections(
         screen_df, panel, insts, judge, gate, rcfg, interval, stability_windows
     )
@@ -376,8 +384,18 @@ def backtest(
     start_bar = min((s.start for s in selections), default=len(panel))
     bars_per_year = {"1W": 52, "1D": 252, "4h": 252 * 2, "1h": 252 * 8}[interval]
     rows = []
-    out_dir = run_dir() / f"backtest_{interval}_{tier}"
+    params = {
+        "judge": judge_backend,
+        "gate": gate,
+        "max_groups": max_groups,
+        "stability_windows": stability_windows,
+        "max_size": max_size,
+        "min_edge_multiple": min_edge_multiple,
+    }
+    phash = hashlib.sha256(json.dumps(params, sort_keys=True).encode()).hexdigest()[:8]
+    out_dir = run_dir() / f"backtest_{interval}_{tier}_{phash}"
     out_dir.mkdir(exist_ok=True)
+    (out_dir / "params.json").write_text(json.dumps(params, indent=1))
     for acc in accounts.split(","):
         cm = CostModel(ccfg, acc)
         for var in variants.split(",") if variants else rcfg.variants:
@@ -390,6 +408,8 @@ def backtest(
                 max_groups=max_groups,
                 trade_bars=rcfg.trade_bars[interval],
                 bars_per_year=bars_per_year,
+                min_edge_multiple=min_edge_multiple,
+                max_group_size=max_size,
             )
             res = run_backtest(
                 panel, selections, cm, sub, spreads, cfg, start_bar, inverse_map=inv_map
@@ -397,7 +417,7 @@ def backtest(
             tag = f"{acc}__{var}"
             res.equity.to_frame().join(res.benchmark).to_parquet(out_dir / f"equity_{tag}.parquet")
             res.trades.to_parquet(out_dir / f"trades_{tag}.parquet", index=False)
-            rows.append({"account": acc, "variant": var, **res.stats})
+            rows.append({"account": acc, "variant": var, **params, **res.stats})
             console.print(
                 f"{tag}: {res.stats['n_trades']} trades, total {res.stats['total_return']:+.1%}, "
                 f"monthly mean {res.stats['monthly_mean']:+.2%}, costs £{res.stats['total_costs_gbp']:,.0f}"
@@ -420,7 +440,9 @@ def report(interval: str = typer.Option("1D"), tier: str = typer.Option("lse_etf
     rows = []
     bt_dirs = sorted(rd.glob("backtest_*"))
     for d in bt_dirs:
-        iv, tr = d.name.split("_", 2)[1:]
+        parts = d.name.split("_")
+        iv, tr = parts[1], "_".join(parts[2:4])
+        params = json.loads((d / "params.json").read_text()) if (d / "params.json").exists() else {}
         summary = pd.read_csv(d / "summary.csv") if (d / "summary.csv").exists() else pd.DataFrame()
         n_trials = max(len(summary), 1)
         for eqf in sorted(d.glob("equity_*.parquet")):
@@ -443,7 +465,9 @@ def report(interval: str = typer.Option("1D"), tier: str = typer.Option("lse_etf
                         "n_trades": int(m["n_trades"].iloc[0]),
                         "total_costs_gbp": float(m["total_costs_gbp"].iloc[0]),
                     }
-            rows.append({"account": acc, "variant": var, "interval": iv, "tier": tr, **a, **extra})
+            rows.append(
+                {"account": acc, "variant": var, "interval": iv, "tier": tr, **params, **a, **extra}
+            )
     table = pd.DataFrame(rows)
     table.to_csv(rd / "attainability.csv", index=False)
     notes = [

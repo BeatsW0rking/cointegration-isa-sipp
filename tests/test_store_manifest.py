@@ -65,3 +65,15 @@ def test_resample_1h_to_4h():
     )
     r = resample_bars(bars, "4h")
     assert len(r) == 2 and r["v"].tolist() == [4, 4] and r["h"].tolist() == [4, 8]
+
+
+def test_align_weekly_snaps_to_monday():
+    from cointisa.data.panel import align_weekly
+
+    idx = pd.to_datetime(["2024-01-02", "2024-01-11", "2024-01-15"], utc=True)  # Tue, Thu, Mon
+    s = align_weekly(pd.Series([1.0, 2.0, 3.0], index=idx))
+    assert [d.strftime("%a %Y-%m-%d") for d in s.index] == [
+        "Mon 2024-01-01",
+        "Mon 2024-01-08",
+        "Mon 2024-01-15",
+    ]

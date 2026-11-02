@@ -85,8 +85,9 @@ def candidate_groups(
     min_size: int = 2,
     max_size: int = 5,
     cap_per_cluster: int = 500,
+    min_overlap: int = 200,
 ) -> tuple[list[tuple[str, ...]], dict[int, list[str]]]:
-    corr = return_correlation(panel)
+    corr = return_correlation(panel, min_overlap)
     clusters = cluster_symbols(corr, threshold)
     groups: list[tuple[str, ...]] = []
     for _, members in sorted(clusters.items()):

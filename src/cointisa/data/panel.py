@@ -60,6 +60,14 @@ def load_fx(as_of: str, interval: str, source: str = "yfinance") -> dict[str, pd
     return fx
 
 
+def align_weekly(s: pd.Series) -> pd.Series:
+    """Providers stamp weekly bars on different weekdays per symbol; snap each to its Monday."""
+    idx = pd.DatetimeIndex(s.index).tz_convert("UTC")
+    monday = idx.normalize() - pd.to_timedelta(idx.dayofweek, unit="D")
+    out = pd.Series(s.to_numpy(), index=monday, name=s.name)
+    return out[~out.index.duplicated(keep="last")]
+
+
 def load_close_panel(
     as_of: str,
     interval: str,
@@ -86,6 +94,8 @@ def load_close_panel(
         bars = read_bars(ent[sym]["path"])
         s = bars_to_series(bars, field)
         s = s[s > 0]
+        if interval == "1W":
+            s = align_weekly(s)
         try:
             s = to_base_currency(s, inst, fx, base)
         except KeyError:

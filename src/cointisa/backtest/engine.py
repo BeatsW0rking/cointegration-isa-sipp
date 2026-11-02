@@ -41,6 +41,8 @@ class BacktestConfig:
     trade_bars: int = 126
     min_trade_gbp: float = 50.0  # ignore rebalances smaller than this per symbol
     bars_per_year: int = 252
+    min_edge_multiple: float = 0.0  # enter only if |z|*spread_std >= multiple x round-trip cost
+    max_group_size: int = 5  # ignore selected groups larger than this
 
 
 @dataclass
@@ -268,6 +270,8 @@ def run_backtest(
             equity_now = book.value(prices)
             for m in fresh:
                 key = "|".join(m.members)
+                if len(m.members) > cfg.max_group_size:
+                    continue
                 if key in open_groups or len(open_groups) >= cfg.max_groups:
                     continue
                 if any(not np.isfinite(prices[s]) for s in m.members):
@@ -310,6 +314,27 @@ def run_backtest(
                 new_state, reason = 0, "time_stop"
             if t - og.opened >= cfg.trade_bars and new_state == 0:
                 reason = reason or "window_end"
+            if new_state != 0 and og.state == 0 and cfg.min_edge_multiple > 0:
+                # cost-aware entry: expected log-price gap must cover the round trip
+                probe = OpenGroup(model=og.model, opened=og.opened, state=new_state)
+                tgt = _targets_for_group(probe, cfg.variant, inverse_map, insts)
+                buys = [s for s, w in tgt.items() if w > 0]
+                if buys:
+                    slice_gbp = og.capital_gbp * max(tgt.values())
+                    cost = float(
+                        np.mean(
+                            [
+                                cm.round_trip_pct(
+                                    insts[s],
+                                    max(slice_gbp, 1.0),
+                                    spreads.iat[t, spreads.columns.get_loc(s)],
+                                )
+                                for s in buys
+                            ]
+                        )
+                    )
+                    if abs(z) * og.model.std < cfg.min_edge_multiple * cost:
+                        new_state = 0
             if new_state != og.state:
                 if new_state != 0:
                     og.tilted_since = t
