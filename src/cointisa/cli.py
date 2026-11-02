@@ -439,12 +439,14 @@ def report(interval: str = typer.Option("1D"), tier: str = typer.Option("lse_etf
     rd = run_dir()
     rows = []
     bt_dirs = sorted(rd.glob("backtest_*"))
+    # every account x variant x parameter set in this run counts as a trial for the deflated Sharpe
+    n_trials_total = sum(len(list(d.glob("equity_*.parquet"))) for d in bt_dirs)
     for d in bt_dirs:
         parts = d.name.split("_")
         iv, tr = parts[1], "_".join(parts[2:4])
         params = json.loads((d / "params.json").read_text()) if (d / "params.json").exists() else {}
         summary = pd.read_csv(d / "summary.csv") if (d / "summary.csv").exists() else pd.DataFrame()
-        n_trials = max(len(summary), 1)
+        n_trials = max(n_trials_total, 1)
         for eqf in sorted(d.glob("equity_*.parquet")):
             tag = eqf.stem[len("equity_") :]
             acc, var = tag.split("__", 1)

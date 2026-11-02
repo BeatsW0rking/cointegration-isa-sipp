@@ -1,0 +1,8 @@
+{
+ "judge": "rules",
+ "gate": 0.5,
+ "max_groups": 5,
+ "stability_windows": 1,
+ "max_size": 5,
+ "min_edge_multiple": 1.5
+}
