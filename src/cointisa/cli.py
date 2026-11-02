@@ -598,3 +598,77 @@ def paper_trade(
                 reason=f"state {s.state} z {s.z:+.2f}",
             )
             bot.place(intent, dry_run=dry_run)
+
+
+@app.command()
+def hl_report(
+    interval: str = typer.Option("1D"),
+    tier: str = typer.Option("lse_etf"),
+    variant: str = typer.Option("B_cheap_leg_only"),
+    max_groups: int = typer.Option(8),
+    capital_gbp: float = typer.Option(0.0, help="Override SIPP capital (default from costs.yaml)"),
+) -> None:
+    """Write the manual trade list for the HL SIPP from today's signals (whole shares, fee-adjusted)."""
+    import pandas as pd
+
+    from cointisa.backtest.prepare import build_selections, inverse_etf_map
+    from cointisa.costs.model import CostModel
+    from cointisa.data.panel import load_close_panel, load_seed_instruments
+    from cointisa.exec.hl_report import write_hl_report
+    from cointisa.judge.registry import make_judge
+    from cointisa.runid import run_dir
+    from cointisa.signals.live import latest_signals
+
+    rcfg, ccfg = load_research(), load_costs()
+    cm = CostModel(ccfg, "hl_sipp")
+    capital = capital_gbp or cm.acc.capital_gbp
+    insts = load_seed_instruments()
+    screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
+    needed = sorted({s for g in screen_df["group"] for s in g.split("|")})
+    inv_map = inverse_etf_map(insts)
+    sub = {k: insts[k] for k in needed + list(inv_map.values()) if k in insts}
+    panel = load_close_panel(rcfg.as_of, interval, sub, min_rows=50)
+    sel = build_selections(
+        screen_df, panel, insts, make_judge("rules"), rcfg.judge["gate_probability"], rcfg, interval
+    )
+    sigs = latest_signals(
+        panel,
+        sel,
+        variant,
+        sub,
+        rcfg.signals["z_entry"],
+        rcfg.signals["z_exit"],
+        rcfg.signals["z_stop"],
+        inv_map,
+    )[:max_groups]
+    last = panel.iloc[-1]
+    rows = []
+    for s in sigs:
+        if s.state == 0:
+            continue
+        for sym, w in s.targets.items():
+            if w <= 0:
+                continue
+            price = float(last[sym])
+            shares = cm.round_quantity(capital / max_groups * w / price)
+            if shares <= 0:
+                continue
+            rows.append(
+                {
+                    "group": s.group,
+                    "symbol": sym,
+                    "name": insts[sym].name,
+                    "side": "BUY",
+                    "shares": int(shares),
+                    "price_gbp": price,
+                    "notional_gbp": shares * price,
+                    "z": round(s.z, 2),
+                    "half_life": round(s.half_life, 1),
+                    "expected_edge_pct": s.expected_edge_pct,
+                    "reason": f"state {s.state}",
+                }
+            )
+    out = write_hl_report(
+        pd.DataFrame(rows), str(panel.index[-1].date()), run_dir() / "hl_reports", cm.fixed_fee()
+    )
+    console.print(out.read_text())
