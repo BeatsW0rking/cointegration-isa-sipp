@@ -2196,6 +2196,30 @@
    "source": "yfinance",
    "symbol": "LSE:AAL"
   },
+  "snapshots/2026-10-31/yfinance/LSE_AAZ_1D.parquet": {
+   "bytes": 100544,
+   "first_t": 1122595200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "AAZ.L",
+   "recorded_at": "2026-11-02T22:44:55Z",
+   "rows": 5375,
+   "sha256": "184d607a989f54d9492e11007a29f03c328c3d3be3b41173155d058793c36f12",
+   "source": "yfinance",
+   "symbol": "LSE:AAZ"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AAZ_1W.parquet": {
+   "bytes": 25857,
+   "first_t": 1122249600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "AAZ.L",
+   "recorded_at": "2026-11-02T22:44:54Z",
+   "rows": 1110,
+   "sha256": "e818bd2e8531968cf38bcf1354d534ca79a22549c532e34ad03f184b33306685",
+   "source": "yfinance",
+   "symbol": "LSE:AAZ"
+  },
   "snapshots/2026-10-31/yfinance/LSE_ABDN_1D.parquet": {
    "bytes": 132526,
    "first_t": 1152489600,
@@ -2243,6 +2267,30 @@
    "sha256": "bad1993e5990b106f15f77a6820427edba5fe7fc830bea612704eadb4b29a6e5",
    "source": "yfinance",
    "symbol": "LSE:ABF"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AC8_1D.parquet": {
+   "bytes": 4689,
+   "first_t": 1788912000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "AC8.L",
+   "recorded_at": "2026-11-02T22:45:04Z",
+   "rows": 38,
+   "sha256": "2770753898024f3cec635192fe223b1def1e099427606203ef5bb8864d5cde02",
+   "source": "yfinance",
+   "symbol": "LSE:AC8"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AC8_1W.parquet": {
+   "bytes": 3990,
+   "first_t": 1788739200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "AC8.L",
+   "recorded_at": "2026-11-02T22:45:04Z",
+   "rows": 8,
+   "sha256": "1af378ff927d429a59e016e8553f3e6748bde6fe795e11819518270682a4071f",
+   "source": "yfinance",
+   "symbol": "LSE:AC8"
   },
   "snapshots/2026-10-31/yfinance/LSE_ACWD_1D.parquet": {
    "bytes": 100747,
@@ -2303,6 +2351,30 @@
    "sha256": "2d3d67b650417782b90d0a491146f8b368dece292c2bad879efb5b4a8c3a7b2a",
    "source": "yfinance",
    "symbol": "LSE:ADM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AEP_1D.parquet": {
+   "bytes": 145719,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "AEP.L",
+   "recorded_at": "2026-11-02T22:44:15Z",
+   "rows": 9830,
+   "sha256": "ebc979a7ab3275cde498fe6582617e27595a669e91b957fe984a2a3f8d92253c",
+   "source": "yfinance",
+   "symbol": "LSE:AEP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AEP_1W.parquet": {
+   "bytes": 39868,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "AEP.L",
+   "recorded_at": "2026-11-02T22:44:15Z",
+   "rows": 2001,
+   "sha256": "af5640d2216cc53279a2d28385c151b4b0f92160b320386ab946f8924e4a2429",
+   "source": "yfinance",
+   "symbol": "LSE:AEP"
   },
   "snapshots/2026-10-31/yfinance/LSE_AGAP_1D.parquet": {
    "bytes": 102642,
@@ -2700,6 +2772,30 @@
    "source": "yfinance",
    "symbol": "LSE:AIPG"
   },
+  "snapshots/2026-10-31/yfinance/LSE_AJB_1D.parquet": {
+   "bytes": 42873,
+   "first_t": 1544140800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "AJB.L",
+   "recorded_at": "2026-11-02T22:41:30Z",
+   "rows": 1994,
+   "sha256": "6bec63cdca835ea40cbed2179011dad8c472c50ac6001b261de2e3f36c398704",
+   "source": "yfinance",
+   "symbol": "LSE:AJB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AJB_1W.parquet": {
+   "bytes": 13306,
+   "first_t": 1543795200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "AJB.L",
+   "recorded_at": "2026-11-02T22:41:30Z",
+   "rows": 413,
+   "sha256": "ac94d2a5483ed979f800c5b54d41b714b3e9084d3b76389fa28ef30c837ef479",
+   "source": "yfinance",
+   "symbol": "LSE:AJB"
+  },
   "snapshots/2026-10-31/yfinance/LSE_ALAU_1D.parquet": {
    "bytes": 53492,
    "first_t": 1522108800,
@@ -2735,6 +2831,30 @@
    "sha256": "2563a45a7155006efbb75272e55107ce5289c41cc15477e452963c070a6c1e48",
    "source": "yfinance",
    "symbol": "LSE:ALAU"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ALFA_1D.parquet": {
+   "bytes": 47551,
+   "first_t": 1495756800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ALFA.L",
+   "recorded_at": "2026-11-02T22:44:44Z",
+   "rows": 2384,
+   "sha256": "1428d44677c0e734d28b2170f3b737978ca0a1c3de6059ebd9cc0c30cb9fbfa8",
+   "source": "yfinance",
+   "symbol": "LSE:ALFA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ALFA_1W.parquet": {
+   "bytes": 14206,
+   "first_t": 1495411200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ALFA.L",
+   "recorded_at": "2026-11-02T22:44:44Z",
+   "rows": 493,
+   "sha256": "dc745474904ad83f9ce38daef478686dfb8be2ed44021a0db45b58ad3ea8d75a",
+   "source": "yfinance",
+   "symbol": "LSE:ALFA"
   },
   "snapshots/2026-10-31/yfinance/LSE_ALLG_1D.parquet": {
    "bytes": 7320,
@@ -2844,6 +2964,54 @@
    "source": "yfinance",
    "symbol": "LSE:AMD3"
   },
+  "snapshots/2026-10-31/yfinance/LSE_AMRQ_1D.parquet": {
+   "bytes": 29671,
+   "first_t": 1596153600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "AMRQ.L",
+   "recorded_at": "2026-11-02T22:44:51Z",
+   "rows": 1579,
+   "sha256": "183f47c8ab574a7a0433f6496af139e9ad63551d4769b04e462fbc849368f868",
+   "source": "yfinance",
+   "symbol": "LSE:AMRQ"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AMRQ_1W.parquet": {
+   "bytes": 9728,
+   "first_t": 1595808000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "AMRQ.L",
+   "recorded_at": "2026-11-02T22:44:50Z",
+   "rows": 327,
+   "sha256": "0289ca5ec5a4b8f7f2025d4998ea562480734246f398a7cef3ad24f4a55e5115",
+   "source": "yfinance",
+   "symbol": "LSE:AMRQ"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AMS_1D.parquet": {
+   "bytes": 140856,
+   "first_t": 787536000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "AMS.L",
+   "recorded_at": "2026-11-02T22:44:12Z",
+   "rows": 8145,
+   "sha256": "2bf40c8ffdfc0865e0806f2b4c5bde21a7ce88ac4e0c829596952e29f38805bc",
+   "source": "yfinance",
+   "symbol": "LSE:AMS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AMS_1W.parquet": {
+   "bytes": 36323,
+   "first_t": 787190400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "AMS.L",
+   "recorded_at": "2026-11-02T22:44:12Z",
+   "rows": 1664,
+   "sha256": "5fb9ab442eed05a015c7864661cfdc1e482ad7e5c05dc34651ad648df6be3b96",
+   "source": "yfinance",
+   "symbol": "LSE:AMS"
+  },
   "snapshots/2026-10-31/yfinance/LSE_ANTO_1D.parquet": {
    "bytes": 200765,
    "first_t": 583718400,
@@ -2867,6 +3035,30 @@
    "sha256": "fd9bb7d1952a397ef27eb6965477958d934d37a23f420cf68e2734f7d1889165",
    "source": "yfinance",
    "symbol": "LSE:ANTO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_APN_1D.parquet": {
+   "bytes": 13644,
+   "first_t": 1729728000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "APN.L",
+   "recorded_at": "2026-11-02T22:43:35Z",
+   "rows": 511,
+   "sha256": "787c95f27a605502ff93ca98b80de072d1ac733988bafb542fc136367c03fe14",
+   "source": "yfinance",
+   "symbol": "LSE:APN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_APN_1W.parquet": {
+   "bytes": 6296,
+   "first_t": 1729468800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "APN.L",
+   "recorded_at": "2026-11-02T22:43:35Z",
+   "rows": 106,
+   "sha256": "b52934717ca33fd57cd5d8e98bcdb8a72b6d3dd23c0a0bb051618c11aa885c22",
+   "source": "yfinance",
+   "symbol": "LSE:APN"
   },
   "snapshots/2026-10-31/yfinance/LSE_ARCG_1D.parquet": {
    "bytes": 19501,
@@ -3000,6 +3192,54 @@
    "source": "yfinance",
    "symbol": "LSE:ASCH"
   },
+  "snapshots/2026-10-31/yfinance/LSE_ASC_1D.parquet": {
+   "bytes": 136628,
+   "first_t": 1002067200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ASC.L",
+   "recorded_at": "2026-11-02T22:44:38Z",
+   "rows": 6372,
+   "sha256": "b98d3f01f33ac0c5e1db959c62d772028be087c29f4fadac4d2ccadfe7504ada",
+   "source": "yfinance",
+   "symbol": "LSE:ASC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ASC_1W.parquet": {
+   "bytes": 33671,
+   "first_t": 1001894400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ASC.L",
+   "recorded_at": "2026-11-02T22:44:38Z",
+   "rows": 1309,
+   "sha256": "aafc371c6982345afeb179b29ab822b3bcc91a4aed4566fb7fa252cb0d8799a1",
+   "source": "yfinance",
+   "symbol": "LSE:ASC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ASHM_1D.parquet": {
+   "bytes": 108584,
+   "first_t": 1160611200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ASHM.L",
+   "recorded_at": "2026-11-02T22:42:16Z",
+   "rows": 5067,
+   "sha256": "5e7b2c208412de3ad73e0542f4471e54a5495ed2e9ebef68ecc641f01405845d",
+   "source": "yfinance",
+   "symbol": "LSE:ASHM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ASHM_1W.parquet": {
+   "bytes": 28872,
+   "first_t": 1160352000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ASHM.L",
+   "recorded_at": "2026-11-02T22:42:16Z",
+   "rows": 1047,
+   "sha256": "5feeb3c035589cae38ee593f86348059a4bc1ef04e4016af1882b9a71599b9fc",
+   "source": "yfinance",
+   "symbol": "LSE:ASHM"
+  },
   "snapshots/2026-10-31/yfinance/LSE_AT1_1D.parquet": {
    "bytes": 47318,
    "first_t": 1529366400,
@@ -3035,6 +3275,54 @@
    "sha256": "d031fb8cfb02decc0ae85d30fe9ec56727d3cbfce69f9c82860183f5078fd71f",
    "source": "yfinance",
    "symbol": "LSE:AT1"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ATG_1D.parquet": {
+   "bytes": 31301,
+   "first_t": 1614038400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ATG.L",
+   "recorded_at": "2026-11-02T22:44:17Z",
+   "rows": 1436,
+   "sha256": "04b06376dbc652660d53b80749890295f0b948a9779389d3b8039e5b7d1c1662",
+   "source": "yfinance",
+   "symbol": "LSE:ATG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ATG_1W.parquet": {
+   "bytes": 10181,
+   "first_t": 1613952000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ATG.L",
+   "recorded_at": "2026-11-02T22:44:16Z",
+   "rows": 297,
+   "sha256": "637c90b86843a18312e8a4723fbd27b67e6712b7a746c5399151d10bd910034c",
+   "source": "yfinance",
+   "symbol": "LSE:ATG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ATYM_1D.parquet": {
+   "bytes": 105275,
+   "first_t": 1115596800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ATYM.L",
+   "recorded_at": "2026-11-02T22:42:38Z",
+   "rows": 5434,
+   "sha256": "04de72c773d16c1d5d61440754972f354c6428607db43d3fc5067ad332872156",
+   "source": "yfinance",
+   "symbol": "LSE:ATYM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ATYM_1W.parquet": {
+   "bytes": 27478,
+   "first_t": 1115596800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ATYM.L",
+   "recorded_at": "2026-11-02T22:42:38Z",
+   "rows": 1121,
+   "sha256": "4c1e1c3759ec0fc57f0da153d6cd79f96c24cf2e2cc1d8d4179de83e27443dde",
+   "source": "yfinance",
+   "symbol": "LSE:ATYM"
   },
   "snapshots/2026-10-31/yfinance/LSE_AUEG_1D.parquet": {
    "bytes": 81798,
@@ -3156,6 +3444,30 @@
    "source": "yfinance",
    "symbol": "LSE:AVGS"
   },
+  "snapshots/2026-10-31/yfinance/LSE_AVON_1D.parquet": {
+   "bytes": 164519,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "AVON.L",
+   "recorded_at": "2026-11-02T22:43:34Z",
+   "rows": 9830,
+   "sha256": "205ce27fd876f11ab673122b7e0045217de43020be9215d1e3ef0025524feff4",
+   "source": "yfinance",
+   "symbol": "LSE:AVON"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_AVON_1W.parquet": {
+   "bytes": 44146,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "AVON.L",
+   "recorded_at": "2026-11-02T22:43:33Z",
+   "rows": 2001,
+   "sha256": "22e379e40cbfef2f043ddf8bccf930e7107e72ca21a8fef36113b04350ee211f",
+   "source": "yfinance",
+   "symbol": "LSE:AVON"
+  },
   "snapshots/2026-10-31/yfinance/LSE_AVSG_1D.parquet": {
    "bytes": 15495,
    "first_t": 1733702400,
@@ -3276,6 +3588,30 @@
    "source": "yfinance",
    "symbol": "LSE:BAB"
   },
+  "snapshots/2026-10-31/yfinance/LSE_BAG_1D.parquet": {
+   "bytes": 153294,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BAG.L",
+   "recorded_at": "2026-11-02T22:43:57Z",
+   "rows": 9830,
+   "sha256": "3a712fffae45618f1fffc8b28bd87e1dba6891123e585c0608e78df618254641",
+   "source": "yfinance",
+   "symbol": "LSE:BAG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BAG_1W.parquet": {
+   "bytes": 41702,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BAG.L",
+   "recorded_at": "2026-11-02T22:43:57Z",
+   "rows": 2001,
+   "sha256": "3e9c8ec41b9897a2355b2a704aaf22ae5bed0067fe80a226362894a66e9d2479",
+   "source": "yfinance",
+   "symbol": "LSE:BAG"
+  },
   "snapshots/2026-10-31/yfinance/LSE_BARC_1D.parquet": {
    "bytes": 238100,
    "first_t": 583718400,
@@ -3347,6 +3683,30 @@
    "sha256": "ad69b583306d5700f2cbc576c03db9b946d3d77259c30f9fe002dd4be6be778d",
    "source": "yfinance",
    "symbol": "LSE:BBY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BCG_1D.parquet": {
+   "bytes": 30058,
+   "first_t": 1625011200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BCG.L",
+   "recorded_at": "2026-11-02T22:43:33Z",
+   "rows": 1349,
+   "sha256": "3440e0e12beba2e3fe01bd7263176bbf6b82c6f67a43b3102f0d19d163f67c85",
+   "source": "yfinance",
+   "symbol": "LSE:BCG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BCG_1W.parquet": {
+   "bytes": 10134,
+   "first_t": 1624838400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BCG.L",
+   "recorded_at": "2026-11-02T22:43:32Z",
+   "rows": 279,
+   "sha256": "a9da4555a29f5dd2b94322c40c23ce5af3f03b95ff33a59c760d44e44b9d255b",
+   "source": "yfinance",
+   "symbol": "LSE:BCG"
   },
   "snapshots/2026-10-31/yfinance/LSE_BCOG_1D.parquet": {
    "bytes": 44827,
@@ -3564,6 +3924,30 @@
    "source": "yfinance",
    "symbol": "LSE:BMN3"
   },
+  "snapshots/2026-10-31/yfinance/LSE_BMY_1D.parquet": {
+   "bytes": 148328,
+   "first_t": 772675200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BMY.L",
+   "recorded_at": "2026-11-02T22:44:37Z",
+   "rows": 8269,
+   "sha256": "18d0a1f0da4dbd2e94cb9f8af4fcb9b81ab8fd13f25eac89882dbd9c38cc5acf",
+   "source": "yfinance",
+   "symbol": "LSE:BMY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BMY_1W.parquet": {
+   "bytes": 39077,
+   "first_t": 772675200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BMY.L",
+   "recorded_at": "2026-11-02T22:44:36Z",
+   "rows": 1688,
+   "sha256": "bd5b8f9a31f75dd663bc8158b032c77462c08d3c0e8b897ebaf01222c3149a94",
+   "source": "yfinance",
+   "symbol": "LSE:BMY"
+  },
   "snapshots/2026-10-31/yfinance/LSE_BNC_1D.parquet": {
    "bytes": 141867,
    "first_t": 1066348800,
@@ -3684,6 +4068,54 @@
    "source": "yfinance",
    "symbol": "LSE:BNZL"
   },
+  "snapshots/2026-10-31/yfinance/LSE_BOWL_1D.parquet": {
+   "bytes": 45304,
+   "first_t": 1474416000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BOWL.L",
+   "recorded_at": "2026-11-02T22:44:53Z",
+   "rows": 2555,
+   "sha256": "e5df608121007e917d1f8a4d2502458645cac7f656c8da61c93a34135cc9d692",
+   "source": "yfinance",
+   "symbol": "LSE:BOWL"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BOWL_1W.parquet": {
+   "bytes": 13419,
+   "first_t": 1474243200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BOWL.L",
+   "recorded_at": "2026-11-02T22:44:53Z",
+   "rows": 528,
+   "sha256": "92f228a2e34ab520ae05a0da7183a0a08864f8fda426368b321c9575aadaf8bb",
+   "source": "yfinance",
+   "symbol": "LSE:BOWL"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BOY_1D.parquet": {
+   "bytes": 187432,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BOY.L",
+   "recorded_at": "2026-11-02T22:42:10Z",
+   "rows": 9830,
+   "sha256": "34807fe9e6999b90e6e4d03d0a17010046d5d9dd469086618c3e4957a21e2078",
+   "source": "yfinance",
+   "symbol": "LSE:BOY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BOY_1W.parquet": {
+   "bytes": 50382,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BOY.L",
+   "recorded_at": "2026-11-02T22:42:09Z",
+   "rows": 2001,
+   "sha256": "51525ead427a8c7d49cbaa198e033d281a09e10c6487983ad9c5588d1c71cd74",
+   "source": "yfinance",
+   "symbol": "LSE:BOY"
+  },
   "snapshots/2026-10-31/yfinance/LSE_BPT_1D.parquet": {
    "bytes": 31836,
    "first_t": 1626825600,
@@ -3731,6 +4163,30 @@
    "sha256": "ed6bc9175c1d9c14dca4c7a23de78960a197a4a6e81be68fd688b0a648523391",
    "source": "yfinance",
    "symbol": "LSE:BRBY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BREE_1D.parquet": {
+   "bytes": 88652,
+   "first_t": 1213228800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BREE.L",
+   "recorded_at": "2026-11-02T22:42:47Z",
+   "rows": 4647,
+   "sha256": "7dca421bc071d2424d4ca9c516c896b52ba28c0849b6062cc07bcf1ff3bd2209",
+   "source": "yfinance",
+   "symbol": "LSE:BREE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BREE_1W.parquet": {
+   "bytes": 24668,
+   "first_t": 1212969600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BREE.L",
+   "recorded_at": "2026-11-02T22:42:46Z",
+   "rows": 960,
+   "sha256": "406e1ccb628836559491909f3b4a6852a35166cce441186a665054f19b45727a",
+   "source": "yfinance",
+   "symbol": "LSE:BREE"
   },
   "snapshots/2026-10-31/yfinance/LSE_BRNT_1D.parquet": {
    "bytes": 84104,
@@ -3960,6 +4416,30 @@
    "source": "yfinance",
    "symbol": "LSE:BTRW"
   },
+  "snapshots/2026-10-31/yfinance/LSE_BUR_1D.parquet": {
+   "bytes": 84830,
+   "first_t": 1256083200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BUR.L",
+   "recorded_at": "2026-11-02T22:44:25Z",
+   "rows": 4302,
+   "sha256": "9a30c3c4c8e76515e4645d8eacfd061503d031f80a637cefbece7bd3585a1364",
+   "source": "yfinance",
+   "symbol": "LSE:BUR"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BUR_1W.parquet": {
+   "bytes": 22549,
+   "first_t": 1255910400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BUR.L",
+   "recorded_at": "2026-11-02T22:44:24Z",
+   "rows": 889,
+   "sha256": "d82e4b1f265101fe7429864b02674159ec254fa7d22fdcebf84c4313d0ad9103",
+   "source": "yfinance",
+   "symbol": "LSE:BUR"
+  },
   "snapshots/2026-10-31/yfinance/LSE_BVA_1D.parquet": {
    "bytes": 141710,
    "first_t": 997660800,
@@ -3983,6 +4463,126 @@
    "sha256": "1d733db079c1fc8b4197966fe218b0d6d6003db23da05594e84465e4d9c6a6b2",
    "source": "yfinance",
    "symbol": "LSE:BVA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BWY_1D.parquet": {
+   "bytes": 178159,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BWY.L",
+   "recorded_at": "2026-11-02T22:41:15Z",
+   "rows": 9830,
+   "sha256": "4c91d24f2a98b81cb0b89c6a41861cb2c01a4ece79a52623cc0694b3edccc92e",
+   "source": "yfinance",
+   "symbol": "LSE:BWY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BWY_1W.parquet": {
+   "bytes": 45518,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BWY.L",
+   "recorded_at": "2026-11-02T22:41:14Z",
+   "rows": 2001,
+   "sha256": "e9f81f17992a3a1728dde7b3f62ec59bb898aeec697177ae3f943ad339a8a2b2",
+   "source": "yfinance",
+   "symbol": "LSE:BWY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BYG_1D.parquet": {
+   "bytes": 134000,
+   "first_t": 957744000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BYG.L",
+   "recorded_at": "2026-11-02T22:41:52Z",
+   "rows": 6739,
+   "sha256": "c14816944f559f89436fc57ef722a441abd9e6d6e538fc30b27f9f6a869417fe",
+   "source": "yfinance",
+   "symbol": "LSE:BYG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BYG_1W.parquet": {
+   "bytes": 34158,
+   "first_t": 957139200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BYG.L",
+   "recorded_at": "2026-11-02T22:41:52Z",
+   "rows": 1383,
+   "sha256": "00177c7337b871c653152a17f71924f42049624b8232fc7fe1479eb0491a69bf",
+   "source": "yfinance",
+   "symbol": "LSE:BYG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BYIT_1D.parquet": {
+   "bytes": 33214,
+   "first_t": 1607644800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "BYIT.L",
+   "recorded_at": "2026-11-02T22:42:57Z",
+   "rows": 1484,
+   "sha256": "76a0f44e2619cb082cdfa0136a892db1deb0a5ffb545ec6bf3114d2a5ac55f5c",
+   "source": "yfinance",
+   "symbol": "LSE:BYIT"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_BYIT_1W.parquet": {
+   "bytes": 11243,
+   "first_t": 1607299200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "BYIT.L",
+   "recorded_at": "2026-11-02T22:42:56Z",
+   "rows": 308,
+   "sha256": "4a98f88e93fe198e58c7919b6887a8ed8a5d5340614bdd7d0d99aa706aea7556",
+   "source": "yfinance",
+   "symbol": "LSE:BYIT"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CAN_1D.parquet": {
+   "bytes": 14268,
+   "first_t": 1734307200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CAN.L",
+   "recorded_at": "2026-11-02T22:41:36Z",
+   "rows": 474,
+   "sha256": "8d89e69a7e517d105aa8cb81cf6deae3b34cdffad206be5f15af72b9a33f5fdc",
+   "source": "yfinance",
+   "symbol": "LSE:CAN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CAN_1W.parquet": {
+   "bytes": 6407,
+   "first_t": 1734307200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CAN.L",
+   "recorded_at": "2026-11-02T22:41:35Z",
+   "rows": 98,
+   "sha256": "d5d9588e01ee2f6c2c78acc23fb4f3d71129698c754f5291a16a254c2bf0d9be",
+   "source": "yfinance",
+   "symbol": "LSE:CAN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CBG_1D.parquet": {
+   "bytes": 135904,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CBG.L",
+   "recorded_at": "2026-11-02T22:44:20Z",
+   "rows": 9829,
+   "sha256": "1abcf327ee2ab8e8d20858183dcfa0ee324a2ff3d13b0482966c38bb07d3fc06",
+   "source": "yfinance",
+   "symbol": "LSE:CBG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CBG_1W.parquet": {
+   "bytes": 35340,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CBG.L",
+   "recorded_at": "2026-11-02T22:44:20Z",
+   "rows": 2001,
+   "sha256": "553fc4ea72c986c9522bd98a3abfd44b3e23c3848eede74226341087324ce934",
+   "source": "yfinance",
+   "symbol": "LSE:CBG"
   },
   "snapshots/2026-10-31/yfinance/LSE_CBR3_1D.parquet": {
    "bytes": 6694,
@@ -4236,6 +4836,54 @@
    "source": "yfinance",
    "symbol": "LSE:CEMA"
   },
+  "snapshots/2026-10-31/yfinance/LSE_CHG_1D.parquet": {
+   "bytes": 184130,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CHG.L",
+   "recorded_at": "2026-11-02T22:42:12Z",
+   "rows": 9830,
+   "sha256": "3dfcc7f7663dd79a8a197557c3d3c5e50437b97206638c6ecfd5629c39062c03",
+   "source": "yfinance",
+   "symbol": "LSE:CHG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CHG_1W.parquet": {
+   "bytes": 50209,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CHG.L",
+   "recorded_at": "2026-11-02T22:42:11Z",
+   "rows": 2001,
+   "sha256": "90f0c86c341715b15eebec9bf0d5401abd945262dd53538969fa415e56205c21",
+   "source": "yfinance",
+   "symbol": "LSE:CHG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CHRT_1D.parquet": {
+   "bytes": 90082,
+   "first_t": 1141776000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CHRT.L",
+   "recorded_at": "2026-11-02T22:43:55Z",
+   "rows": 5218,
+   "sha256": "47d6fa1c19c129b9019c22798193d4e13bfe608ee0322262b067aa6efacd5ed5",
+   "source": "yfinance",
+   "symbol": "LSE:CHRT"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CHRT_1W.parquet": {
+   "bytes": 24787,
+   "first_t": 1141603200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CHRT.L",
+   "recorded_at": "2026-11-02T22:43:54Z",
+   "rows": 1078,
+   "sha256": "dd0054ed3be81562bf6ec790c9c7edd9976873b89b556b09fe85fe6f0f8f4e17",
+   "source": "yfinance",
+   "symbol": "LSE:CHRT"
+  },
   "snapshots/2026-10-31/yfinance/LSE_CIBR_1D.parquet": {
    "bytes": 44410,
    "first_t": 1589932800,
@@ -4272,6 +4920,30 @@
    "source": "yfinance",
    "symbol": "LSE:CIBR"
   },
+  "snapshots/2026-10-31/yfinance/LSE_CKN_1D.parquet": {
+   "bytes": 152342,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CKN.L",
+   "recorded_at": "2026-11-02T22:42:07Z",
+   "rows": 9830,
+   "sha256": "0a592076c303c8986210a6d972479cf4298a4ff86d641b209a47b22bf52b820d",
+   "source": "yfinance",
+   "symbol": "LSE:CKN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CKN_1W.parquet": {
+   "bytes": 40622,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CKN.L",
+   "recorded_at": "2026-11-02T22:42:06Z",
+   "rows": 2001,
+   "sha256": "366f6072394bc550e103cea408d0a275c5ef33f625251b3c8ff66a5f6a0f18e3",
+   "source": "yfinance",
+   "symbol": "LSE:CKN"
+  },
   "snapshots/2026-10-31/yfinance/LSE_CLOX_1D.parquet": {
    "bytes": 9953,
    "first_t": 1755475200,
@@ -4307,6 +4979,30 @@
    "sha256": "5db4adfcbbf8187fbb6a1e490828bf5182cf7d27677bb6fe0df5f8c50af973cb",
    "source": "yfinance",
    "symbol": "LSE:CLOX"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CMCX_1D.parquet": {
+   "bytes": 56792,
+   "first_t": 1454630400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CMCX.L",
+   "recorded_at": "2026-11-02T22:41:46Z",
+   "rows": 2713,
+   "sha256": "d89e72a4c4b9b6eb27fe46d03461485d415611c37b1af0c6bdf1c602728394a3",
+   "source": "yfinance",
+   "symbol": "LSE:CMCX"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CMCX_1W.parquet": {
+   "bytes": 16206,
+   "first_t": 1454284800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CMCX.L",
+   "recorded_at": "2026-11-02T22:41:46Z",
+   "rows": 561,
+   "sha256": "2b5c9624d2b79b955e9f2485fdb0c3063998fd697954a1246eb0682979723040",
+   "source": "yfinance",
+   "symbol": "LSE:CMCX"
   },
   "snapshots/2026-10-31/yfinance/LSE_CMOD_1D.parquet": {
    "bytes": 63831,
@@ -4427,6 +5123,30 @@
    "sha256": "968c9628354649772992be085278247ae7700404248b4dca2e63f250fb9e0b8a",
    "source": "yfinance",
    "symbol": "LSE:CNYA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_COA_1D.parquet": {
+   "bytes": 162464,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "COA.L",
+   "recorded_at": "2026-11-02T22:42:04Z",
+   "rows": 9830,
+   "sha256": "fe01961a3ff616bcd846602603c36a3ef55ca5395e5296b2c52aa22d60c10ed3",
+   "source": "yfinance",
+   "symbol": "LSE:COA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_COA_1W.parquet": {
+   "bytes": 46573,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "COA.L",
+   "recorded_at": "2026-11-02T22:42:04Z",
+   "rows": 2001,
+   "sha256": "7b347bd1076458dc94458d925bf88268ea965503aa70aeef02bec5c319909e59",
+   "source": "yfinance",
+   "symbol": "LSE:COA"
   },
   "snapshots/2026-10-31/yfinance/LSE_COCO_1D.parquet": {
    "bytes": 98822,
@@ -4680,6 +5400,30 @@
    "source": "yfinance",
    "symbol": "LSE:COPX"
   },
+  "snapshots/2026-10-31/yfinance/LSE_COST_1D.parquet": {
+   "bytes": 173032,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "COST.L",
+   "recorded_at": "2026-11-02T22:43:52Z",
+   "rows": 9830,
+   "sha256": "8d4a0e247d74bd179621600c3f2424fdd3280db9b02c236544104387f13f8da5",
+   "source": "yfinance",
+   "symbol": "LSE:COST"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_COST_1W.parquet": {
+   "bytes": 46631,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "COST.L",
+   "recorded_at": "2026-11-02T22:43:52Z",
+   "rows": 2001,
+   "sha256": "9a4a57f2e1f0275938d505ac9b668eb93a1ea0f483e29a157b407af64bac7b07",
+   "source": "yfinance",
+   "symbol": "LSE:COST"
+  },
   "snapshots/2026-10-31/yfinance/LSE_CPG_1D.parquet": {
    "bytes": 166418,
    "first_t": 946944000,
@@ -4764,6 +5508,54 @@
    "source": "yfinance",
    "symbol": "LSE:CRDA"
   },
+  "snapshots/2026-10-31/yfinance/LSE_CREI_1D.parquet": {
+   "bytes": 54799,
+   "first_t": 1395792000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CREI.L",
+   "recorded_at": "2026-11-02T22:45:10Z",
+   "rows": 3184,
+   "sha256": "f23e071aabaad4aa46b001bdd6aebec5330471617755252fce473a2c8167f2f9",
+   "source": "yfinance",
+   "symbol": "LSE:CREI"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CREI_1W.parquet": {
+   "bytes": 16195,
+   "first_t": 1395619200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CREI.L",
+   "recorded_at": "2026-11-02T22:45:09Z",
+   "rows": 658,
+   "sha256": "2bef77c7ab8331b0a9b13adc47c9e6953b489ce9b773049f2aca1cd9e1735fbd",
+   "source": "yfinance",
+   "symbol": "LSE:CREI"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CRE_1D.parquet": {
+   "bytes": 28251,
+   "first_t": 1606867200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CRE.L",
+   "recorded_at": "2026-11-02T22:43:56Z",
+   "rows": 1492,
+   "sha256": "73dd4dba16346b6eae7ea54815ec0870f092b4f72fc8ef19b7fda1e6f4c86c30",
+   "source": "yfinance",
+   "symbol": "LSE:CRE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CRE_1W.parquet": {
+   "bytes": 9525,
+   "first_t": 1606694400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CRE.L",
+   "recorded_at": "2026-11-02T22:43:56Z",
+   "rows": 309,
+   "sha256": "36ca3a4343d4849fd111d4c8756094014cc8049a26530ead031e7e2208a2c891",
+   "source": "yfinance",
+   "symbol": "LSE:CRE"
+  },
   "snapshots/2026-10-31/yfinance/LSE_CRHG_1D.parquet": {
    "bytes": 51763,
    "first_t": 1521590400,
@@ -4799,6 +5591,30 @@
    "sha256": "e33344ea487ab7abb5a3f69e34533042d245e38a771ecaf9902e5feb7f3ad06c",
    "source": "yfinance",
    "symbol": "LSE:CRHG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CRN_1D.parquet": {
+   "bytes": 56255,
+   "first_t": 1433894400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CRN.L",
+   "recorded_at": "2026-11-02T22:42:20Z",
+   "rows": 2881,
+   "sha256": "e289d293352a3376a2323fc864d51e5504160c4299512b715867858935d5c8a7",
+   "source": "yfinance",
+   "symbol": "LSE:CRN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CRN_1W.parquet": {
+   "bytes": 16730,
+   "first_t": 1433721600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CRN.L",
+   "recorded_at": "2026-11-02T22:42:19Z",
+   "rows": 595,
+   "sha256": "36d8b85afbbf7abcd834c7a6d63e15654628bc671544bc157699db585b350a63",
+   "source": "yfinance",
+   "symbol": "LSE:CRN"
   },
   "snapshots/2026-10-31/yfinance/LSE_CRPA_1D.parquet": {
    "bytes": 46666,
@@ -5052,6 +5868,30 @@
    "source": "yfinance",
    "symbol": "LSE:CSHE"
   },
+  "snapshots/2026-10-31/yfinance/LSE_CSN_1D.parquet": {
+   "bytes": 115177,
+   "first_t": 1085011200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CSN.L",
+   "recorded_at": "2026-11-02T22:43:30Z",
+   "rows": 5686,
+   "sha256": "2cae6e1f2b8a6329f1902f324992b1b0da4a40944a57f5249908c92664984e52",
+   "source": "yfinance",
+   "symbol": "LSE:CSN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CSN_1W.parquet": {
+   "bytes": 30542,
+   "first_t": 1084752000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CSN.L",
+   "recorded_at": "2026-11-02T22:43:29Z",
+   "rows": 1172,
+   "sha256": "238383e0700f5745771a84a357ddd92c5e698c920c0b0b95232bd34e281df961",
+   "source": "yfinance",
+   "symbol": "LSE:CSN"
+  },
   "snapshots/2026-10-31/yfinance/LSE_CSPX_1D.parquet": {
    "bytes": 109900,
    "first_t": 1284508800,
@@ -5220,6 +6060,54 @@
    "source": "yfinance",
    "symbol": "LSE:CUKX"
   },
+  "snapshots/2026-10-31/yfinance/LSE_CURY_1D.parquet": {
+   "bytes": 103641,
+   "first_t": 1254355200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CURY.L",
+   "recorded_at": "2026-11-02T22:42:18Z",
+   "rows": 4316,
+   "sha256": "71995ae082ef75e71ec5de7373aaa5d35c5eec2d7bedac2ed74b307b236d5763",
+   "source": "yfinance",
+   "symbol": "LSE:CURY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CURY_1W.parquet": {
+   "bytes": 26100,
+   "first_t": 1254096000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CURY.L",
+   "recorded_at": "2026-11-02T22:42:17Z",
+   "rows": 892,
+   "sha256": "7dddaf4f44f84d94a12090152b25a7412c1699da4eea2e5b2adfeb70157950f1",
+   "source": "yfinance",
+   "symbol": "LSE:CURY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CVSG_1D.parquet": {
+   "bytes": 97519,
+   "first_t": 1191974400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CVSG.L",
+   "recorded_at": "2026-11-02T22:43:18Z",
+   "rows": 4816,
+   "sha256": "389109ba4d54582bb5f2ff0da17636e70298bae40f7f75df56213b1393f1f01d",
+   "source": "yfinance",
+   "symbol": "LSE:CVSG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CVSG_1W.parquet": {
+   "bytes": 24342,
+   "first_t": 1191801600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CVSG.L",
+   "recorded_at": "2026-11-02T22:43:18Z",
+   "rows": 995,
+   "sha256": "fb8a1a5cdfa4fda579229e713499aae1064697b57b169ed253bbcfe61a0f1fb3",
+   "source": "yfinance",
+   "symbol": "LSE:CVSG"
+  },
   "snapshots/2026-10-31/yfinance/LSE_CWK_1D.parquet": {
    "bytes": 160629,
    "first_t": 583718400,
@@ -5243,6 +6131,30 @@
    "sha256": "4d3139bb9670bfd626604f69819f496967d7af29466c62fb1eaf655b13a4e476",
    "source": "yfinance",
    "symbol": "LSE:CWK"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CWR_1D.parquet": {
+   "bytes": 126373,
+   "first_t": 1101340800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "CWR.L",
+   "recorded_at": "2026-11-02T22:44:23Z",
+   "rows": 5551,
+   "sha256": "4caf7277f40d54c356d069bbdb685e5c2c039e9ff15e110703e887fff9acc7ff",
+   "source": "yfinance",
+   "symbol": "LSE:CWR"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_CWR_1W.parquet": {
+   "bytes": 32124,
+   "first_t": 1101081600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "CWR.L",
+   "recorded_at": "2026-11-02T22:44:23Z",
+   "rows": 1145,
+   "sha256": "27a6403bd6920c025ce6737498b516979483313557e80cfc70ee81872fc5c929",
+   "source": "yfinance",
+   "symbol": "LSE:CWR"
   },
   "snapshots/2026-10-31/yfinance/LSE_CYSE_1D.parquet": {
    "bytes": 36798,
@@ -5315,6 +6227,30 @@
    "sha256": "f57e2e38dbb2126f50c3ef10f27c1958609b80adac4330711bedb124b70ea9b1",
    "source": "yfinance",
    "symbol": "LSE:DAGB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DATA_1D.parquet": {
+   "bytes": 105106,
+   "first_t": 962323200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "DATA.L",
+   "recorded_at": "2026-11-02T22:44:59Z",
+   "rows": 6700,
+   "sha256": "db7caa7103a9aa05dc2993660080473e7edf9045b2553b20621affcf2f80aad6",
+   "source": "yfinance",
+   "symbol": "LSE:DATA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DATA_1W.parquet": {
+   "bytes": 29464,
+   "first_t": 961977600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "DATA.L",
+   "recorded_at": "2026-11-02T22:44:58Z",
+   "rows": 1375,
+   "sha256": "05a6320edbe2e9079f1dc3c9f93fe4d12ad482435b287ed419fb78d9d0056a07",
+   "source": "yfinance",
+   "symbol": "LSE:DATA"
   },
   "snapshots/2026-10-31/yfinance/LSE_DCC_1D.parquet": {
    "bytes": 145842,
@@ -5652,6 +6588,30 @@
    "source": "yfinance",
    "symbol": "LSE:DHYG"
   },
+  "snapshots/2026-10-31/yfinance/LSE_DLN_1D.parquet": {
+   "bytes": 161794,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "DLN.L",
+   "recorded_at": "2026-11-02T22:41:43Z",
+   "rows": 9830,
+   "sha256": "c3d60220ccb638d06c1fb05f554883295eff430567a0c279bb36e16a5141aef1",
+   "source": "yfinance",
+   "symbol": "LSE:DLN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DLN_1W.parquet": {
+   "bytes": 43584,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "DLN.L",
+   "recorded_at": "2026-11-02T22:41:43Z",
+   "rows": 2001,
+   "sha256": "02ff02de493325aa114be004825c430bccfe7c5fc61131cbfbbec73f3980e5fb",
+   "source": "yfinance",
+   "symbol": "LSE:DLN"
+  },
   "snapshots/2026-10-31/yfinance/LSE_DLTM_1D.parquet": {
    "bytes": 107122,
    "first_t": 1199232000,
@@ -5687,6 +6647,78 @@
    "sha256": "fa9e64828987bf4ab79333a9ae0c0f5db0a010cf91b3da95d8169548684e0d65",
    "source": "yfinance",
    "symbol": "LSE:DLTM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DNLM_1D.parquet": {
+   "bytes": 103967,
+   "first_t": 1161216000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "DNLM.L",
+   "recorded_at": "2026-11-02T22:42:00Z",
+   "rows": 5062,
+   "sha256": "ecbfd9607f4699b28d4e5bc13b6244103708717081428486d722b470b22ce065",
+   "source": "yfinance",
+   "symbol": "LSE:DNLM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DNLM_1W.parquet": {
+   "bytes": 26211,
+   "first_t": 1160956800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "DNLM.L",
+   "recorded_at": "2026-11-02T22:41:59Z",
+   "rows": 1046,
+   "sha256": "522bf424284cfbf0ac0d10ea12f176182b9608cd982bbf9764a8445711f4ba4d",
+   "source": "yfinance",
+   "symbol": "LSE:DNLM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DOCS_1D.parquet": {
+   "bytes": 36722,
+   "first_t": 1611878400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "DOCS.L",
+   "recorded_at": "2026-11-02T22:44:07Z",
+   "rows": 1453,
+   "sha256": "c69d23b021572015aa80bf0d8f759619f804a39b3e0afc812108319d9e6d958f",
+   "source": "yfinance",
+   "symbol": "LSE:DOCS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DOCS_1W.parquet": {
+   "bytes": 11494,
+   "first_t": 1611532800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "DOCS.L",
+   "recorded_at": "2026-11-02T22:44:07Z",
+   "rows": 301,
+   "sha256": "d10d8a8af48b873c7402fb73694f916c65dfd16d3771405d19e48c302482e014",
+   "source": "yfinance",
+   "symbol": "LSE:DOCS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DOM_1D.parquet": {
+   "bytes": 152379,
+   "first_t": 943401600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "DOM.L",
+   "recorded_at": "2026-11-02T22:43:20Z",
+   "rows": 6857,
+   "sha256": "a07177057d7bfb897a2f94a6802945295476ac1d1e7916f14fd42396fc3072da",
+   "source": "yfinance",
+   "symbol": "LSE:DOM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DOM_1W.parquet": {
+   "bytes": 39298,
+   "first_t": 943228800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "DOM.L",
+   "recorded_at": "2026-11-02T22:43:19Z",
+   "rows": 1406,
+   "sha256": "51af0f3620cc25951f6c73beabbe9530a67b5e41a3386fe0b05baf0fac494a82",
+   "source": "yfinance",
+   "symbol": "LSE:DOM"
   },
   "snapshots/2026-10-31/yfinance/LSE_DPLM_1D.parquet": {
    "bytes": 174653,
@@ -6059,6 +7091,30 @@
    "sha256": "2213033fae023743ba7612720073e246f27a4548adc4617b46d8ad785fc4996f",
    "source": "yfinance",
    "symbol": "LSE:DS2P"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DSCV_1D.parquet": {
+   "bytes": 151312,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "DSCV.L",
+   "recorded_at": "2026-11-02T22:43:28Z",
+   "rows": 9830,
+   "sha256": "2db3da416c1c4c46bd36152d81670134ece64e5afd63fbe4bc6378119dfde9ad",
+   "source": "yfinance",
+   "symbol": "LSE:DSCV"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_DSCV_1W.parquet": {
+   "bytes": 44079,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "DSCV.L",
+   "recorded_at": "2026-11-02T22:43:28Z",
+   "rows": 2001,
+   "sha256": "0adad077c073c6ce49a20ed2bbda005a541ceaf0bbc619290ba306b1c770e25b",
+   "source": "yfinance",
+   "symbol": "LSE:DSCV"
   },
   "snapshots/2026-10-31/yfinance/LSE_DTEC_1D.parquet": {
    "bytes": 18657,
@@ -6672,6 +7728,30 @@
    "source": "yfinance",
    "symbol": "LSE:EIMU"
   },
+  "snapshots/2026-10-31/yfinance/LSE_ELM_1D.parquet": {
+   "bytes": 188045,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ELM.L",
+   "recorded_at": "2026-11-02T22:42:52Z",
+   "rows": 9830,
+   "sha256": "484e75d174a3604ce35d15a3f21f67c6ef146cc3a2c5acd79dc861d11c00a77d",
+   "source": "yfinance",
+   "symbol": "LSE:ELM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ELM_1W.parquet": {
+   "bytes": 49179,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ELM.L",
+   "recorded_at": "2026-11-02T22:42:51Z",
+   "rows": 2001,
+   "sha256": "8d273ef9995187343ca87adcfc44d81280d81fa34640638e3ace134c8a778c42",
+   "source": "yfinance",
+   "symbol": "LSE:ELM"
+  },
   "snapshots/2026-10-31/yfinance/LSE_ELON_1D.parquet": {
    "bytes": 6602,
    "first_t": 1782086400,
@@ -7224,6 +8304,54 @@
    "source": "yfinance",
    "symbol": "LSE:EMXN"
   },
+  "snapshots/2026-10-31/yfinance/LSE_ENOG_1D.parquet": {
+   "bytes": 44264,
+   "first_t": 1521158400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ENOG.L",
+   "recorded_at": "2026-11-02T22:42:27Z",
+   "rows": 2179,
+   "sha256": "381795a8fd4461ab67f1e659376123335e325f767473eca3b2edb639c5a9915a",
+   "source": "yfinance",
+   "symbol": "LSE:ENOG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ENOG_1W.parquet": {
+   "bytes": 13100,
+   "first_t": 1520812800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ENOG.L",
+   "recorded_at": "2026-11-02T22:42:26Z",
+   "rows": 451,
+   "sha256": "5d79995fbfb9faec86d1e552b8967717a993b05ea987b841064bbf7ff80dcca3",
+   "source": "yfinance",
+   "symbol": "LSE:ENOG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ENQ_1D.parquet": {
+   "bytes": 103057,
+   "first_t": 1270512000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ENQ.L",
+   "recorded_at": "2026-11-02T22:44:14Z",
+   "rows": 4188,
+   "sha256": "6fab329e596f62c6cfe267e672514d71dfa9fb921a6b8e6612769c4c0a370f81",
+   "source": "yfinance",
+   "symbol": "LSE:ENQ"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ENQ_1W.parquet": {
+   "bytes": 27277,
+   "first_t": 1270425600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ENQ.L",
+   "recorded_at": "2026-11-02T22:44:13Z",
+   "rows": 865,
+   "sha256": "668dd21d0ebfe01b1a511e61a3d499c46181e5bb47d389ce0f7dcfbda874e8ef",
+   "source": "yfinance",
+   "symbol": "LSE:ENQ"
+  },
   "snapshots/2026-10-31/yfinance/LSE_ENT_1D.parquet": {
    "bytes": 116261,
    "first_t": 1103587200,
@@ -7644,6 +8772,54 @@
    "source": "yfinance",
    "symbol": "LSE:EUMD"
   },
+  "snapshots/2026-10-31/yfinance/LSE_EVPL_1D.parquet": {
+   "bytes": 39911,
+   "first_t": 1527033600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "EVPL.L",
+   "recorded_at": "2026-11-02T22:44:18Z",
+   "rows": 2134,
+   "sha256": "7181779ff7ccfa76df4749226e4b875b04141167f3e2655f25f27c1b773d9ab7",
+   "source": "yfinance",
+   "symbol": "LSE:EVPL"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_EVPL_1W.parquet": {
+   "bytes": 11797,
+   "first_t": 1526860800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "EVPL.L",
+   "recorded_at": "2026-11-02T22:44:17Z",
+   "rows": 441,
+   "sha256": "0773b1bf6270aabd235298ac14f297955befbf35ac755fbfaa8c950360d983eb",
+   "source": "yfinance",
+   "symbol": "LSE:EVPL"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_EWG_1D.parquet": {
+   "bytes": 26031,
+   "first_t": 1633651200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "EWG.L",
+   "recorded_at": "2026-11-02T22:43:36Z",
+   "rows": 1278,
+   "sha256": "7c3164506fce2fd88a9e919255d5cb205eb58c935a9d0a9e886d718c9bbee343",
+   "source": "yfinance",
+   "symbol": "LSE:EWG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_EWG_1W.parquet": {
+   "bytes": 9395,
+   "first_t": 1633305600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "EWG.L",
+   "recorded_at": "2026-11-02T22:43:36Z",
+   "rows": 265,
+   "sha256": "1361ba81091e239d38db0491b3c7d9420d372718f4b5266569618183596e60f5",
+   "source": "yfinance",
+   "symbol": "LSE:EWG"
+  },
   "snapshots/2026-10-31/yfinance/LSE_EWSP_1D.parquet": {
    "bytes": 30084,
    "first_t": 1659398400,
@@ -7824,6 +9000,30 @@
    "source": "yfinance",
    "symbol": "LSE:EZJ"
   },
+  "snapshots/2026-10-31/yfinance/LSE_FAN_1D.parquet": {
+   "bytes": 58157,
+   "first_t": 1403049600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "FAN.L",
+   "recorded_at": "2026-11-02T22:42:40Z",
+   "rows": 3128,
+   "sha256": "00941248fed5c6f4d6de810ab7f432402d73ae803d6fec465e0bfeacfb52cf86",
+   "source": "yfinance",
+   "symbol": "LSE:FAN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FAN_1W.parquet": {
+   "bytes": 16153,
+   "first_t": 1402876800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "FAN.L",
+   "recorded_at": "2026-11-02T22:42:39Z",
+   "rows": 646,
+   "sha256": "6a2257cea61eb260b542af094b2014f8b4f65a89bae718d9e5f336b8bd63d0ad",
+   "source": "yfinance",
+   "symbol": "LSE:FAN"
+  },
   "snapshots/2026-10-31/yfinance/LSE_FB3S_1D.parquet": {
    "bytes": 34504,
    "first_t": 1654473600,
@@ -7968,6 +9168,54 @@
    "source": "yfinance",
    "symbol": "LSE:FCBR"
   },
+  "snapshots/2026-10-31/yfinance/LSE_FCH_1D.parquet": {
+   "bytes": 45790,
+   "first_t": 1538438400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "FCH.L",
+   "recorded_at": "2026-11-02T22:44:19Z",
+   "rows": 2042,
+   "sha256": "321bd3d3012a7952174c739c3142e4971ddbf49213429ba865fa68ccad856ec9",
+   "source": "yfinance",
+   "symbol": "LSE:FCH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FCH_1W.parquet": {
+   "bytes": 13721,
+   "first_t": 1538352000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "FCH.L",
+   "recorded_at": "2026-11-02T22:44:18Z",
+   "rows": 422,
+   "sha256": "1ec373f4ee3ec7f70c4c1f9a507dee23cf4f40c7533916e78c1b68f6ac6a2151",
+   "source": "yfinance",
+   "symbol": "LSE:FCH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FEVR_1D.parquet": {
+   "bytes": 64150,
+   "first_t": 1415318400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "FEVR.L",
+   "recorded_at": "2026-11-02T22:43:09Z",
+   "rows": 3027,
+   "sha256": "c0288bed1ca678e5deb8d4d877e8d037275c33e6fce21e6ba08abe89b20b2ec9",
+   "source": "yfinance",
+   "symbol": "LSE:FEVR"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FEVR_1W.parquet": {
+   "bytes": 17509,
+   "first_t": 1414972800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "FEVR.L",
+   "recorded_at": "2026-11-02T22:43:08Z",
+   "rows": 626,
+   "sha256": "9336cccb7856d8353495101bdcff972412152cf934a3ebdcfd4aaf205fff5bc2",
+   "source": "yfinance",
+   "symbol": "LSE:FEVR"
+  },
   "snapshots/2026-10-31/yfinance/LSE_FFLC_1D.parquet": {
    "bytes": 9999,
    "first_t": 1757289600,
@@ -8039,6 +9287,30 @@
    "sha256": "68dfab8867cb939cc313567749d1aa87ff0e26cfd50e8547f7834ee9e0501360",
    "source": "yfinance",
    "symbol": "LSE:FGLR"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FGP_1D.parquet": {
+   "bytes": 182907,
+   "first_t": 803520000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "FGP.L",
+   "recorded_at": "2026-11-02T22:42:50Z",
+   "rows": 8014,
+   "sha256": "5baf8f3a36e7bb4fe0ed730fea27032abcec44381abb4bf6b9ea30e7254ab8df",
+   "source": "yfinance",
+   "symbol": "LSE:FGP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FGP_1W.parquet": {
+   "bytes": 46584,
+   "first_t": 803520000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "FGP.L",
+   "recorded_at": "2026-11-02T22:42:49Z",
+   "rows": 1637,
+   "sha256": "351b047c1650fae5160ca1527e520bf046f09fa81174c5f2fb9da31ad060d5a4",
+   "source": "yfinance",
+   "symbol": "LSE:FGP"
   },
   "snapshots/2026-10-31/yfinance/LSE_FLOA_1D.parquet": {
    "bytes": 47841,
@@ -8376,6 +9648,30 @@
    "source": "yfinance",
    "symbol": "LSE:FRES"
   },
+  "snapshots/2026-10-31/yfinance/LSE_FRMI_1D.parquet": {
+   "bytes": 10752,
+   "first_t": 1759449600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "FRMI.L",
+   "recorded_at": "2026-11-02T22:42:41Z",
+   "rows": 273,
+   "sha256": "c2102e7f9aba2471b0da8464853ed9512c9db0f106ad30a6b2dacbe6b870d18a",
+   "source": "yfinance",
+   "symbol": "LSE:FRMI"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FRMI_1W.parquet": {
+   "bytes": 5675,
+   "first_t": 1759104000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "FRMI.L",
+   "recorded_at": "2026-11-02T22:42:41Z",
+   "rows": 57,
+   "sha256": "5f12f427ee3ebfff817dd94e0cfe4f81be8e5565589147534acc08ae502be3f3",
+   "source": "yfinance",
+   "symbol": "LSE:FRMI"
+  },
   "snapshots/2026-10-31/yfinance/LSE_FSMF_1D.parquet": {
    "bytes": 30966,
    "first_t": 1616457600,
@@ -8447,6 +9743,30 @@
    "sha256": "6b6f8f77e4e7e65cae7e7bbbcf0470f1683a64f71edd78e25adffa57bd8a9ee3",
    "source": "yfinance",
    "symbol": "LSE:FTAD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FTC_1D.parquet": {
+   "bytes": 139351,
+   "first_t": 784166400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "FTC.L",
+   "recorded_at": "2026-11-02T22:44:42Z",
+   "rows": 8174,
+   "sha256": "298b9244495aefbdb50eaab96aec733c3ac87874212a8ea90a2c69fdae179f3c",
+   "source": "yfinance",
+   "symbol": "LSE:FTC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_FTC_1W.parquet": {
+   "bytes": 36952,
+   "first_t": 784166400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "FTC.L",
+   "recorded_at": "2026-11-02T22:44:42Z",
+   "rows": 1669,
+   "sha256": "e488de61b3b4b2056d5370a2d175e6f945f1a1a0b8ace7d3328af38bfe6caf05",
+   "source": "yfinance",
+   "symbol": "LSE:FTC"
   },
   "snapshots/2026-10-31/yfinance/LSE_FTWG_1D.parquet": {
    "bytes": 22659,
@@ -8735,6 +10055,30 @@
    "sha256": "08ea81dbfabbc246d99dab4ed93f4413f92ca9bfe4c5438972849122382f1920",
    "source": "yfinance",
    "symbol": "LSE:FWSD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GAMA_1D.parquet": {
+   "bytes": 60066,
+   "first_t": 1412899200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GAMA.L",
+   "recorded_at": "2026-11-02T22:43:13Z",
+   "rows": 3047,
+   "sha256": "5b999e498a7e81dfa67f7b3029a1ea05e2dcc9f3b18e7e822dff240c723cad9b",
+   "source": "yfinance",
+   "symbol": "LSE:GAMA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GAMA_1W.parquet": {
+   "bytes": 16400,
+   "first_t": 1412553600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GAMA.L",
+   "recorded_at": "2026-11-02T22:43:12Z",
+   "rows": 630,
+   "sha256": "9cbca3ba8311e699c80777e3946cd25c7568f6fa0a155773904eea42dd4999e9",
+   "source": "yfinance",
+   "symbol": "LSE:GAMA"
   },
   "snapshots/2026-10-31/yfinance/LSE_GAW_1D.parquet": {
    "bytes": 151694,
@@ -9084,6 +10428,102 @@
    "source": "yfinance",
    "symbol": "LSE:GEMB"
   },
+  "snapshots/2026-10-31/yfinance/LSE_GEN_1D.parquet": {
+   "bytes": 65181,
+   "first_t": 1397174400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GEN.L",
+   "recorded_at": "2026-11-02T22:43:51Z",
+   "rows": 3172,
+   "sha256": "df8108aabdf0184cdefd1bef4bb142f4958d2a5cace256a187a2cd4ed540c588",
+   "source": "yfinance",
+   "symbol": "LSE:GEN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GEN_1W.parquet": {
+   "bytes": 18163,
+   "first_t": 1396828800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GEN.L",
+   "recorded_at": "2026-11-02T22:43:50Z",
+   "rows": 656,
+   "sha256": "7af69382669f27ce0403064a88da7a36c5ff02bab89a993f500149f96483a1c2",
+   "source": "yfinance",
+   "symbol": "LSE:GEN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GFM_1D.parquet": {
+   "bytes": 125792,
+   "first_t": 946944000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GFM.L",
+   "recorded_at": "2026-11-02T22:44:29Z",
+   "rows": 6828,
+   "sha256": "6387e6a5bd31a104be4813755e1bc249081ca212b53af6fa5f607df98a800e99",
+   "source": "yfinance",
+   "symbol": "LSE:GFM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GFM_1W.parquet": {
+   "bytes": 31835,
+   "first_t": 946857600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GFM.L",
+   "recorded_at": "2026-11-02T22:44:29Z",
+   "rows": 1400,
+   "sha256": "23167b7f6e4ece1a231df6320bdb1be0c5c10ed18d689d86b9ff21b41abdce78",
+   "source": "yfinance",
+   "symbol": "LSE:GFM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GFRD_1D.parquet": {
+   "bytes": 188529,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GFRD.L",
+   "recorded_at": "2026-11-02T22:43:45Z",
+   "rows": 9830,
+   "sha256": "adbe7d008ff033184ba25335f838b8c7d4e71a7562b3c6bc5543916a219e89af",
+   "source": "yfinance",
+   "symbol": "LSE:GFRD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GFRD_1W.parquet": {
+   "bytes": 49964,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GFRD.L",
+   "recorded_at": "2026-11-02T22:43:44Z",
+   "rows": 2001,
+   "sha256": "9b48e4394efec5d62ca145300b4fe28b070efee3934c37a93fa045c8a7fe2c26",
+   "source": "yfinance",
+   "symbol": "LSE:GFRD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GFTU_1D.parquet": {
+   "bytes": 130008,
+   "first_t": 1027987200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GFTU.L",
+   "recorded_at": "2026-11-02T22:41:51Z",
+   "rows": 6157,
+   "sha256": "10be758e0991ae42010c3056b0204507bf27ba8b31fe098b40ee8fa8c408053e",
+   "source": "yfinance",
+   "symbol": "LSE:GFTU"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GFTU_1W.parquet": {
+   "bytes": 33878,
+   "first_t": 1027900800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GFTU.L",
+   "recorded_at": "2026-11-02T22:41:50Z",
+   "rows": 1266,
+   "sha256": "5202fb7aa08a1d0690fcee000be33aaa0f419a54ca7355226cb3f2834dee2eef",
+   "source": "yfinance",
+   "symbol": "LSE:GFTU"
+  },
   "snapshots/2026-10-31/yfinance/LSE_GGP_1D.parquet": {
    "bytes": 96672,
    "first_t": 1151884800,
@@ -9288,6 +10728,30 @@
    "source": "yfinance",
    "symbol": "LSE:GIN"
   },
+  "snapshots/2026-10-31/yfinance/LSE_GKP_1D.parquet": {
+   "bytes": 122139,
+   "first_t": 1094601600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GKP.L",
+   "recorded_at": "2026-11-02T22:44:52Z",
+   "rows": 5607,
+   "sha256": "e6c9867c7c374d257dc6d668979f2db3617eb0090fb174fa8dc2d4b6d8fe7849",
+   "source": "yfinance",
+   "symbol": "LSE:GKP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GKP_1W.parquet": {
+   "bytes": 32636,
+   "first_t": 1094428800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GKP.L",
+   "recorded_at": "2026-11-02T22:44:51Z",
+   "rows": 1156,
+   "sha256": "d6a6d4eaac20b40e96b7789c91ace35a85940e9d9839b714b916f19016816629",
+   "source": "yfinance",
+   "symbol": "LSE:GKP"
+  },
   "snapshots/2026-10-31/yfinance/LSE_GLB_1D.parquet": {
    "bytes": 130989,
    "first_t": 946944000,
@@ -9372,6 +10836,102 @@
    "source": "yfinance",
    "symbol": "LSE:GLTL"
   },
+  "snapshots/2026-10-31/yfinance/LSE_GLV_1D.parquet": {
+   "bytes": 49063,
+   "first_t": 1507593600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GLV.L",
+   "recorded_at": "2026-11-02T22:43:11Z",
+   "rows": 2289,
+   "sha256": "4965d26acc4c1bacfe625b4b7315dfc0c654f513ff089d04793c613ae494e089",
+   "source": "yfinance",
+   "symbol": "LSE:GLV"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GLV_1W.parquet": {
+   "bytes": 15370,
+   "first_t": 1507507200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GLV.L",
+   "recorded_at": "2026-11-02T22:43:11Z",
+   "rows": 473,
+   "sha256": "5c7a2cd13acd8de19db9125f3309f94516c76a8486ac5e5c7377b401486c68a5",
+   "source": "yfinance",
+   "symbol": "LSE:GLV"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GNC_1D.parquet": {
+   "bytes": 153420,
+   "first_t": 946944000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GNC.L",
+   "recorded_at": "2026-11-02T22:41:20Z",
+   "rows": 6828,
+   "sha256": "378669b4582480ac2e4b8c637bf3cf67ff9585b1b8aa30b2f45191d79893d4c3",
+   "source": "yfinance",
+   "symbol": "LSE:GNC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GNC_1W.parquet": {
+   "bytes": 39627,
+   "first_t": 946857600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GNC.L",
+   "recorded_at": "2026-11-02T22:41:19Z",
+   "rows": 1400,
+   "sha256": "f9936a73d152656bfe5a3f7c1c1b455cc27c6e96310c82be69e40d581fdaa4e4",
+   "source": "yfinance",
+   "symbol": "LSE:GNC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GNS_1D.parquet": {
+   "bytes": 126796,
+   "first_t": 962841600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GNS.L",
+   "recorded_at": "2026-11-02T22:42:15Z",
+   "rows": 6696,
+   "sha256": "ed2ad94ee0882ea9b010ef4a9d50edd1953859e018300a28ec987ddc28038ed7",
+   "source": "yfinance",
+   "symbol": "LSE:GNS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GNS_1W.parquet": {
+   "bytes": 32241,
+   "first_t": 962582400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GNS.L",
+   "recorded_at": "2026-11-02T22:42:14Z",
+   "rows": 1374,
+   "sha256": "de1a2de7bbb1d094ffc78e41057ef7723930eca2477d2f39911c5cbb6ea8c03b",
+   "source": "yfinance",
+   "symbol": "LSE:GNS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GPE_1D.parquet": {
+   "bytes": 221383,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GPE.L",
+   "recorded_at": "2026-11-02T22:42:24Z",
+   "rows": 9830,
+   "sha256": "89db3a0bfa3de109b643ae8b011c240855a19aa28b3daf9cde5299f1c4e33096",
+   "source": "yfinance",
+   "symbol": "LSE:GPE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GPE_1W.parquet": {
+   "bytes": 55010,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GPE.L",
+   "recorded_at": "2026-11-02T22:42:24Z",
+   "rows": 2001,
+   "sha256": "532888d7ad522ddce8a1b176495b9488880fc6c4a05a28e91593f836a19e2a4e",
+   "source": "yfinance",
+   "symbol": "LSE:GPE"
+  },
   "snapshots/2026-10-31/yfinance/LSE_GPSA_1D.parquet": {
    "bytes": 54250,
    "first_t": 1539907200,
@@ -9443,6 +11003,54 @@
    "sha256": "7bc95fc6a593e093772186326754070447ebb07008bbf46dc6873938eb4907cb",
    "source": "yfinance",
    "symbol": "LSE:GRDU"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GRG_1D.parquet": {
+   "bytes": 164464,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GRG.L",
+   "recorded_at": "2026-11-02T22:41:25Z",
+   "rows": 9830,
+   "sha256": "2419fe93e87c80fce85e847c374408d5ead7dd0acd9ee04842a5d9daa6ba58fe",
+   "source": "yfinance",
+   "symbol": "LSE:GRG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GRG_1W.parquet": {
+   "bytes": 43325,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GRG.L",
+   "recorded_at": "2026-11-02T22:41:24Z",
+   "rows": 2001,
+   "sha256": "83ca7094e16636741898374f41fc9e57859ccebe9e7ac34ea2bb7aa32475b0bc",
+   "source": "yfinance",
+   "symbol": "LSE:GRG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GRI_1D.parquet": {
+   "bytes": 182878,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GRI.L",
+   "recorded_at": "2026-11-02T22:42:30Z",
+   "rows": 9830,
+   "sha256": "6b91559d9a03117ca920ece4dead997fd10c0f4aee58099b4f877ed9b1c82d8b",
+   "source": "yfinance",
+   "symbol": "LSE:GRI"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GRI_1W.parquet": {
+   "bytes": 50468,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GRI.L",
+   "recorded_at": "2026-11-02T22:42:29Z",
+   "rows": 2001,
+   "sha256": "5e736d30ac1cace43778dc705ddaed9dfb87167703e5155eaad1804ce62a001c",
+   "source": "yfinance",
+   "symbol": "LSE:GRI"
   },
   "snapshots/2026-10-31/yfinance/LSE_GSK_1D.parquet": {
    "bytes": 217438,
@@ -9540,6 +11148,30 @@
    "source": "yfinance",
    "symbol": "LSE:GT15"
   },
+  "snapshots/2026-10-31/yfinance/LSE_GTCO_1D.parquet": {
+   "bytes": 9723,
+   "first_t": 1752019200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "GTCO.L",
+   "recorded_at": "2026-11-02T22:41:26Z",
+   "rows": 334,
+   "sha256": "52020feaade8d9528a4afdb8df31ea41bcd7759244da12715b914aebc50a7934",
+   "source": "yfinance",
+   "symbol": "LSE:GTCO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_GTCO_1W.parquet": {
+   "bytes": 5646,
+   "first_t": 1751846400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "GTCO.L",
+   "recorded_at": "2026-11-02T22:41:25Z",
+   "rows": 69,
+   "sha256": "fb245ef299818edcf0b665539e5ce2f5be9dbf6fad7fffa9023ed1f969d4799f",
+   "source": "yfinance",
+   "symbol": "LSE:GTCO"
+  },
   "snapshots/2026-10-31/yfinance/LSE_GXLC_1D.parquet": {
    "bytes": 51698,
    "first_t": 1534809600,
@@ -9611,6 +11243,78 @@
    "sha256": "286fb9b671d76ac4d9376f6c941594920dcd69ecfc3728c3ca618e55782d55c1",
    "source": "yfinance",
    "symbol": "LSE:GXUS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HANA_1D.parquet": {
+   "bytes": 155743,
+   "first_t": 323308800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HANA.L",
+   "recorded_at": "2026-11-02T22:44:06Z",
+   "rows": 11984,
+   "sha256": "082286fb7f41be87f22d7bc25dc8571f2b3ccf34ff2de3663ada127e0c51ccb0",
+   "source": "yfinance",
+   "symbol": "LSE:HANA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HANA_1W.parquet": {
+   "bytes": 42507,
+   "first_t": 323308800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HANA.L",
+   "recorded_at": "2026-11-02T22:44:05Z",
+   "rows": 2431,
+   "sha256": "67b9d7c72baff13d739481a21a1670c14ba5b96022b90bcc6e2a4018a74eaeb2",
+   "source": "yfinance",
+   "symbol": "LSE:HANA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HAN_1D.parquet": {
+   "bytes": 157704,
+   "first_t": 273369600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HAN.L",
+   "recorded_at": "2026-11-02T22:44:04Z",
+   "rows": 12396,
+   "sha256": "158b03a4ed4bb67d2b91523edadb3f46dd27524d93fb35442f549633afba24d9",
+   "source": "yfinance",
+   "symbol": "LSE:HAN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HAN_1W.parquet": {
+   "bytes": 43783,
+   "first_t": 273110400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HAN.L",
+   "recorded_at": "2026-11-02T22:44:04Z",
+   "rows": 2514,
+   "sha256": "3853969c58125e803045593d8ab44f1da6353dae58fbc4aac8875069a703e6c0",
+   "source": "yfinance",
+   "symbol": "LSE:HAN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HAS_1D.parquet": {
+   "bytes": 182622,
+   "first_t": 625276800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HAS.L",
+   "recorded_at": "2026-11-02T22:43:17Z",
+   "rows": 9487,
+   "sha256": "519e09d3c28ff337509f5b65c278e6f07d4ff20999a81e5d2e132824478cd2cb",
+   "source": "yfinance",
+   "symbol": "LSE:HAS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HAS_1W.parquet": {
+   "bytes": 45914,
+   "first_t": 625104000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HAS.L",
+   "recorded_at": "2026-11-02T22:43:16Z",
+   "rows": 1932,
+   "sha256": "ba888a22db32a4d748fa62b9b799c6a06dab56497485da4180044c6ae95ebb9a",
+   "source": "yfinance",
+   "symbol": "LSE:HAS"
   },
   "snapshots/2026-10-31/yfinance/LSE_HBR_1D.parquet": {
    "bytes": 36888,
@@ -9708,6 +11412,54 @@
    "source": "yfinance",
    "symbol": "LSE:HEDK"
   },
+  "snapshots/2026-10-31/yfinance/LSE_HFD_1D.parquet": {
+   "bytes": 121329,
+   "first_t": 1086220800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HFD.L",
+   "recorded_at": "2026-11-02T22:44:26Z",
+   "rows": 5676,
+   "sha256": "4146c67f11a0bc216f3f0ce64f09d1139ef1d2a627932cb48e1d295b729d7df7",
+   "source": "yfinance",
+   "symbol": "LSE:HFD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HFD_1W.parquet": {
+   "bytes": 31535,
+   "first_t": 1085961600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HFD.L",
+   "recorded_at": "2026-11-02T22:44:25Z",
+   "rows": 1170,
+   "sha256": "f7771ef8fece13bc3c2792d323addf9520e202ab54ab1c6f575fe955f1af6b10",
+   "source": "yfinance",
+   "symbol": "LSE:HFD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HFG_1D.parquet": {
+   "bytes": 89296,
+   "first_t": 1168473600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HFG.L",
+   "recorded_at": "2026-11-02T22:43:59Z",
+   "rows": 5004,
+   "sha256": "9fae47aea4157d4ada6af0386f62e6ea68fca12a1546647fb95e3320802a538d",
+   "source": "yfinance",
+   "symbol": "LSE:HFG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HFG_1W.parquet": {
+   "bytes": 23623,
+   "first_t": 1168214400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HFG.L",
+   "recorded_at": "2026-11-02T22:43:58Z",
+   "rows": 1034,
+   "sha256": "cf000f1bb114380baf966a7ac6540d0655b2db19ef06e723a7ba4bd132391368",
+   "source": "yfinance",
+   "symbol": "LSE:HFG"
+  },
   "snapshots/2026-10-31/yfinance/LSE_HIGH_1D.parquet": {
    "bytes": 50285,
    "first_t": 1505952000,
@@ -9767,6 +11519,30 @@
    "sha256": "7bfa03bf799280487835e817b0b24e3d343aeb8d3ba84f1734c28377813bf614",
    "source": "yfinance",
    "symbol": "LSE:HIK"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HILS_1D.parquet": {
+   "bytes": 158407,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HILS.L",
+   "recorded_at": "2026-11-02T22:41:27Z",
+   "rows": 9830,
+   "sha256": "a2e845c400c4d411ac198b4f891039b555686d4e0966e22463ef0fbca926d415",
+   "source": "yfinance",
+   "symbol": "LSE:HILS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HILS_1W.parquet": {
+   "bytes": 43315,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HILS.L",
+   "recorded_at": "2026-11-02T22:41:27Z",
+   "rows": 2001,
+   "sha256": "2792bf38047c0b06365399bf1b12e54527447e075eff08ca12cc8d425fb0fe92",
+   "source": "yfinance",
+   "symbol": "LSE:HILS"
   },
   "snapshots/2026-10-31/yfinance/LSE_HLMA_1D.parquet": {
    "bytes": 184164,
@@ -9959,6 +11735,30 @@
    "sha256": "9b340218fd50a8e0f6d4ac460ff34bbd14c4343bbe01f2b1246ec588228aee26",
    "source": "yfinance",
    "symbol": "LSE:HMEM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HMSO_1D.parquet": {
+   "bytes": 218587,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HMSO.L",
+   "recorded_at": "2026-11-02T22:41:45Z",
+   "rows": 9830,
+   "sha256": "cf8bc932c38bf59975724a97fb7e7280507c2456a01004d1d8eaf28fb335f712",
+   "source": "yfinance",
+   "symbol": "LSE:HMSO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HMSO_1W.parquet": {
+   "bytes": 55114,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HMSO.L",
+   "recorded_at": "2026-11-02T22:41:44Z",
+   "rows": 2001,
+   "sha256": "26eeb603ac1be79e89f55f007b3235113278b026fd50b47f78fa37e1de27f027",
+   "source": "yfinance",
+   "symbol": "LSE:HMSO"
   },
   "snapshots/2026-10-31/yfinance/LSE_HMWD_1D.parquet": {
    "bytes": 98412,
@@ -10176,6 +11976,30 @@
    "source": "yfinance",
    "symbol": "LSE:HNX3"
   },
+  "snapshots/2026-10-31/yfinance/LSE_HOC_1D.parquet": {
+   "bytes": 135226,
+   "first_t": 1162512000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HOC.L",
+   "recorded_at": "2026-11-02T22:41:33Z",
+   "rows": 5051,
+   "sha256": "4782ab6bba4a9661fc824682a320d994be9e2a0ad4645defd627e401ba761707",
+   "source": "yfinance",
+   "symbol": "LSE:HOC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HOC_1W.parquet": {
+   "bytes": 33207,
+   "first_t": 1162166400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HOC.L",
+   "recorded_at": "2026-11-02T22:41:32Z",
+   "rows": 1044,
+   "sha256": "69a866ae1512ed8b493394de56081604139ae8b50b981a09a8723bb7d00a81b3",
+   "source": "yfinance",
+   "symbol": "LSE:HOC"
+  },
   "snapshots/2026-10-31/yfinance/LSE_HSBA_1D.parquet": {
    "bytes": 229356,
    "first_t": 584064000,
@@ -10332,6 +12156,54 @@
    "source": "yfinance",
    "symbol": "LSE:HSX"
   },
+  "snapshots/2026-10-31/yfinance/LSE_HTG_1D.parquet": {
+   "bytes": 173201,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HTG.L",
+   "recorded_at": "2026-11-02T22:44:28Z",
+   "rows": 9830,
+   "sha256": "5046651279b830717aff109f477b917eaae9c0c8362ae98cf3956eb4d29d31ab",
+   "source": "yfinance",
+   "symbol": "LSE:HTG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HTG_1W.parquet": {
+   "bytes": 46797,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HTG.L",
+   "recorded_at": "2026-11-02T22:44:27Z",
+   "rows": 2001,
+   "sha256": "dafba12ea85a101fb36dca492e73f6354160d47320831045918eb4af585ef840",
+   "source": "yfinance",
+   "symbol": "LSE:HTG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HTWS_1D.parquet": {
+   "bytes": 38502,
+   "first_t": 1571097600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HTWS.L",
+   "recorded_at": "2026-11-02T22:41:41Z",
+   "rows": 1780,
+   "sha256": "0e52771dfbee77c32798aa06dfd2662f375207480b1f22312d071588d11a7e75",
+   "source": "yfinance",
+   "symbol": "LSE:HTWS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HTWS_1W.parquet": {
+   "bytes": 12387,
+   "first_t": 1571011200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HTWS.L",
+   "recorded_at": "2026-11-02T22:41:40Z",
+   "rows": 368,
+   "sha256": "2df5e7efe4d79be21888cc89d6bb9479cd27262f600752e4b8ea4db7132cc55b",
+   "source": "yfinance",
+   "symbol": "LSE:HTWS"
+  },
   "snapshots/2026-10-31/yfinance/LSE_HUKX_1D.parquet": {
    "bytes": 91905,
    "first_t": 1251072000,
@@ -10391,6 +12263,30 @@
    "sha256": "e3ac57f40bbd7cc571c80a9ab468b5a9e005305f4d0a4fdf852fd49d85247bc5",
    "source": "yfinance",
    "symbol": "LSE:HWDN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HWG_1D.parquet": {
+   "bytes": 160364,
+   "first_t": 738288000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "HWG.L",
+   "recorded_at": "2026-11-02T22:44:09Z",
+   "rows": 8553,
+   "sha256": "7bb2480a3bff99907c86fc53b2c6e451563bfe26a44c4ec639670ab9fb7cd34a",
+   "source": "yfinance",
+   "symbol": "LSE:HWG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_HWG_1W.parquet": {
+   "bytes": 42016,
+   "first_t": 738201600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "HWG.L",
+   "recorded_at": "2026-11-02T22:44:08Z",
+   "rows": 1745,
+   "sha256": "512262c63eda7ecf6721d33f8db51badcb4b99d60451f8fbf70d9dfa98974090",
+   "source": "yfinance",
+   "symbol": "LSE:HWG"
   },
   "snapshots/2026-10-31/yfinance/LSE_HYGU_1D.parquet": {
    "bytes": 49281,
@@ -13320,6 +15216,30 @@
    "source": "yfinance",
    "symbol": "LSE:INAS"
   },
+  "snapshots/2026-10-31/yfinance/LSE_INCH_1D.parquet": {
+   "bytes": 155891,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "INCH.L",
+   "recorded_at": "2026-11-02T22:41:39Z",
+   "rows": 9830,
+   "sha256": "a1cf32a43f59f64fc3dfd6d72da66751437b58de9b0fdd937c0e5e0a2d79780a",
+   "source": "yfinance",
+   "symbol": "LSE:INCH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_INCH_1W.parquet": {
+   "bytes": 40766,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "INCH.L",
+   "recorded_at": "2026-11-02T22:41:38Z",
+   "rows": 2001,
+   "sha256": "73edcfd09f6d8af9f776b2c1d9cac80d380b01e18cb60e9464bd7e271ea57130",
+   "source": "yfinance",
+   "symbol": "LSE:INCH"
+  },
   "snapshots/2026-10-31/yfinance/LSE_INFR_1D.parquet": {
    "bytes": 99049,
    "first_t": 1230854400,
@@ -13619,6 +15539,54 @@
    "sha256": "57f38e33fe8e6c1e6099b0518c5966306efd03c1d2fc92f920d06d6845c69607",
    "source": "yfinance",
    "symbol": "LSE:IONQ"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_IPO_1D.parquet": {
+   "bytes": 123540,
+   "first_t": 1066176000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "IPO.L",
+   "recorded_at": "2026-11-02T22:44:00Z",
+   "rows": 5842,
+   "sha256": "764b1d87e6e070a767778e7149eea3e1d89bca5606531780c04f8253cf62983e",
+   "source": "yfinance",
+   "symbol": "LSE:IPO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_IPO_1W.parquet": {
+   "bytes": 32396,
+   "first_t": 1066003200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "IPO.L",
+   "recorded_at": "2026-11-02T22:44:00Z",
+   "rows": 1203,
+   "sha256": "454db25efd8667657189f9f6cfb56f5b8ca7f45441efb0c22bc3c65accf59551",
+   "source": "yfinance",
+   "symbol": "LSE:IPO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_IQE_1D.parquet": {
+   "bytes": 138294,
+   "first_t": 958694400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "IQE.L",
+   "recorded_at": "2026-11-02T22:44:49Z",
+   "rows": 6730,
+   "sha256": "97c92c8552b0b751d9b9dbcb040f89c87e7afacf1166759eaf7bd52a8a6a260c",
+   "source": "yfinance",
+   "symbol": "LSE:IQE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_IQE_1W.parquet": {
+   "bytes": 33695,
+   "first_t": 958348800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "IQE.L",
+   "recorded_at": "2026-11-02T22:44:49Z",
+   "rows": 1381,
+   "sha256": "bf6ee6c6865e2bfde97db5dac78057460f77b712858ae53db927ee3da0f80ef5",
+   "source": "yfinance",
+   "symbol": "LSE:IQE"
   },
   "snapshots/2026-10-31/yfinance/LSE_IQGA_1D.parquet": {
    "bytes": 12741,
@@ -14148,6 +16116,30 @@
    "source": "yfinance",
    "symbol": "LSE:ITH"
   },
+  "snapshots/2026-10-31/yfinance/LSE_ITM_1D.parquet": {
+   "bytes": 131250,
+   "first_t": 1086912000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ITM.L",
+   "recorded_at": "2026-11-02T22:44:34Z",
+   "rows": 5670,
+   "sha256": "a8dd029514b0f1388ad3c8b577346f689f5cae4dfb74d04cbbe38543b87ce427",
+   "source": "yfinance",
+   "symbol": "LSE:ITM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ITM_1W.parquet": {
+   "bytes": 32868,
+   "first_t": 1086566400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ITM.L",
+   "recorded_at": "2026-11-02T22:44:34Z",
+   "rows": 1169,
+   "sha256": "94ef94f4bb809e21be4339752439b6e90a368a318970d1cc734e7c5cf7a60128",
+   "source": "yfinance",
+   "symbol": "LSE:ITM"
+  },
   "snapshots/2026-10-31/yfinance/LSE_ITPG_1D.parquet": {
    "bytes": 48804,
    "first_t": 1520208000,
@@ -14207,6 +16199,30 @@
    "sha256": "fc120855bb9d7cee41d3a2d13c24aeb989bdefafd8d80603b46819d6e2493552",
    "source": "yfinance",
    "symbol": "LSE:ITRK"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ITV_1D.parquet": {
+   "bytes": 152234,
+   "first_t": 946944000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ITV.L",
+   "recorded_at": "2026-11-02T22:41:22Z",
+   "rows": 6828,
+   "sha256": "a086c746e4e0a6295ec1b5561119489998ea6802a3487b7fa53c37bee2a73efa",
+   "source": "yfinance",
+   "symbol": "LSE:ITV"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ITV_1W.parquet": {
+   "bytes": 38084,
+   "first_t": 946857600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ITV.L",
+   "recorded_at": "2026-11-02T22:41:21Z",
+   "rows": 1400,
+   "sha256": "6377885d93aa10cf455ad6bff1bc314e5c488fa758bea121a30b5848c24f8895",
+   "source": "yfinance",
+   "symbol": "LSE:ITV"
   },
   "snapshots/2026-10-31/yfinance/LSE_IUAA_1D.parquet": {
    "bytes": 49942,
@@ -15360,6 +17376,30 @@
    "source": "yfinance",
    "symbol": "LSE:IWFV"
   },
+  "snapshots/2026-10-31/yfinance/LSE_IWG_1D.parquet": {
+   "bytes": 126831,
+   "first_t": 997056000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "IWG.L",
+   "recorded_at": "2026-11-02T22:41:56Z",
+   "rows": 6414,
+   "sha256": "6691a4b63a654dfc88b1f6f47781b79618763abddfdd7dec8053b5b7798a35f4",
+   "source": "yfinance",
+   "symbol": "LSE:IWG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_IWG_1W.parquet": {
+   "bytes": 32916,
+   "first_t": 997056000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "IWG.L",
+   "recorded_at": "2026-11-02T22:41:55Z",
+   "rows": 1317,
+   "sha256": "974a630f705f78e3f4ef1a33716f2a574a4f90567d5f094b5f1f1c332068ca84",
+   "source": "yfinance",
+   "symbol": "LSE:IWG"
+  },
   "snapshots/2026-10-31/yfinance/LSE_IWMO_1D.parquet": {
    "bytes": 78549,
    "first_t": 1412553600,
@@ -15575,6 +17615,30 @@
    "sha256": "b31c1dd54fccb68cfcc409909dcafcf8c455d9b6370cb80e5a7cd575ae573383",
    "source": "yfinance",
    "symbol": "LSE:JAGA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_JDW_1D.parquet": {
+   "bytes": 166505,
+   "first_t": 720316800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "JDW.L",
+   "recorded_at": "2026-11-02T22:42:59Z",
+   "rows": 8701,
+   "sha256": "09cca94215bb4844af4f316e9d22ffff15208c76e10eb1bf595d3ee90e5a547f",
+   "source": "yfinance",
+   "symbol": "LSE:JDW"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_JDW_1W.parquet": {
+   "bytes": 42607,
+   "first_t": 720057600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "JDW.L",
+   "recorded_at": "2026-11-02T22:42:58Z",
+   "rows": 1775,
+   "sha256": "e4493962ed9c89e4deb5d1494b3f81cb512c1ee7c64fe06acd2010d8507a78b7",
+   "source": "yfinance",
+   "symbol": "LSE:JDW"
   },
   "snapshots/2026-10-31/yfinance/LSE_JEDI_1D.parquet": {
    "bytes": 29845,
@@ -15840,6 +17904,30 @@
    "source": "yfinance",
    "symbol": "LSE:JGBH"
   },
+  "snapshots/2026-10-31/yfinance/LSE_JHD_1D.parquet": {
+   "bytes": 150145,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "JHD.L",
+   "recorded_at": "2026-11-02T22:44:22Z",
+   "rows": 9830,
+   "sha256": "dfc2e1a90468c99e489d15e130fb0842c3f7bd9d61756ae90555ea832ea47cf9",
+   "source": "yfinance",
+   "symbol": "LSE:JHD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_JHD_1W.parquet": {
+   "bytes": 39402,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "JHD.L",
+   "recorded_at": "2026-11-02T22:44:21Z",
+   "rows": 2001,
+   "sha256": "21c7b6582bfccf68f34e04103e89292929184a5b304fd8c7cfd0edacc676fc28",
+   "source": "yfinance",
+   "symbol": "LSE:JHD"
+  },
   "snapshots/2026-10-31/yfinance/LSE_JMAT_1D.parquet": {
    "bytes": 212022,
    "first_t": 583718400,
@@ -16044,6 +18132,30 @@
    "source": "yfinance",
    "symbol": "LSE:JREU"
   },
+  "snapshots/2026-10-31/yfinance/LSE_JSG_1D.parquet": {
+   "bytes": 160237,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "JSG.L",
+   "recorded_at": "2026-11-02T22:44:41Z",
+   "rows": 9830,
+   "sha256": "d1ab3610d57039b0dc7cdae6ae7d9faaefb52d0c091cacfd64e2aa00ddfc0e4b",
+   "source": "yfinance",
+   "symbol": "LSE:JSG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_JSG_1W.parquet": {
+   "bytes": 40901,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "JSG.L",
+   "recorded_at": "2026-11-02T22:44:40Z",
+   "rows": 2001,
+   "sha256": "485a9673e6e141f1e97e6b40103cd479d4597789fc9ea98224a8f8e0970e7b47",
+   "source": "yfinance",
+   "symbol": "LSE:JSG"
+  },
   "snapshots/2026-10-31/yfinance/LSE_JT13_1D.parquet": {
    "bytes": 40944,
    "first_t": 1585872000,
@@ -16139,6 +18251,78 @@
    "sha256": "0dc04258d7924b6eaef18eaf87c75af42f68b26688c2de71c5d04b4ec21cdf75",
    "source": "yfinance",
    "symbol": "LSE:KGF"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_KIE_1D.parquet": {
+   "bytes": 172990,
+   "first_t": 850348800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "KIE.L",
+   "recorded_at": "2026-11-02T22:42:36Z",
+   "rows": 7626,
+   "sha256": "2c32f49f84a360c350289cd50be098ccf7e91326372f5417a7ff6b68ceb1da0c",
+   "source": "yfinance",
+   "symbol": "LSE:KIE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_KIE_1W.parquet": {
+   "bytes": 44652,
+   "first_t": 850089600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "KIE.L",
+   "recorded_at": "2026-11-02T22:42:35Z",
+   "rows": 1560,
+   "sha256": "3ebd188276df9c9691683c2d62d1ea0ee20fa6d1feb388bc712fd29780331061",
+   "source": "yfinance",
+   "symbol": "LSE:KIE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_KLR_1D.parquet": {
+   "bytes": 145761,
+   "first_t": 767232000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "KLR.L",
+   "recorded_at": "2026-11-02T22:41:37Z",
+   "rows": 8314,
+   "sha256": "a80865925ff03301807aeb85656092450b4564bd502bd435009a7a6f37bd33ce",
+   "source": "yfinance",
+   "symbol": "LSE:KLR"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_KLR_1W.parquet": {
+   "bytes": 36842,
+   "first_t": 767232000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "KLR.L",
+   "recorded_at": "2026-11-02T22:41:37Z",
+   "rows": 1697,
+   "sha256": "20a43f8e7975d000dc018e4aacf762ea27a4b342f1dec978fb88cc1ada1d55cb",
+   "source": "yfinance",
+   "symbol": "LSE:KLR"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_KNOS_1D.parquet": {
+   "bytes": 58210,
+   "first_t": 1436486400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "KNOS.L",
+   "recorded_at": "2026-11-02T22:42:13Z",
+   "rows": 2859,
+   "sha256": "94d29271092f33c90d8ce7e0e9a55c576bd61f0c50df364c4d6863bc706da3cc",
+   "source": "yfinance",
+   "symbol": "LSE:KNOS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_KNOS_1W.parquet": {
+   "bytes": 15956,
+   "first_t": 1436140800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "KNOS.L",
+   "recorded_at": "2026-11-02T22:42:13Z",
+   "rows": 591,
+   "sha256": "c1541a347bbeaf335f51e69f578bbc02c64a0ebf22f0329e065729e13aa0176e",
+   "source": "yfinance",
+   "symbol": "LSE:KNOS"
   },
   "snapshots/2026-10-31/yfinance/LSE_KOR3_1D.parquet": {
    "bytes": 32128,
@@ -16980,6 +19164,30 @@
    "source": "yfinance",
    "symbol": "LSE:LQQS"
   },
+  "snapshots/2026-10-31/yfinance/LSE_LRE_1D.parquet": {
+   "bytes": 94157,
+   "first_t": 1134432000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "LRE.L",
+   "recorded_at": "2026-11-02T22:42:03Z",
+   "rows": 5278,
+   "sha256": "e7587532801c036a257b6118d84b2e44e028fa6189b73a7ecc16487cc065dfe8",
+   "source": "yfinance",
+   "symbol": "LSE:LRE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_LRE_1W.parquet": {
+   "bytes": 25089,
+   "first_t": 1134345600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "LRE.L",
+   "recorded_at": "2026-11-02T22:42:02Z",
+   "rows": 1090,
+   "sha256": "af0431d5847b8d263f95b9dba0d0e040ffa6b63abc8808d84925fb2cdf0eae09",
+   "source": "yfinance",
+   "symbol": "LSE:LRE"
+  },
   "snapshots/2026-10-31/yfinance/LSE_LSEG_1D.parquet": {
    "bytes": 148102,
    "first_t": 995587200,
@@ -17076,6 +19284,30 @@
    "source": "yfinance",
    "symbol": "LSE:LTAM"
   },
+  "snapshots/2026-10-31/yfinance/LSE_MAB_1D.parquet": {
+   "bytes": 146152,
+   "first_t": 1049068800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MAB.L",
+   "recorded_at": "2026-11-02T22:41:48Z",
+   "rows": 5984,
+   "sha256": "4c646ca20bce1ef693075d6d577ebf5ad9023a8d35f2b99a3074b6f9ad7d4e62",
+   "source": "yfinance",
+   "symbol": "LSE:MAB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MAB_1W.parquet": {
+   "bytes": 37335,
+   "first_t": 1049068800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MAB.L",
+   "recorded_at": "2026-11-02T22:41:47Z",
+   "rows": 1231,
+   "sha256": "6ccf412c0b5b124b56abcd3b7acb3f5e8e88ffa27ac0268688e7571ac8d4527b",
+   "source": "yfinance",
+   "symbol": "LSE:MAB"
+  },
   "snapshots/2026-10-31/yfinance/LSE_MAG7_1D.parquet": {
    "bytes": 21078,
    "first_t": 1712534400,
@@ -17099,6 +19331,30 @@
    "sha256": "b3014897e16a9e5c3c0e0df0d9fdbd03a570261febbdc07e83b8e0ff33e83aca",
    "source": "yfinance",
    "symbol": "LSE:MAG7"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MEGP_1D.parquet": {
+   "bytes": 162652,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MEGP.L",
+   "recorded_at": "2026-11-02T22:45:02Z",
+   "rows": 9830,
+   "sha256": "9ec25be7c02345390c2aec3966682d2417323f2261ab2ca04cbcf00ee3409f8e",
+   "source": "yfinance",
+   "symbol": "LSE:MEGP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MEGP_1W.parquet": {
+   "bytes": 42029,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MEGP.L",
+   "recorded_at": "2026-11-02T22:45:01Z",
+   "rows": 2001,
+   "sha256": "e7455aa242fd37d1479dc5ed283d255b94a979841361261555c147858e5d6e9b",
+   "source": "yfinance",
+   "symbol": "LSE:MEGP"
   },
   "snapshots/2026-10-31/yfinance/LSE_MEUH_1D.parquet": {
    "bytes": 15184,
@@ -17135,6 +19391,54 @@
    "sha256": "b2b2cd8baac70cea5bb3e6c3c01bad5e6c8da59da468168d67a6be583ccba661",
    "source": "yfinance",
    "symbol": "LSE:MEUH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MGAM_1D.parquet": {
+   "bytes": 191513,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MGAM.L",
+   "recorded_at": "2026-11-02T22:43:38Z",
+   "rows": 9830,
+   "sha256": "b5e8a001445ac44edd94493702e23bcbcb3781a03dc5bc183e623a592c5b65ea",
+   "source": "yfinance",
+   "symbol": "LSE:MGAM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MGAM_1W.parquet": {
+   "bytes": 49795,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MGAM.L",
+   "recorded_at": "2026-11-02T22:43:37Z",
+   "rows": 2001,
+   "sha256": "cdc606797f72dbad38bed45c60cc16dae675b7ba9735b613f0697eb9f4ba2c63",
+   "source": "yfinance",
+   "symbol": "LSE:MGAM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MGNS_1D.parquet": {
+   "bytes": 155409,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MGNS.L",
+   "recorded_at": "2026-11-02T22:41:49Z",
+   "rows": 9830,
+   "sha256": "bacd5917d6cab97148c8f4bf1cf075c3f3628ab4027b34e84b96aadc60890394",
+   "source": "yfinance",
+   "symbol": "LSE:MGNS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MGNS_1W.parquet": {
+   "bytes": 42111,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MGNS.L",
+   "recorded_at": "2026-11-02T22:41:48Z",
+   "rows": 2001,
+   "sha256": "ce115c92677a3baac71d6fb27712487d98d5957074b9254e03c49d726c312d4a",
+   "source": "yfinance",
+   "symbol": "LSE:MGNS"
   },
   "snapshots/2026-10-31/yfinance/LSE_MICC_1D.parquet": {
    "bytes": 8571,
@@ -17304,6 +19608,102 @@
    "source": "yfinance",
    "symbol": "LSE:MNG"
   },
+  "snapshots/2026-10-31/yfinance/LSE_MNO_1D.parquet": {
+   "bytes": 6313,
+   "first_t": 1777593600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MNO.L",
+   "recorded_at": "2026-11-02T22:44:57Z",
+   "rows": 128,
+   "sha256": "ef05847790dd87599e4c0fc60c748d91dd932f078756b733b7e71d25b5e6cf67",
+   "source": "yfinance",
+   "symbol": "LSE:MNO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MNO_1W.parquet": {
+   "bytes": 4546,
+   "first_t": 1777248000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MNO.L",
+   "recorded_at": "2026-11-02T22:44:57Z",
+   "rows": 27,
+   "sha256": "fa09088ad6598f571ee6648eebd830f852b72079be284d5b51757d7a27396db4",
+   "source": "yfinance",
+   "symbol": "LSE:MNO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MONY_1D.parquet": {
+   "bytes": 105734,
+   "first_t": 1185408000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MONY.L",
+   "recorded_at": "2026-11-02T22:43:00Z",
+   "rows": 4869,
+   "sha256": "8edf9516dd6a4c7601f4ec34dd2131907fc63ab1b2e8293d6c1d2a8b3dda0b43",
+   "source": "yfinance",
+   "symbol": "LSE:MONY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MONY_1W.parquet": {
+   "bytes": 27761,
+   "first_t": 1185148800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MONY.L",
+   "recorded_at": "2026-11-02T22:43:00Z",
+   "rows": 1006,
+   "sha256": "612a298da7526237d545a1a6a3f28b95d11029cabf2f0c99a1bd68c7f05e60f7",
+   "source": "yfinance",
+   "symbol": "LSE:MONY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MOON_1D.parquet": {
+   "bytes": 33553,
+   "first_t": 1612224000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MOON.L",
+   "recorded_at": "2026-11-02T22:43:27Z",
+   "rows": 1451,
+   "sha256": "f0112e62948b18925e18de4af924fe64080de9e9aee0c63e3785afc769628a92",
+   "source": "yfinance",
+   "symbol": "LSE:MOON"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MOON_1W.parquet": {
+   "bytes": 10860,
+   "first_t": 1612137600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MOON.L",
+   "recorded_at": "2026-11-02T22:43:26Z",
+   "rows": 300,
+   "sha256": "aa5bfbb84501bac6ebdb97299a912fea151f40793f2f75c0850281ddb501ce17",
+   "source": "yfinance",
+   "symbol": "LSE:MOON"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MPE_1D.parquet": {
+   "bytes": 135874,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MPE.L",
+   "recorded_at": "2026-11-02T22:43:15Z",
+   "rows": 9830,
+   "sha256": "3b6d2d26420367ae1d782890b6761e82ec64a9f1f64152483d4cdd842204074d",
+   "source": "yfinance",
+   "symbol": "LSE:MPE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MPE_1W.parquet": {
+   "bytes": 36496,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MPE.L",
+   "recorded_at": "2026-11-02T22:43:15Z",
+   "rows": 2001,
+   "sha256": "6c711c1d418019856da7e1de2bce24fa7b4ca742e082e7f0b1dfaa78691bdfe2",
+   "source": "yfinance",
+   "symbol": "LSE:MPE"
+  },
   "snapshots/2026-10-31/yfinance/LSE_MRO_1D.parquet": {
    "bytes": 152255,
    "first_t": 1067299200,
@@ -17363,6 +19763,30 @@
    "sha256": "1f1345f42b3c67478dd1df50ae03e880419de26b3240a37184927b1ae58a2174",
    "source": "yfinance",
    "symbol": "LSE:MS3S"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MSLH_1D.parquet": {
+   "bytes": 188629,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MSLH.L",
+   "recorded_at": "2026-11-02T22:44:56Z",
+   "rows": 9830,
+   "sha256": "05d77c8b6c156fa3b1e8d85060fd75c159ebe3c14a0aca53074fe54ce6f45bc4",
+   "source": "yfinance",
+   "symbol": "LSE:MSLH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MSLH_1W.parquet": {
+   "bytes": 49502,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MSLH.L",
+   "recorded_at": "2026-11-02T22:44:56Z",
+   "rows": 2001,
+   "sha256": "bd5adb2e72574d5537eb82a96dbe1031771d29fe8d7d7496e5c7c116cb5895f6",
+   "source": "yfinance",
+   "symbol": "LSE:MSLH"
   },
   "snapshots/2026-10-31/yfinance/LSE_MST3_1D.parquet": {
    "bytes": 18449,
@@ -17436,6 +19860,30 @@
    "source": "yfinance",
    "symbol": "LSE:MTLN"
   },
+  "snapshots/2026-10-31/yfinance/LSE_MTL_1D.parquet": {
+   "bytes": 94994,
+   "first_t": 1098403200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MTL.L",
+   "recorded_at": "2026-11-02T22:44:48Z",
+   "rows": 5575,
+   "sha256": "fef9c6f8c9407caf97cf1fc33454923d38f7199c23cc4e42f25cc80b05970eba",
+   "source": "yfinance",
+   "symbol": "LSE:MTL"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MTL_1W.parquet": {
+   "bytes": 26040,
+   "first_t": 1098057600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MTL.L",
+   "recorded_at": "2026-11-02T22:44:48Z",
+   "rows": 1150,
+   "sha256": "319f5dc77c6afc283b4e8de28827439bd3d4f6184ff573c3e877f496c4358d10",
+   "source": "yfinance",
+   "symbol": "LSE:MTL"
+  },
   "snapshots/2026-10-31/yfinance/LSE_MTO_1D.parquet": {
    "bytes": 183769,
    "first_t": 583718400,
@@ -17459,6 +19907,30 @@
    "sha256": "f4b6840903eed794f215d66ab02338ff8da0bd13c31e4a9f42a936a444e4b044",
    "source": "yfinance",
    "symbol": "LSE:MTO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MTRO_1D.parquet": {
+   "bytes": 62204,
+   "first_t": 1457308800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "MTRO.L",
+   "recorded_at": "2026-11-02T22:42:54Z",
+   "rows": 2692,
+   "sha256": "6a5e17c8c6cf6578a30bb7ebe1b4f2e7a8f0a0720f923167e6a2a5e49e181611",
+   "source": "yfinance",
+   "symbol": "LSE:MTRO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_MTRO_1W.parquet": {
+   "bytes": 17188,
+   "first_t": 1457308800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "MTRO.L",
+   "recorded_at": "2026-11-02T22:42:54Z",
+   "rows": 556,
+   "sha256": "8943edfbc234f692d2d0915e9567ef29e9470fd455596ccd426959d324073143",
+   "source": "yfinance",
+   "symbol": "LSE:MTRO"
   },
   "snapshots/2026-10-31/yfinance/LSE_MUSD_1D.parquet": {
    "bytes": 8864,
@@ -18312,6 +20784,30 @@
    "source": "yfinance",
    "symbol": "LSE:OMU"
   },
+  "snapshots/2026-10-31/yfinance/LSE_ONT_1D.parquet": {
+   "bytes": 31605,
+   "first_t": 1632960000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ONT.L",
+   "recorded_at": "2026-11-02T22:41:34Z",
+   "rows": 1284,
+   "sha256": "a4ef57043b18b33119e3e81f1b5d6c9dcf6b8c27ab84a81cb205251acbc31a5c",
+   "source": "yfinance",
+   "symbol": "LSE:ONT"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ONT_1W.parquet": {
+   "bytes": 10436,
+   "first_t": 1632700800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ONT.L",
+   "recorded_at": "2026-11-02T22:41:34Z",
+   "rows": 266,
+   "sha256": "4bbff81e1a53230badf77dfc377cefe8aa531c4fe2bd97cf09788379230a6372",
+   "source": "yfinance",
+   "symbol": "LSE:ONT"
+  },
   "snapshots/2026-10-31/yfinance/LSE_ORC3_1D.parquet": {
    "bytes": 7582,
    "first_t": 1777420800,
@@ -18347,6 +20843,78 @@
    "sha256": "daffd149beae503a4008375ea2fb7a51ddaac048930387bbe4e8dc0e125d7728",
    "source": "yfinance",
    "symbol": "LSE:ORC3"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_OSB_1D.parquet": {
+   "bytes": 67127,
+   "first_t": 1401926400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "OSB.L",
+   "recorded_at": "2026-11-02T22:42:06Z",
+   "rows": 3137,
+   "sha256": "0d3a0cfc254f56c1bd27560d55105344c818cdbbde103f53adc259f51426186a",
+   "source": "yfinance",
+   "symbol": "LSE:OSB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_OSB_1W.parquet": {
+   "bytes": 19426,
+   "first_t": 1401667200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "OSB.L",
+   "recorded_at": "2026-11-02T22:42:05Z",
+   "rows": 648,
+   "sha256": "0f84a230d1aff10e7236aeda1caae0c1ee70b5706ad2c572dc0dad9bd5a5e7c2",
+   "source": "yfinance",
+   "symbol": "LSE:OSB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_OXB_1D.parquet": {
+   "bytes": 146192,
+   "first_t": 850435200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "OXB.L",
+   "recorded_at": "2026-11-02T22:43:53Z",
+   "rows": 7625,
+   "sha256": "9f425479d410edc55f3c79a9b5bc298034a91861c09514a3a406d8777383b496",
+   "source": "yfinance",
+   "symbol": "LSE:OXB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_OXB_1W.parquet": {
+   "bytes": 38139,
+   "first_t": 850089600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "OXB.L",
+   "recorded_at": "2026-11-02T22:43:53Z",
+   "rows": 1560,
+   "sha256": "386377d6574a9b95d4ead1022dd41d897866e5b974afe21076290721ca2ac7c1",
+   "source": "yfinance",
+   "symbol": "LSE:OXB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_OXIG_1D.parquet": {
+   "bytes": 158383,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "OXIG.L",
+   "recorded_at": "2026-11-02T22:42:21Z",
+   "rows": 9830,
+   "sha256": "e1dbb1021a64df0909f69f679e63fa133b256a4f91891c056c33a55b1344efea",
+   "source": "yfinance",
+   "symbol": "LSE:OXIG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_OXIG_1W.parquet": {
+   "bytes": 40630,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "OXIG.L",
+   "recorded_at": "2026-11-02T22:42:21Z",
+   "rows": 2001,
+   "sha256": "b2ad7e89fd80c3986dd42dd690cff55d8091f7b550b9c6f77d12734814962072",
+   "source": "yfinance",
+   "symbol": "LSE:OXIG"
   },
   "snapshots/2026-10-31/yfinance/LSE_PACW_1D.parquet": {
    "bytes": 14390,
@@ -18408,6 +20976,54 @@
    "source": "yfinance",
    "symbol": "LSE:PAF"
   },
+  "snapshots/2026-10-31/yfinance/LSE_PAGE_1D.parquet": {
+   "bytes": 130941,
+   "first_t": 985737600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PAGE.L",
+   "recorded_at": "2026-11-02T22:43:46Z",
+   "rows": 6507,
+   "sha256": "4052f5997a0eaba3d1843119caf960d8c6d0cd1344ecbc2bdfdcf1b107f91c0b",
+   "source": "yfinance",
+   "symbol": "LSE:PAGE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PAGE_1W.parquet": {
+   "bytes": 34835,
+   "first_t": 985564800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PAGE.L",
+   "recorded_at": "2026-11-02T22:43:46Z",
+   "rows": 1336,
+   "sha256": "3712d96983640fc56dc5f56aacfc72789b403037045eb952a679e051066d3764",
+   "source": "yfinance",
+   "symbol": "LSE:PAGE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PAG_1D.parquet": {
+   "bytes": 191596,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PAG.L",
+   "recorded_at": "2026-11-02T22:42:34Z",
+   "rows": 9830,
+   "sha256": "5be886c3a4a553e67a329d92e68d8bdca386b8d45e36cc9ba40b6aa915d09e40",
+   "source": "yfinance",
+   "symbol": "LSE:PAG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PAG_1W.parquet": {
+   "bytes": 50131,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PAG.L",
+   "recorded_at": "2026-11-02T22:42:33Z",
+   "rows": 2001,
+   "sha256": "109c9933bcd618e4bfd47fb55eec57975b64e32ede0a7a629e04ff21a7131931",
+   "source": "yfinance",
+   "symbol": "LSE:PAG"
+  },
   "snapshots/2026-10-31/yfinance/LSE_PAUX_1D.parquet": {
    "bytes": 30857,
    "first_t": 1638748800,
@@ -18443,6 +21059,198 @@
    "sha256": "3d62dc9686afc9ea83f11a7f04c41abac5af60c54b52650759fd089c985fd9ce",
    "source": "yfinance",
    "symbol": "LSE:PAUX"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PAY_1D.parquet": {
+   "bytes": 110837,
+   "first_t": 1087516800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PAY.L",
+   "recorded_at": "2026-11-02T22:45:00Z",
+   "rows": 5665,
+   "sha256": "8abe78a68c16e9f8ca7f30728cfc002b4373eacd67c19ab80297ce6bd2c8ecc2",
+   "source": "yfinance",
+   "symbol": "LSE:PAY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PAY_1W.parquet": {
+   "bytes": 29851,
+   "first_t": 1087171200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PAY.L",
+   "recorded_at": "2026-11-02T22:45:00Z",
+   "rows": 1168,
+   "sha256": "e5eb67e3f3d5087c0bdaeb5c5976e3849f246aa099dee739fb86a0062bacf368",
+   "source": "yfinance",
+   "symbol": "LSE:PAY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PETS_1D.parquet": {
+   "bytes": 70585,
+   "first_t": 1394582400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PETS.L",
+   "recorded_at": "2026-11-02T22:42:53Z",
+   "rows": 3194,
+   "sha256": "0b2adf5158aaffa10d3e5cc8efd8064de45b6e0a25977254c51f2d9d0e9ff871",
+   "source": "yfinance",
+   "symbol": "LSE:PETS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PETS_1W.parquet": {
+   "bytes": 20013,
+   "first_t": 1394409600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PETS.L",
+   "recorded_at": "2026-11-02T22:42:53Z",
+   "rows": 660,
+   "sha256": "5933a7ae37d23c8172b0ffdfe49633bb56e33af4f088f81f36bc666f37af5fef",
+   "source": "yfinance",
+   "symbol": "LSE:PETS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PFD_1D.parquet": {
+   "bytes": 129139,
+   "first_t": 1090281600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PFD.L",
+   "recorded_at": "2026-11-02T22:41:59Z",
+   "rows": 5643,
+   "sha256": "9676569c9045f45210c5929193729eb17aec193ac40456410c2397d7bbf0563a",
+   "source": "yfinance",
+   "symbol": "LSE:PFD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PFD_1W.parquet": {
+   "bytes": 32786,
+   "first_t": 1090195200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PFD.L",
+   "recorded_at": "2026-11-02T22:41:58Z",
+   "rows": 1163,
+   "sha256": "f7f1e2978bfe6cc31c145d931c40bedc0856f399d81364406e7e3e440095e196",
+   "source": "yfinance",
+   "symbol": "LSE:PFD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PHP_1D.parquet": {
+   "bytes": 134285,
+   "first_t": 827193600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PHP.L",
+   "recorded_at": "2026-11-02T22:41:12Z",
+   "rows": 7818,
+   "sha256": "42bba44fbde56262d2bc36095f7d7e75f955e4d516e1d01a254b2ac4bb065176",
+   "source": "yfinance",
+   "symbol": "LSE:PHP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PHP_1W.parquet": {
+   "bytes": 35303,
+   "first_t": 827107200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PHP.L",
+   "recorded_at": "2026-11-02T22:41:11Z",
+   "rows": 1598,
+   "sha256": "cd6d9df72ebd0118dab0b01e2b92154e6a22847b97d5e634373d8bba7fa3a211",
+   "source": "yfinance",
+   "symbol": "LSE:PHP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PLUS_1D.parquet": {
+   "bytes": 72732,
+   "first_t": 1374624000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PLUS.L",
+   "recorded_at": "2026-11-02T22:41:29Z",
+   "rows": 3355,
+   "sha256": "089cdde0ed04b6b440c650f6de39edf79594e63b2c891bf23ca689a7ea718a65",
+   "source": "yfinance",
+   "symbol": "LSE:PLUS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PLUS_1W.parquet": {
+   "bytes": 19138,
+   "first_t": 1374451200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PLUS.L",
+   "recorded_at": "2026-11-02T22:41:28Z",
+   "rows": 693,
+   "sha256": "476212ea6e88aa441e151dbfd22ec5df52eb82bb9f4215192c90246e468dd477",
+   "source": "yfinance",
+   "symbol": "LSE:PLUS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PNN_1D.parquet": {
+   "bytes": 196825,
+   "first_t": 629337600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PNN.L",
+   "recorded_at": "2026-11-02T22:41:16Z",
+   "rows": 9454,
+   "sha256": "ba6247f03e42c0219fb8850254c199cad0fb555998596b665cd25529813ed542",
+   "source": "yfinance",
+   "symbol": "LSE:PNN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PNN_1W.parquet": {
+   "bytes": 50720,
+   "first_t": 629337600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PNN.L",
+   "recorded_at": "2026-11-02T22:41:16Z",
+   "rows": 1925,
+   "sha256": "bdf0c5c3c926a95b81e862144840f49fd46aec3f8054657dd4da26354d2301fd",
+   "source": "yfinance",
+   "symbol": "LSE:PNN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_POLN_1D.parquet": {
+   "bytes": 41667,
+   "first_t": 1450828800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "POLN.L",
+   "recorded_at": "2026-11-02T22:44:30Z",
+   "rows": 2742,
+   "sha256": "66cb48ae0954e9746e754e2e89a416f12f96f6dc8192b3663c6a8a06df8ed9c6",
+   "source": "yfinance",
+   "symbol": "LSE:POLN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_POLN_1W.parquet": {
+   "bytes": 13374,
+   "first_t": 1450656000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "POLN.L",
+   "recorded_at": "2026-11-02T22:44:30Z",
+   "rows": 567,
+   "sha256": "cead1eb9ef06644945b052367764fc09a4a8b96d7486530a7bc9b1b692be2e25",
+   "source": "yfinance",
+   "symbol": "LSE:POLN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_POLR_1D.parquet": {
+   "bytes": 89748,
+   "first_t": 1170720000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "POLR.L",
+   "recorded_at": "2026-11-02T22:43:39Z",
+   "rows": 4987,
+   "sha256": "7442ed1d5cc78d60ad84b3670eebed547ba28925a3bb384fbf235d04e9dc4f9b",
+   "source": "yfinance",
+   "symbol": "LSE:POLR"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_POLR_1W.parquet": {
+   "bytes": 23865,
+   "first_t": 1170633600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "POLR.L",
+   "recorded_at": "2026-11-02T22:43:39Z",
+   "rows": 1030,
+   "sha256": "3ddedc15d6ef85418de6e8092b5a5addc558f10286c94c908450302e5f10be67",
+   "source": "yfinance",
+   "symbol": "LSE:POLR"
   },
   "snapshots/2026-10-31/yfinance/LSE_PQWD_1D.parquet": {
    "bytes": 4444,
@@ -18588,6 +21396,30 @@
    "source": "yfinance",
    "symbol": "LSE:PRIJ"
   },
+  "snapshots/2026-10-31/yfinance/LSE_PRN_1D.parquet": {
+   "bytes": 8366,
+   "first_t": 1761868800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PRN.L",
+   "recorded_at": "2026-11-02T22:43:22Z",
+   "rows": 253,
+   "sha256": "13eb239fceb8cd6c2a58be8740f0cd4b9718c6b70ebca5801504b6acc8bc8e37",
+   "source": "yfinance",
+   "symbol": "LSE:PRN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PRN_1W.parquet": {
+   "bytes": 5105,
+   "first_t": 1761523200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PRN.L",
+   "recorded_at": "2026-11-02T22:43:22Z",
+   "rows": 53,
+   "sha256": "42a23a2ede5311bf61deb296a82020ef74342817ce86f4ffd64176032261c84a",
+   "source": "yfinance",
+   "symbol": "LSE:PRN"
+  },
   "snapshots/2026-10-31/yfinance/LSE_PRU_1D.parquet": {
    "bytes": 234564,
    "first_t": 583718400,
@@ -18695,6 +21527,102 @@
    "sha256": "4036a8ff4b1895ec5207ac1bce43adff038bd743246f136952b917c79c9a170b",
    "source": "yfinance",
    "symbol": "LSE:PSRF"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PTEC_1D.parquet": {
+   "bytes": 108004,
+   "first_t": 1143504000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PTEC.L",
+   "recorded_at": "2026-11-02T22:43:07Z",
+   "rows": 5204,
+   "sha256": "f20ca729cb7403519267cdd571fd4a519d1248f8737d2e7f9cdbfb6c5c514b46",
+   "source": "yfinance",
+   "symbol": "LSE:PTEC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PTEC_1W.parquet": {
+   "bytes": 28000,
+   "first_t": 1143417600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PTEC.L",
+   "recorded_at": "2026-11-02T22:43:07Z",
+   "rows": 1075,
+   "sha256": "70903a20c74ad51e2533561d1cd90c1b0d689bd262b328462c16059df50d0983",
+   "source": "yfinance",
+   "symbol": "LSE:PTEC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PTSB_1D.parquet": {
+   "bytes": 143726,
+   "first_t": 946944000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PTSB.L",
+   "recorded_at": "2026-11-02T22:42:28Z",
+   "rows": 6828,
+   "sha256": "92d3b695f11732822c89e2e3d7fd9a770d7cbff3be5c5b18e213ab66afa1a427",
+   "source": "yfinance",
+   "symbol": "LSE:PTSB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PTSB_1W.parquet": {
+   "bytes": 35508,
+   "first_t": 946857600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PTSB.L",
+   "recorded_at": "2026-11-02T22:42:28Z",
+   "rows": 1400,
+   "sha256": "4c842f3980f503c163a255a7369d2a04e44e54f4de4f27407d16c9f8034f164e",
+   "source": "yfinance",
+   "symbol": "LSE:PTSB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PZC_1D.parquet": {
+   "bytes": 159116,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "PZC.L",
+   "recorded_at": "2026-11-02T22:45:12Z",
+   "rows": 9830,
+   "sha256": "e3a7a4a8d116c1615522096c9fd93f989fa5b6bc84ec883ed2b34afc7534cc4d",
+   "source": "yfinance",
+   "symbol": "LSE:PZC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_PZC_1W.parquet": {
+   "bytes": 43162,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "PZC.L",
+   "recorded_at": "2026-11-02T22:45:11Z",
+   "rows": 2001,
+   "sha256": "2577c03d83923f212c7182dc373d621c6b2fe23add354debd1ab92f92c45fac9",
+   "source": "yfinance",
+   "symbol": "LSE:PZC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_QLT_1D.parquet": {
+   "bytes": 53632,
+   "first_t": 1529884800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "QLT.L",
+   "recorded_at": "2026-11-02T22:41:18Z",
+   "rows": 2112,
+   "sha256": "e342d96360890c3f6dbb2b5605c4b9747633849e8e9ae9f95538510c7e20c9a1",
+   "source": "yfinance",
+   "symbol": "LSE:QLT"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_QLT_1W.parquet": {
+   "bytes": 15257,
+   "first_t": 1529884800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "QLT.L",
+   "recorded_at": "2026-11-02T22:41:17Z",
+   "rows": 436,
+   "sha256": "22851fe9a5feeaa649d5642ff42c3fe3d43046460744c3d3a5d7cd9893ceb4ca",
+   "source": "yfinance",
+   "symbol": "LSE:QLT"
   },
   "snapshots/2026-10-31/yfinance/LSE_QQQ5_1D.parquet": {
    "bytes": 37048,
@@ -19044,6 +21972,30 @@
    "source": "yfinance",
    "symbol": "LSE:R2US"
   },
+  "snapshots/2026-10-31/yfinance/LSE_RAT_1D.parquet": {
+   "bytes": 147736,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "RAT.L",
+   "recorded_at": "2026-11-02T22:41:57Z",
+   "rows": 9830,
+   "sha256": "ffb23efa8221f33cbe111edbbb10e52eb0643802d9bda5181cc3a7dac6fabdde",
+   "source": "yfinance",
+   "symbol": "LSE:RAT"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RAT_1W.parquet": {
+   "bytes": 40148,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "RAT.L",
+   "recorded_at": "2026-11-02T22:41:57Z",
+   "rows": 2001,
+   "sha256": "043f58647c32cc3f80cbb3c6c0fcdb5ac7605e19912f06e06c603b429509cd19",
+   "source": "yfinance",
+   "symbol": "LSE:RAT"
+  },
   "snapshots/2026-10-31/yfinance/LSE_RBOD_1D.parquet": {
    "bytes": 55416,
    "first_t": 1508371200,
@@ -19308,6 +22260,30 @@
    "source": "yfinance",
    "symbol": "LSE:RIO"
   },
+  "snapshots/2026-10-31/yfinance/LSE_RKH_1D.parquet": {
+   "bytes": 111156,
+   "first_t": 1124064000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "RKH.L",
+   "recorded_at": "2026-11-02T22:43:48Z",
+   "rows": 5364,
+   "sha256": "e49d32dc657e46204b55b6fcebf71e1163d306e1b75ebf5a0ba4dc86b8af7408",
+   "source": "yfinance",
+   "symbol": "LSE:RKH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RKH_1W.parquet": {
+   "bytes": 28573,
+   "first_t": 1124064000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "RKH.L",
+   "recorded_at": "2026-11-02T22:43:47Z",
+   "rows": 1107,
+   "sha256": "e8de6b4670566bbb8788373b7cb89690443c381cc65d57be7b2badbbcfc85474",
+   "source": "yfinance",
+   "symbol": "LSE:RKH"
+  },
   "snapshots/2026-10-31/yfinance/LSE_RKL3_1D.parquet": {
    "bytes": 7761,
    "first_t": 1777420800,
@@ -19391,6 +22367,30 @@
    "sha256": "6d3d9688e9a62ff4802131957dfe478074ed1003c3493a7b58101ec0d84e8727",
    "source": "yfinance",
    "symbol": "LSE:RMV"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RNWH_1D.parquet": {
+   "bytes": 151520,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "RNWH.L",
+   "recorded_at": "2026-11-02T22:43:26Z",
+   "rows": 9830,
+   "sha256": "b634df04183f0b70dd3a15e0f5692076ddfee2433378dd8b3cf165513b6b4e98",
+   "source": "yfinance",
+   "symbol": "LSE:RNWH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RNWH_1W.parquet": {
+   "bytes": 39060,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "RNWH.L",
+   "recorded_at": "2026-11-02T22:43:25Z",
+   "rows": 2001,
+   "sha256": "ffc236841e75bbd79c4baa7b42ffa4f883d0fd14492a9d3f7f96fefc85d8af8c",
+   "source": "yfinance",
+   "symbol": "LSE:RNWH"
   },
   "snapshots/2026-10-31/yfinance/LSE_ROLG_1D.parquet": {
    "bytes": 52721,
@@ -19512,6 +22512,30 @@
    "source": "yfinance",
    "symbol": "LSE:ROSE"
   },
+  "snapshots/2026-10-31/yfinance/LSE_RPI_1D.parquet": {
+   "bytes": 17171,
+   "first_t": 1718064000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "RPI.L",
+   "recorded_at": "2026-11-02T22:43:02Z",
+   "rows": 607,
+   "sha256": "85df7daddd1623e4f363242cdf361bc72759e4cc44e8a609d19ed8c95dabae81",
+   "source": "yfinance",
+   "symbol": "LSE:RPI"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RPI_1W.parquet": {
+   "bytes": 6974,
+   "first_t": 1717977600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "RPI.L",
+   "recorded_at": "2026-11-02T22:43:01Z",
+   "rows": 125,
+   "sha256": "0995b4dcc2818f5c5c9acfb55698d5b71e10239cf9c09f329c5f17a270a5dd49",
+   "source": "yfinance",
+   "symbol": "LSE:RPI"
+  },
   "snapshots/2026-10-31/yfinance/LSE_RS1_1D.parquet": {
    "bytes": 180414,
    "first_t": 583718400,
@@ -19535,6 +22559,30 @@
    "sha256": "9da535ae8bcc33106b3717e91a9778a179bb676c37bd52a92fde754fabfab9eb",
    "source": "yfinance",
    "symbol": "LSE:RS1"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RSG_1D.parquet": {
+   "bytes": 41344,
+   "first_t": 1560988800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "RSG.L",
+   "recorded_at": "2026-11-02T22:42:37Z",
+   "rows": 1862,
+   "sha256": "6d64331c7686e699ddf518cae320f3a428c6d6a30fd859d94275b2c2f92dd72a",
+   "source": "yfinance",
+   "symbol": "LSE:RSG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RSG_1W.parquet": {
+   "bytes": 12691,
+   "first_t": 1560729600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "RSG.L",
+   "recorded_at": "2026-11-02T22:42:36Z",
+   "rows": 385,
+   "sha256": "caac3a5e8e11b3b50f13e49bdf03cb382e779843aeb92a0e2ddbfd2d1826a6b6",
+   "source": "yfinance",
+   "symbol": "LSE:RSG"
   },
   "snapshots/2026-10-31/yfinance/LSE_RSPB_1D.parquet": {
    "bytes": 13636,
@@ -19571,6 +22619,30 @@
    "sha256": "ee392fb2660cf7a5c4d4c237f070fa1ab2dd95a54eace9d48244de891151e13b",
    "source": "yfinance",
    "symbol": "LSE:RSPB"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RST_1D.parquet": {
+   "bytes": 119949,
+   "first_t": 946944000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "RST.L",
+   "recorded_at": "2026-11-02T22:45:08Z",
+   "rows": 6828,
+   "sha256": "3d5cacb5c7d77cb4caddd92deed2e85abed65c8aad16fafb664805fab5ee0977",
+   "source": "yfinance",
+   "symbol": "LSE:RST"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RST_1W.parquet": {
+   "bytes": 30810,
+   "first_t": 946857600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "RST.L",
+   "recorded_at": "2026-11-02T22:45:08Z",
+   "rows": 1400,
+   "sha256": "1126f4b50ad65a088cff512e595e654a677e57e1a8417c71f6790cd569dc3d07",
+   "source": "yfinance",
+   "symbol": "LSE:RST"
   },
   "snapshots/2026-10-31/yfinance/LSE_RSW_1D.parquet": {
    "bytes": 167640,
@@ -19643,6 +22715,30 @@
    "sha256": "bd2eb4d77d2462771c3fb1a73a3f9e28d1bc5c64c8b365b69d84867a9a52c309",
    "source": "yfinance",
    "symbol": "LSE:RU2K"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RWS_1D.parquet": {
+   "bytes": 126312,
+   "first_t": 956102400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "RWS.L",
+   "recorded_at": "2026-11-02T22:44:32Z",
+   "rows": 6752,
+   "sha256": "627bf33599694fbdb1d9186717775ed2f178d44cf51a44c7ce8a4e550adabcc0",
+   "source": "yfinance",
+   "symbol": "LSE:RWS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_RWS_1W.parquet": {
+   "bytes": 33020,
+   "first_t": 955929600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "RWS.L",
+   "recorded_at": "2026-11-02T22:44:31Z",
+   "rows": 1385,
+   "sha256": "1cb924e69f6fd1933f43ea06c3211b4b8378658569b0e18e3d645b97741cda91",
+   "source": "yfinance",
+   "symbol": "LSE:RWS"
   },
   "snapshots/2026-10-31/yfinance/LSE_S2P0_1D.parquet": {
    "bytes": 9783,
@@ -19787,6 +22883,54 @@
    "sha256": "66944e099035fd91f99c9dde29f8ef6f9d797563f11936ed26a873d4628bc94a",
    "source": "yfinance",
    "symbol": "LSE:SAEU"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SAFE_1D.parquet": {
+   "bytes": 99893,
+   "first_t": 1173398400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SAFE.L",
+   "recorded_at": "2026-11-02T22:42:44Z",
+   "rows": 4964,
+   "sha256": "8c833a02bbaba1e0913ef6941b3342a542eaf511564779d1828ca68423150539",
+   "source": "yfinance",
+   "symbol": "LSE:SAFE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SAFE_1W.parquet": {
+   "bytes": 25030,
+   "first_t": 1173052800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SAFE.L",
+   "recorded_at": "2026-11-02T22:42:43Z",
+   "rows": 1026,
+   "sha256": "4d431e385e4a9cfe02334871d64eed648c789cbcde548869ffc55789a0e1f252",
+   "source": "yfinance",
+   "symbol": "LSE:SAFE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SAGA_1D.parquet": {
+   "bytes": 78667,
+   "first_t": 1400803200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SAGA.L",
+   "recorded_at": "2026-11-02T22:42:42Z",
+   "rows": 3145,
+   "sha256": "a275e9c0a951789fe4b521cf7740ef5c8606c5e4d40f705bda9aa38a975b3bfc",
+   "source": "yfinance",
+   "symbol": "LSE:SAGA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SAGA_1W.parquet": {
+   "bytes": 21122,
+   "first_t": 1400457600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SAGA.L",
+   "recorded_at": "2026-11-02T22:42:42Z",
+   "rows": 650,
+   "sha256": "7733c48e6428c579ef1afd2b5ac7d9721cd1149226b05378c51d8a28b2b70b3d",
+   "source": "yfinance",
+   "symbol": "LSE:SAGA"
   },
   "snapshots/2026-10-31/yfinance/LSE_SAGE_1D.parquet": {
    "bytes": 10612,
@@ -20003,6 +23147,30 @@
    "sha256": "d6d245cc3b14b84e94049b57ab4d7c1b4ad78959ecd0a5cc5db3579f8c7fec9e",
    "source": "yfinance",
    "symbol": "LSE:SAWD"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SBRE_1D.parquet": {
+   "bytes": 42355,
+   "first_t": 1512518400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SBRE.L",
+   "recorded_at": "2026-11-02T22:45:03Z",
+   "rows": 2248,
+   "sha256": "9c18bc62107b75e3801b4986106783e5fc684cb4acc35b9d8e5caf5a17d1075d",
+   "source": "yfinance",
+   "symbol": "LSE:SBRE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SBRE_1W.parquet": {
+   "bytes": 13258,
+   "first_t": 1512345600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SBRE.L",
+   "recorded_at": "2026-11-02T22:45:03Z",
+   "rows": 465,
+   "sha256": "346e76845e319744ea6e8409b463c6ebd98e3679f11329eb507475f91ac3844a",
+   "source": "yfinance",
+   "symbol": "LSE:SBRE"
   },
   "snapshots/2026-10-31/yfinance/LSE_SBRT_1h.parquet": {
    "bytes": 16240,
@@ -20832,6 +24000,30 @@
    "source": "yfinance",
    "symbol": "LSE:SEPL"
   },
+  "snapshots/2026-10-31/yfinance/LSE_SER_1D.parquet": {
+   "bytes": 108368,
+   "first_t": 1134000000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SER.L",
+   "recorded_at": "2026-11-02T22:43:03Z",
+   "rows": 5281,
+   "sha256": "aa16e84a290935feb94eaaef5b216c911a8d9f3474b53dfdc86e6c657b78db19",
+   "source": "yfinance",
+   "symbol": "LSE:SER"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SER_1W.parquet": {
+   "bytes": 27804,
+   "first_t": 1133740800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SER.L",
+   "recorded_at": "2026-11-02T22:43:02Z",
+   "rows": 1091,
+   "sha256": "81dcc82f77be17e332df78bd86dc3887884d48e4646b076fd8c25eebc2731276",
+   "source": "yfinance",
+   "symbol": "LSE:SER"
+  },
   "snapshots/2026-10-31/yfinance/LSE_SFB3_1D.parquet": {
    "bytes": 29319,
    "first_t": 1654473600,
@@ -21071,6 +24263,30 @@
    "sha256": "97d5976764c298c4ca22b9dea5a33e5ac1cef1bf11383f07431a3f4accd67b7e",
    "source": "yfinance",
    "symbol": "LSE:SGRO"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SHAW_1D.parquet": {
+   "bytes": 8610,
+   "first_t": 1761782400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SHAW.L",
+   "recorded_at": "2026-11-02T22:42:19Z",
+   "rows": 254,
+   "sha256": "044d0251c8c2e06f20e27640ab452c30e5097bb67d24858aed5e5320320646ca",
+   "source": "yfinance",
+   "symbol": "LSE:SHAW"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SHAW_1W.parquet": {
+   "bytes": 5200,
+   "first_t": 1761523200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SHAW.L",
+   "recorded_at": "2026-11-02T22:42:18Z",
+   "rows": 53,
+   "sha256": "c223fb68a22d89cf1512de52be8336505eaebe82c5855d717a09bb3df1d10102",
+   "source": "yfinance",
+   "symbol": "LSE:SHAW"
   },
   "snapshots/2026-10-31/yfinance/LSE_SHC_1D.parquet": {
    "bytes": 106860,
@@ -21419,6 +24635,30 @@
    "sha256": "da85ca64c1a9d021ee38ae13c33129dcaeaea976afcbabd10676e79fbf9c0402",
    "source": "yfinance",
    "symbol": "LSE:SMST"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SMWH_1D.parquet": {
+   "bytes": 109673,
+   "first_t": 1087516800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SMWH.L",
+   "recorded_at": "2026-11-02T22:44:03Z",
+   "rows": 5665,
+   "sha256": "92836472053f0a35b1fe2160c6f6574c9a1829092aad5d31bd363d5430186047",
+   "source": "yfinance",
+   "symbol": "LSE:SMWH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SMWH_1W.parquet": {
+   "bytes": 27982,
+   "first_t": 1087171200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SMWH.L",
+   "recorded_at": "2026-11-02T22:44:02Z",
+   "rows": 1168,
+   "sha256": "5f720d9585866cb29ace30cc120c4e4f58b40cd4f2f42bb4de78a723224dd7cb",
+   "source": "yfinance",
+   "symbol": "LSE:SMWH"
   },
   "snapshots/2026-10-31/yfinance/LSE_SND3_1h.parquet": {
    "bytes": 36827,
@@ -21804,6 +25044,30 @@
    "source": "yfinance",
    "symbol": "LSE:SPGP"
   },
+  "snapshots/2026-10-31/yfinance/LSE_SPI_1D.parquet": {
+   "bytes": 65459,
+   "first_t": 1405641600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SPI.L",
+   "recorded_at": "2026-11-02T22:43:10Z",
+   "rows": 3106,
+   "sha256": "b0fb33ca481691cff8548c36bb5abd535657c26a6da3a0cf1f4daf62b896451c",
+   "source": "yfinance",
+   "symbol": "LSE:SPI"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SPI_1W.parquet": {
+   "bytes": 17981,
+   "first_t": 1405296000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SPI.L",
+   "recorded_at": "2026-11-02T22:43:10Z",
+   "rows": 642,
+   "sha256": "71f3af52bf4d793e7f0d40ac9d4d1c3ce2efda43e559221d673a56e4d260616c",
+   "source": "yfinance",
+   "symbol": "LSE:SPI"
+  },
   "snapshots/2026-10-31/yfinance/LSE_SPL3_1D.parquet": {
    "bytes": 34936,
    "first_t": 1630368000,
@@ -22176,6 +25440,78 @@
    "source": "yfinance",
    "symbol": "LSE:SQS5"
   },
+  "snapshots/2026-10-31/yfinance/LSE_SRC_1D.parquet": {
+   "bytes": 81786,
+   "first_t": 1123027200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SRC.L",
+   "recorded_at": "2026-11-02T22:42:25Z",
+   "rows": 5372,
+   "sha256": "54ffbd5c68d55dbac882fd387d29bb5ade92d48d55705d5a9125baf4053633e4",
+   "source": "yfinance",
+   "symbol": "LSE:SRC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SRC_1W.parquet": {
+   "bytes": 24330,
+   "first_t": 1122854400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SRC.L",
+   "recorded_at": "2026-11-02T22:42:25Z",
+   "rows": 1109,
+   "sha256": "e2e24e0e01b1f3115cf890cdb5e6e9a59a53128e9caaa42bf716cc4c2e22eb83",
+   "source": "yfinance",
+   "symbol": "LSE:SRC"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SREI_1D.parquet": {
+   "bytes": 97671,
+   "first_t": 1089849600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SREI.L",
+   "recorded_at": "2026-11-02T22:45:07Z",
+   "rows": 5646,
+   "sha256": "fee297f6eb295dda0fadc46e70a6d8cea3ef2b2c64628f9e6d10762ffb71a794",
+   "source": "yfinance",
+   "symbol": "LSE:SREI"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SREI_1W.parquet": {
+   "bytes": 25590,
+   "first_t": 1089590400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SREI.L",
+   "recorded_at": "2026-11-02T22:45:07Z",
+   "rows": 1164,
+   "sha256": "75158057a798bbe0dac258b9ddac38ea109b2dea8a9aed1ebbea7cbbd8bfc568",
+   "source": "yfinance",
+   "symbol": "LSE:SREI"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SRE_1D.parquet": {
+   "bytes": 97988,
+   "first_t": 1071100800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SRE.L",
+   "recorded_at": "2026-11-02T22:42:08Z",
+   "rows": 5801,
+   "sha256": "3f54d0a23f1d8e226566e30eae9b9782ef3a7ffe8cb804fcab957eea482503aa",
+   "source": "yfinance",
+   "symbol": "LSE:SRE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SRE_1W.parquet": {
+   "bytes": 27367,
+   "first_t": 1070841600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SRE.L",
+   "recorded_at": "2026-11-02T22:42:08Z",
+   "rows": 1195,
+   "sha256": "f28bdfb65e48b9b73890a8b6e3958d0c27a04b190b8de138263dcd7324451bd4",
+   "source": "yfinance",
+   "symbol": "LSE:SRE"
+  },
   "snapshots/2026-10-31/yfinance/LSE_SRP_1D.parquet": {
    "bytes": 206187,
    "first_t": 583718400,
@@ -22319,6 +25655,30 @@
    "sha256": "8d82bc2c9ea4ca9eda79c8127798d36753dc55802ff982c1f453d38bfa34310e",
    "source": "yfinance",
    "symbol": "LSE:SSMH"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SSPG_1D.parquet": {
+   "bytes": 81562,
+   "first_t": 1404950400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SSPG.L",
+   "recorded_at": "2026-11-02T22:42:23Z",
+   "rows": 3112,
+   "sha256": "2a9998c3c705d1ec950c5ebef8f35d7918410a9823d7f9ede83bd24361078434",
+   "source": "yfinance",
+   "symbol": "LSE:SSPG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SSPG_1W.parquet": {
+   "bytes": 21419,
+   "first_t": 1404691200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SSPG.L",
+   "recorded_at": "2026-11-02T22:42:22Z",
+   "rows": 643,
+   "sha256": "c467cd96208fda1ee20de232bf92c866efac74ed7c5ec0ef6cc25e305d6c3d41",
+   "source": "yfinance",
+   "symbol": "LSE:SSPG"
   },
   "snapshots/2026-10-31/yfinance/LSE_STAN_1D.parquet": {
    "bytes": 242880,
@@ -22680,6 +26040,30 @@
    "source": "yfinance",
    "symbol": "LSE:SUOG"
   },
+  "snapshots/2026-10-31/yfinance/LSE_SUPR_1D.parquet": {
+   "bytes": 43049,
+   "first_t": 1497916800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SUPR.L",
+   "recorded_at": "2026-11-02T22:42:48Z",
+   "rows": 2346,
+   "sha256": "0a1d397a8808f8247d3d0f36166d74c642fe81e3c20ae8c093b2eb943d01d8d4",
+   "source": "yfinance",
+   "symbol": "LSE:SUPR"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SUPR_1W.parquet": {
+   "bytes": 13179,
+   "first_t": 1497830400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SUPR.L",
+   "recorded_at": "2026-11-02T22:42:48Z",
+   "rows": 486,
+   "sha256": "f98ff89c861e86673ab9ccf7245253de0059ab0e54212fd39cdf7a5c86290729",
+   "source": "yfinance",
+   "symbol": "LSE:SUPR"
+  },
   "snapshots/2026-10-31/yfinance/LSE_SUSM_1D.parquet": {
    "bytes": 57408,
    "first_t": 1468195200,
@@ -22859,6 +26243,30 @@
    "sha256": "b04fd9a45bc34347fe3f36cd4f120d1c2a77223d2dc1102ce717516d87df504c",
    "source": "yfinance",
    "symbol": "LSE:SUWS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SVS_1D.parquet": {
+   "bytes": 164178,
+   "first_t": 585360000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "SVS.L",
+   "recorded_at": "2026-11-02T22:41:54Z",
+   "rows": 9817,
+   "sha256": "79d1c58fc2ce3c5a8f5974977ac9144319e59abb9e58536e2240ddca359621ce",
+   "source": "yfinance",
+   "symbol": "LSE:SVS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_SVS_1W.parquet": {
+   "bytes": 41753,
+   "first_t": 585187200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "SVS.L",
+   "recorded_at": "2026-11-02T22:41:54Z",
+   "rows": 1998,
+   "sha256": "d1d0edb300b362fb4132b6c54b7a3ac8d39c69e17749b5af9082ff0bdd5b8adb",
+   "source": "yfinance",
+   "symbol": "LSE:SVS"
   },
   "snapshots/2026-10-31/yfinance/LSE_SVT_1D.parquet": {
    "bytes": 174998,
@@ -23268,6 +26676,30 @@
    "source": "yfinance",
    "symbol": "LSE:T10G"
   },
+  "snapshots/2026-10-31/yfinance/LSE_TAM_1D.parquet": {
+   "bytes": 43463,
+   "first_t": 1499299200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TAM.L",
+   "recorded_at": "2026-11-02T22:45:06Z",
+   "rows": 2356,
+   "sha256": "5179d4bc24a46ba980b687ce4ee0449602a0f31e6e76d619f239befbc57d6102",
+   "source": "yfinance",
+   "symbol": "LSE:TAM"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TAM_1W.parquet": {
+   "bytes": 13042,
+   "first_t": 1499040000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TAM.L",
+   "recorded_at": "2026-11-02T22:45:05Z",
+   "rows": 487,
+   "sha256": "991771616b2e0adff9d26c981fa4b8936ad50e82cab111d3e7c9d0daf93820a5",
+   "source": "yfinance",
+   "symbol": "LSE:TAM"
+  },
   "snapshots/2026-10-31/yfinance/LSE_TATE_1D.parquet": {
    "bytes": 185375,
    "first_t": 583718400,
@@ -23316,6 +26748,54 @@
    "source": "yfinance",
    "symbol": "LSE:TBCG"
   },
+  "snapshots/2026-10-31/yfinance/LSE_TBTG_1D.parquet": {
+   "bytes": 8490,
+   "first_t": 1759449600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TBTG.L",
+   "recorded_at": "2026-11-02T22:44:33Z",
+   "rows": 273,
+   "sha256": "05d74dd14cc10fa6fd4fe17bc76f269abee147ad5455b771f44bfe340d255265",
+   "source": "yfinance",
+   "symbol": "LSE:TBTG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TBTG_1W.parquet": {
+   "bytes": 5180,
+   "first_t": 1759104000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TBTG.L",
+   "recorded_at": "2026-11-02T22:44:32Z",
+   "rows": 57,
+   "sha256": "fc300d3f382fe1554145831d083c03f73f009f5f9fb37f652180345c1d84e5e2",
+   "source": "yfinance",
+   "symbol": "LSE:TBTG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TCAP_1D.parquet": {
+   "bytes": 157185,
+   "first_t": 972345600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TCAP.L",
+   "recorded_at": "2026-11-02T22:41:31Z",
+   "rows": 6618,
+   "sha256": "311f5f5af494945aa3f56d6948ee240df10a5b2098cfe319e02ec3e3f088055c",
+   "source": "yfinance",
+   "symbol": "LSE:TCAP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TCAP_1W.parquet": {
+   "bytes": 40560,
+   "first_t": 972259200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TCAP.L",
+   "recorded_at": "2026-11-02T22:41:31Z",
+   "rows": 1358,
+   "sha256": "a7d1243a461e146ff1d5e7ed67d75779032bf2a4f20d14029adbd56837ea87c5",
+   "source": "yfinance",
+   "symbol": "LSE:TCAP"
+  },
   "snapshots/2026-10-31/yfinance/LSE_TDIV_1D.parquet": {
    "bytes": 65745,
    "first_t": 1463961600,
@@ -23351,6 +26831,78 @@
    "sha256": "e2fc6912172e08b3d69ada7098e013c5d135dea534a2d60cd663944f7c5fe7e8",
    "source": "yfinance",
    "symbol": "LSE:TDIV"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TEP_1D.parquet": {
+   "bytes": 133479,
+   "first_t": 964569600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TEP.L",
+   "recorded_at": "2026-11-02T22:43:43Z",
+   "rows": 6682,
+   "sha256": "943e4f1a522889e45174703c556ee6ada0a05e73f1115200d234cccacc6e25be",
+   "source": "yfinance",
+   "symbol": "LSE:TEP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TEP_1W.parquet": {
+   "bytes": 33462,
+   "first_t": 964396800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TEP.L",
+   "recorded_at": "2026-11-02T22:43:43Z",
+   "rows": 1371,
+   "sha256": "93a709c2adf6bbfdc7d734a0b4a106430c4eb418d36bfec2770456f6957153a6",
+   "source": "yfinance",
+   "symbol": "LSE:TEP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TGA_1D.parquet": {
+   "bytes": 34297,
+   "first_t": 1623024000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TGA.L",
+   "recorded_at": "2026-11-02T22:43:21Z",
+   "rows": 1366,
+   "sha256": "98faee1d1ebcf93a735cf9c1565e62cad37b957fbb1f1a1dd513af332243bddf",
+   "source": "yfinance",
+   "symbol": "LSE:TGA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TGA_1W.parquet": {
+   "bytes": 10707,
+   "first_t": 1623024000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TGA.L",
+   "recorded_at": "2026-11-02T22:43:21Z",
+   "rows": 282,
+   "sha256": "c71c96ad2ab31ca51325aa47a83b39481c696f73437413e45495f9dc639d4624",
+   "source": "yfinance",
+   "symbol": "LSE:TGA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_THG_1D.parquet": {
+   "bytes": 43109,
+   "first_t": 1600214400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "THG.L",
+   "recorded_at": "2026-11-02T22:44:01Z",
+   "rows": 1547,
+   "sha256": "912d53d4d429b91ea0d6c63725033e3ae05368059ed971d3ec3080794afcdc78",
+   "source": "yfinance",
+   "symbol": "LSE:THG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_THG_1W.parquet": {
+   "bytes": 12585,
+   "first_t": 1600041600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "THG.L",
+   "recorded_at": "2026-11-02T22:44:01Z",
+   "rows": 320,
+   "sha256": "024d06d6103aacb2ddfa6a8cad796390f507b0137efada9243bc7a6197167e95",
+   "source": "yfinance",
+   "symbol": "LSE:THG"
   },
   "snapshots/2026-10-31/yfinance/LSE_TI5G_1D.parquet": {
    "bytes": 46594,
@@ -23496,6 +27048,30 @@
    "source": "yfinance",
    "symbol": "LSE:TP05"
   },
+  "snapshots/2026-10-31/yfinance/LSE_TPK_1D.parquet": {
+   "bytes": 213584,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TPK.L",
+   "recorded_at": "2026-11-02T22:42:32Z",
+   "rows": 9830,
+   "sha256": "6c83f70f8605b29418ae2985b915cc392d28e79840b4b5f94e5f08f2697ee21d",
+   "source": "yfinance",
+   "symbol": "LSE:TPK"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TPK_1W.parquet": {
+   "bytes": 54621,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TPK.L",
+   "recorded_at": "2026-11-02T22:42:32Z",
+   "rows": 2001,
+   "sha256": "b47dc57afe769ba9a2c7612ff5a050a811bebbf190da440a44c5f6f496048ca8",
+   "source": "yfinance",
+   "symbol": "LSE:TPK"
+  },
   "snapshots/2026-10-31/yfinance/LSE_TRA3_1D.parquet": {
    "bytes": 6195,
    "first_t": 1776643200,
@@ -23555,6 +27131,54 @@
    "sha256": "3155da843ed7caba10eb69c88ec14fa8d5481dd661214bb20c4dfc66a7362063",
    "source": "yfinance",
    "symbol": "LSE:TRLA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TRN_1D.parquet": {
+   "bytes": 43749,
+   "first_t": 1561075200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TRN.L",
+   "recorded_at": "2026-11-02T22:43:42Z",
+   "rows": 1861,
+   "sha256": "79af298b88b20501c25affb40f4b6311e134d7e14107887adf313dbc787e5cdd",
+   "source": "yfinance",
+   "symbol": "LSE:TRN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TRN_1W.parquet": {
+   "bytes": 13328,
+   "first_t": 1560729600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TRN.L",
+   "recorded_at": "2026-11-02T22:43:41Z",
+   "rows": 385,
+   "sha256": "5ed4384fe9fc7e65b04a04756e3263a5b4ea7d4bd4cbbfc73f14908303f53b17",
+   "source": "yfinance",
+   "symbol": "LSE:TRN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TRST_1D.parquet": {
+   "bytes": 35785,
+   "first_t": 1616457600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TRST.L",
+   "recorded_at": "2026-11-02T22:43:14Z",
+   "rows": 1416,
+   "sha256": "026426299b1e7d84e1ad85e4968ed711366b1a4d60b2d2fb69aac7123d15caf9",
+   "source": "yfinance",
+   "symbol": "LSE:TRST"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TRST_1W.parquet": {
+   "bytes": 11277,
+   "first_t": 1616371200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TRST.L",
+   "recorded_at": "2026-11-02T22:43:13Z",
+   "rows": 293,
+   "sha256": "837af7ff5f0818df27a9973fa8341396226eee25528158d80a7f3c1019fbd9c2",
+   "source": "yfinance",
+   "symbol": "LSE:TRST"
   },
   "snapshots/2026-10-31/yfinance/LSE_TSCO_1D.parquet": {
    "bytes": 223499,
@@ -23675,6 +27299,30 @@
    "sha256": "932aa463812e533a84298ef728de2ed619a69cd578842c0dec8ce1004e8447d6",
    "source": "yfinance",
    "symbol": "LSE:TTE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TUN_1D.parquet": {
+   "bytes": 25874,
+   "first_t": 1634774400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "TUN.L",
+   "recorded_at": "2026-11-02T22:44:39Z",
+   "rows": 1269,
+   "sha256": "3269563a306563be8c00c08785bc0eb498c6dd26ae869a733bd8c27949b576a6",
+   "source": "yfinance",
+   "symbol": "LSE:TUN"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_TUN_1W.parquet": {
+   "bytes": 9419,
+   "first_t": 1634515200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "TUN.L",
+   "recorded_at": "2026-11-02T22:44:39Z",
+   "rows": 263,
+   "sha256": "041f98eb41849262225028f2865d91e424a8dadc23b40eb53f756ad2eaef4e71",
+   "source": "yfinance",
+   "symbol": "LSE:TUN"
   },
   "snapshots/2026-10-31/yfinance/LSE_U03A_1D.parquet": {
    "bytes": 12258,
@@ -24300,6 +27948,30 @@
    "source": "yfinance",
    "symbol": "LSE:USPY"
   },
+  "snapshots/2026-10-31/yfinance/LSE_UTG_1D.parquet": {
+   "bytes": 140019,
+   "first_t": 928195200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "UTG.L",
+   "recorded_at": "2026-11-02T22:41:13Z",
+   "rows": 6983,
+   "sha256": "03c32f41d43c17fcb4941ee585724d4af51996ec187555ec502a7f51f54cad71",
+   "source": "yfinance",
+   "symbol": "LSE:UTG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_UTG_1W.parquet": {
+   "bytes": 35518,
+   "first_t": 928108800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "UTG.L",
+   "recorded_at": "2026-11-02T22:41:13Z",
+   "rows": 1431,
+   "sha256": "4d2bdf0cf784b3a4964c63fcd2ef7042a459f2bfaa21bd7f75ce123f0d222a77",
+   "source": "yfinance",
+   "symbol": "LSE:UTG"
+  },
   "snapshots/2026-10-31/yfinance/LSE_V3AB_1D.parquet": {
    "bytes": 39308,
    "first_t": 1616630400,
@@ -24827,6 +28499,30 @@
    "sha256": "566ca41da56d3b63dee9d8714b9c513e276715eedd4c6054f5bff79aef8db813",
    "source": "yfinance",
    "symbol": "LSE:VAPX"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_VCT_1D.parquet": {
+   "bytes": 141421,
+   "first_t": 819504000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "VCT.L",
+   "recorded_at": "2026-11-02T22:43:31Z",
+   "rows": 7881,
+   "sha256": "d4e9abaf9851b19549ab982f28b0055fd154de0cd6282349e6ff96e1151325a6",
+   "source": "yfinance",
+   "symbol": "LSE:VCT"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_VCT_1W.parquet": {
+   "bytes": 36066,
+   "first_t": 819244800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "VCT.L",
+   "recorded_at": "2026-11-02T22:43:31Z",
+   "rows": 1611,
+   "sha256": "18e230bb396edb8cc2bf2e19daaecc040e0ba41294681c50320819d49b6218a3",
+   "source": "yfinance",
+   "symbol": "LSE:VCT"
   },
   "snapshots/2026-10-31/yfinance/LSE_VDCA_1D.parquet": {
    "bytes": 41634,
@@ -25548,6 +29244,30 @@
    "source": "yfinance",
    "symbol": "LSE:VJPA"
   },
+  "snapshots/2026-10-31/yfinance/LSE_VLX_1D.parquet": {
+   "bytes": 160907,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "VLX.L",
+   "recorded_at": "2026-11-02T22:43:05Z",
+   "rows": 9830,
+   "sha256": "a77cfbde819699398a9e91afd6659eb4bf5e6c84a2e6da3add37ed37e32bb1f8",
+   "source": "yfinance",
+   "symbol": "LSE:VLX"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_VLX_1W.parquet": {
+   "bytes": 42772,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "VLX.L",
+   "recorded_at": "2026-11-02T22:43:04Z",
+   "rows": 2001,
+   "sha256": "4658567d97f563aa31d75f10aa5f894551a0d49f475ee8615d81b5ec6a63d70a",
+   "source": "yfinance",
+   "symbol": "LSE:VLX"
+  },
   "snapshots/2026-10-31/yfinance/LSE_VMID_1D.parquet": {
    "bytes": 73405,
    "first_t": 1412035200,
@@ -25643,6 +29363,54 @@
    "sha256": "26c01eb89c54cb9134ed35a475e1b6684302774eb6ab05e28404e94104f1aacd",
    "source": "yfinance",
    "symbol": "LSE:VSML"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_VSVS_1D.parquet": {
+   "bytes": 199964,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "VSVS.L",
+   "recorded_at": "2026-11-02T22:42:45Z",
+   "rows": 9830,
+   "sha256": "e43a15b1c0ec2297b66607804ab7e51104ecf9aa7ff6e094566fb5577d4571a3",
+   "source": "yfinance",
+   "symbol": "LSE:VSVS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_VSVS_1W.parquet": {
+   "bytes": 51080,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "VSVS.L",
+   "recorded_at": "2026-11-02T22:42:45Z",
+   "rows": 2001,
+   "sha256": "c3d8b2832b225119ebf26d67ad693e34a62e602e3bd68f08058d3c1f5597cefa",
+   "source": "yfinance",
+   "symbol": "LSE:VSVS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_VTY_1D.parquet": {
+   "bytes": 168148,
+   "first_t": 881625600,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "VTY.L",
+   "recorded_at": "2026-11-02T22:43:24Z",
+   "rows": 7368,
+   "sha256": "b3a99cfaa8a623d96a537f99b59a27b42ab7e20f51f17cd3f287251ba48b68af",
+   "source": "yfinance",
+   "symbol": "LSE:VTY"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_VTY_1W.parquet": {
+   "bytes": 43510,
+   "first_t": 881539200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "VTY.L",
+   "recorded_at": "2026-11-02T22:43:23Z",
+   "rows": 1508,
+   "sha256": "bb99ec4ee79e8599aebaf4ab84abb127696bc14a5ee708044c4678d40f10c311",
+   "source": "yfinance",
+   "symbol": "LSE:VTY"
   },
   "snapshots/2026-10-31/yfinance/LSE_VUAA_1D.parquet": {
    "bytes": 49664,
@@ -26436,6 +30204,78 @@
    "source": "yfinance",
    "symbol": "LSE:WISE"
   },
+  "snapshots/2026-10-31/yfinance/LSE_WIX_1D.parquet": {
+   "bytes": 30839,
+   "first_t": 1619568000,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "WIX.L",
+   "recorded_at": "2026-11-02T22:44:35Z",
+   "rows": 1392,
+   "sha256": "4f37da96315a9aada73aa326a5e40a0222997f117b23d3482812158ddb57865b",
+   "source": "yfinance",
+   "symbol": "LSE:WIX"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_WIX_1W.parquet": {
+   "bytes": 10390,
+   "first_t": 1619395200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "WIX.L",
+   "recorded_at": "2026-11-02T22:44:35Z",
+   "rows": 288,
+   "sha256": "ed793ab78d1db0dd08db29ed1d6709f40408bb67dc3da200dc81633ac833894d",
+   "source": "yfinance",
+   "symbol": "LSE:WIX"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_WIZZ_1D.parquet": {
+   "bytes": 63549,
+   "first_t": 1424822400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "WIZZ.L",
+   "recorded_at": "2026-11-02T22:43:06Z",
+   "rows": 2952,
+   "sha256": "f5c0e232f718affb7df0c86d9d83c6a3de3f76136dbd78e250f78afed926df4d",
+   "source": "yfinance",
+   "symbol": "LSE:WIZZ"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_WIZZ_1W.parquet": {
+   "bytes": 17163,
+   "first_t": 1424649600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "WIZZ.L",
+   "recorded_at": "2026-11-02T22:43:05Z",
+   "rows": 610,
+   "sha256": "1b4a64b49e4076a8f7af0fac60b1a698702a775bd679c6da98a117369d032ba4",
+   "source": "yfinance",
+   "symbol": "LSE:WIZZ"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_WKP_1D.parquet": {
+   "bytes": 153194,
+   "first_t": 755740800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "WKP.L",
+   "recorded_at": "2026-11-02T22:43:49Z",
+   "rows": 8409,
+   "sha256": "d192788f0f900075644a823bcefdb0afb04c3f635c3a8db8dfe5d7240d0cb513",
+   "source": "yfinance",
+   "symbol": "LSE:WKP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_WKP_1W.parquet": {
+   "bytes": 41414,
+   "first_t": 755740800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "WKP.L",
+   "recorded_at": "2026-11-02T22:43:49Z",
+   "rows": 1716,
+   "sha256": "7d696bd5216c417e310ce0c26cdb820f8fb3cf84b0056e70bc22f2cad30e7ac6",
+   "source": "yfinance",
+   "symbol": "LSE:WKP"
+  },
   "snapshots/2026-10-31/yfinance/LSE_WLDS_1D.parquet": {
    "bytes": 56859,
    "first_t": 1522108800,
@@ -26531,6 +30371,30 @@
    "sha256": "82ea86e2fcda05057c9ee000ee20f203afbd0d751a1a71712d54b4c4fdb4d912",
    "source": "yfinance",
    "symbol": "LSE:WOEE"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_WOSG_1D.parquet": {
+   "bytes": 43057,
+   "first_t": 1559174400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "WOSG.L",
+   "recorded_at": "2026-11-02T22:42:01Z",
+   "rows": 1877,
+   "sha256": "3e407152933cb6e81abb8f429ba5b45eaed4713c8f774660f98f894e86fa271b",
+   "source": "yfinance",
+   "symbol": "LSE:WOSG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_WOSG_1W.parquet": {
+   "bytes": 12870,
+   "first_t": 1558915200,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "WOSG.L",
+   "recorded_at": "2026-11-02T22:42:01Z",
+   "rows": 388,
+   "sha256": "a0d66fd637d2d85ca023f79dcc604b16a580424f8e70dd2f4ff17db0dda28680",
+   "source": "yfinance",
+   "symbol": "LSE:WOSG"
   },
   "snapshots/2026-10-31/yfinance/LSE_WPP_1D.parquet": {
    "bytes": 148856,
@@ -27756,6 +31620,54 @@
    "source": "yfinance",
    "symbol": "LSE:XPHG"
   },
+  "snapshots/2026-10-31/yfinance/LSE_XPP_1D.parquet": {
+   "bytes": 116056,
+   "first_t": 962755200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "XPP.L",
+   "recorded_at": "2026-11-02T22:44:47Z",
+   "rows": 6697,
+   "sha256": "bb2ca31cd2fbfc7c01e6752c3928f21f5342534414de1b6222b978bd8bb0f138",
+   "source": "yfinance",
+   "symbol": "LSE:XPP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_XPP_1W.parquet": {
+   "bytes": 30387,
+   "first_t": 962582400,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "XPP.L",
+   "recorded_at": "2026-11-02T22:44:46Z",
+   "rows": 1374,
+   "sha256": "8f988a281fb2f63ab9cfb41e75d74fef58833264e0d690660b3d55bee8767679",
+   "source": "yfinance",
+   "symbol": "LSE:XPP"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_XPS_1D.parquet": {
+   "bytes": 43950,
+   "first_t": 1487203200,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "XPS.L",
+   "recorded_at": "2026-11-02T22:43:41Z",
+   "rows": 2452,
+   "sha256": "30728b965537e4aee46651c7abeb4e2e5153baa753aa1c7b7b98c9c8774706ea",
+   "source": "yfinance",
+   "symbol": "LSE:XPS"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_XPS_1W.parquet": {
+   "bytes": 12889,
+   "first_t": 1486944000,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "XPS.L",
+   "recorded_at": "2026-11-02T22:43:40Z",
+   "rows": 507,
+   "sha256": "b7d1c04dc4ac653645c76a061b730d076d635a18a18b7d8cca61926b44cf5a19",
+   "source": "yfinance",
+   "symbol": "LSE:XPS"
+  },
   "snapshots/2026-10-31/yfinance/LSE_XREP_1D.parquet": {
    "bytes": 64681,
    "first_t": 1455667200,
@@ -28392,6 +32304,54 @@
    "source": "yfinance",
    "symbol": "LSE:XZEM"
   },
+  "snapshots/2026-10-31/yfinance/LSE_YCA_1D.parquet": {
+   "bytes": 43565,
+   "first_t": 1530748800,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "YCA.L",
+   "recorded_at": "2026-11-02T22:42:31Z",
+   "rows": 2104,
+   "sha256": "32a59769277536c92ccd0d6f336abaa34264fafbb080f9f28cc3a65e16691f73",
+   "source": "yfinance",
+   "symbol": "LSE:YCA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_YCA_1W.parquet": {
+   "bytes": 13484,
+   "first_t": 1530489600,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "YCA.L",
+   "recorded_at": "2026-11-02T22:42:30Z",
+   "rows": 435,
+   "sha256": "6701bcf40ef1564a3e06f4616f52e9ea54d00f5ed86f66d667c6341d8a068057",
+   "source": "yfinance",
+   "symbol": "LSE:YCA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_YNGA_1D.parquet": {
+   "bytes": 134267,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "YNGA.L",
+   "recorded_at": "2026-11-02T22:44:10Z",
+   "rows": 9830,
+   "sha256": "a853d8a4978dfa1c40f9c61bf6dfdb8d4336f66906a731ca6c844bfa86226c7c",
+   "source": "yfinance",
+   "symbol": "LSE:YNGA"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_YNGA_1W.parquet": {
+   "bytes": 35686,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "YNGA.L",
+   "recorded_at": "2026-11-02T22:44:10Z",
+   "rows": 2001,
+   "sha256": "1ea6dc8eaf659a5ab2ff986abd973737f7837dcf9ddfe5961a4b2e9b1d9f50d1",
+   "source": "yfinance",
+   "symbol": "LSE:YNGA"
+  },
   "snapshots/2026-10-31/yfinance/LSE_ZEG_1D.parquet": {
    "bytes": 46995,
    "first_t": 1426723200,
@@ -28415,6 +32375,30 @@
    "sha256": "b9a7321f7022561532f6569d1d322a7e2b3ee483786c19e1f42630ad8f4a9fd7",
    "source": "yfinance",
    "symbol": "LSE:ZEG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ZIG_1D.parquet": {
+   "bytes": 175716,
+   "first_t": 583718400,
+   "interval": "1D",
+   "last_t": 1793318400,
+   "provider_symbol": "ZIG.L",
+   "recorded_at": "2026-11-02T22:42:56Z",
+   "rows": 9830,
+   "sha256": "26708c6777d6f45265f1e3d7d46eb6b0ca2239aab5e286a29916e7e0e91d8723",
+   "source": "yfinance",
+   "symbol": "LSE:ZIG"
+  },
+  "snapshots/2026-10-31/yfinance/LSE_ZIG_1W.parquet": {
+   "bytes": 46943,
+   "first_t": 583372800,
+   "interval": "1W",
+   "last_t": 1792972800,
+   "provider_symbol": "ZIG.L",
+   "recorded_at": "2026-11-02T22:42:55Z",
+   "rows": 2001,
+   "sha256": "19e3193e00344649e8cd9fee7c2e3046f39b0688f1c9ca0907f82198873ecc0e",
+   "source": "yfinance",
+   "symbol": "LSE:ZIG"
   }
  }
 }

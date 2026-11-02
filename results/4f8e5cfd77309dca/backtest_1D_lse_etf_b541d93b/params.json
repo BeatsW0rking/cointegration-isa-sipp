@@ -1,0 +1,12 @@
+{
+ "judge": "rules",
+ "gate": 0.5,
+ "max_groups": 5,
+ "stability_windows": 1,
+ "max_size": 2,
+ "min_edge_multiple": 1.5,
+ "capital": 10000.0,
+ "gross_leverage": 1.0,
+ "costs_hash": "837e27156a73",
+ "accounts": "ig_spreadbet"
+}
