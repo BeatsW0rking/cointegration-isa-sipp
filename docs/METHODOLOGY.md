@@ -80,7 +80,13 @@ State +1 (spread rich) favours members with negative `beta`; state -1 favours po
 - **C inverse-ETF leg**: when tilted, half the slice in the cheap side and half in an inverse ETF on
   the rich side's benchmark (only where one exists; otherwise flat).
 
-Benchmark for every variant: equal-weight hold of all members ever selected, rebalanced on selection.
+- **D long/short** (phase 2, shorting venues only): a genuine pairs trade. For spread
+  `s = log A - b log B` in state -1 (spread cheap) hold long £x of A and short £b·x of B with
+  `x(1+b)` equal to the group's slice times `gross_leverage`; state +1 mirrors it. Weights are the
+  signed hedge-ratio weights normalised to unit gross. Benchmark is cash. Only pairs are traded
+  (larger groups were shown to be spurious in phase 1).
+
+Benchmark for variants A-C: equal-weight hold of all members ever selected, rebalanced on selection.
 
 ## 6. Selection without look-ahead
 
@@ -96,6 +102,34 @@ estimated spread (Corwin-Schultz from high/low, floored at 5 bps for ETFs, 15 bp
 slippage (5 bps), FX (0.15% flat T212; marginal tiers at HL), stamp duty on UK share buys (not ETFs),
 PTM levy over £10k, and fixed dealing fees (HL £6.95, or £3.95 after 20 trades the previous month).
 Every figure in `config/costs.yaml` carries a source URL and the date checked.
+
+### Shorting venues and financing (phase 2)
+
+Three venues are modelled without opening an account: IG spread betting, Interactive Brokers margin
+and Trading 212 CFD, plus two fee-free SIPPs (Trading 212, InvestEngine) for the long-only variants.
+Per fill: the venue's spread markup is added to the estimated market spread; spread bets and CFDs
+are exempt from stamp duty and the PTM levy; IBKR pays 0.05% commission (min £1) and stamp duty on
+real UK share purchases; CFD FX applies to P&L only. Per bar, financing accrues on gross exposure:
+longs pay (SONIA + markup), shorts receive (SONIA - markup) at IG (negative when the markup exceeds
+the benchmark) or pay (SONIA + markup) at Trading 212 CFD, plus a borrow fee; at IBKR a 1x-gross
+long is funded by cash and the short pays a general-collateral borrow fee with no interest on
+proceeds below £80k. All rates are in `config/costs.yaml` with sources and dates and are marked for
+verification against the live tariffs.
+
+### Single-stock universe (phase 2)
+
+FTSE 350 proxy: the 350 largest LSE ordinary shares by market cap from the TradingView screener
+(investment trusts excluded), with sector and industry. Candidate clustering runs within sector so
+every candidate shares an economic block; the rules judge scores same-industry pairs 0.6, same-sector
+0.4, otherwise 0.1. Stocks are assumed UK-incorporated for stamp duty on real purchases (the seed
+has no ISINs); the exempt venues are unaffected.
+
+### Edge budget
+
+For each qualifying pair, the capturable move per entry is (z_entry - z_exit) x formation spread
+std in log terms per unit of gross exposure, realised only on the share of entries that exit on
+reversion (measured from the zero-cost variant D run), compared with the round-trip cost per venue.
+This is the quantity that bounds what any execution venue can deliver.
 
 ## 8. Attainability statistics
 

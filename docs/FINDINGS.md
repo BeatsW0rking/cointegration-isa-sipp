@@ -120,6 +120,50 @@ Benchmark hold of the same pairs: +35% (HL) to +43% (T212) over the 23 months.
 The 4h timeframe was not run separately: it would be a resample of the same hourly data with a
 quarter of the bars, and it sits between two timeframes that already agree.
 
+## Phase 2: following the three directions
+
+### A genuine short leg (IG spread betting, IBKR margin, Trading 212 CFD; modelled, no account opened)
+
+Variant D (dollar-neutral, hedge-ratio weighted pairs trade, pairs only, cost-aware entry) on the
+same ETF screens, £20k capital, 93 months daily and weekly, 23 months hourly:
+
+| venue | 1D monthly geo (95% CI) | 1D total | costs / financing | 1W total | 1h total |
+|---|---|---|---|---|---|
+| IBKR margin | -0.30% (-0.49% to -0.12%) | -24.4% | £4,042 / £162 | -21.2% | -25.6% |
+| IG spread bet | -0.35% (-0.54% to -0.17%) | -27.6% | £4,672 / £1,033 | -23.0% | -26.9% |
+| T212 CFD | -0.44% (-0.61% to -0.27%) | -33.6% | £6,072 / £2,502 | -33.7% | -31.9% |
+
+- Capital does not matter (identical returns at £10k, £20k, £50k: the venues have no fixed fees in
+  the model); **2x gross leverage doubles the loss** (-48%). Removing the cost-aware entry filter
+  makes every venue worse.
+- **The signal has no gross edge.** With every cost and financing charge set to zero, variant D
+  returns -3.5% over 7.75 years (Sharpe -0.11) at the default thresholds and is negative at every
+  threshold tried (|z| entry 1.5-2.5, pairs or groups to five). Of 624 entries, 72 (12%) exited on
+  reversion, 193 (31%) hit the 4-sigma stop and 313 (50%) hit the two-half-life time stop. Costs
+  then explain the rest of the loss: roughly 21 points of the 24% at IBKR.
+- Edge budget (`results/<run_id>/edge_budget_1D_lse_etf.md`): median formation spread std 1.4%,
+  so a 2-to-0.5 sigma round trip captures 2.1% of gross when it reverts; at the realised 12%
+  reversion rate the expected edge per entry is 0.25%, below the 0.30% round trip at every venue.
+  Only a minority of pairs (about 45%) show positive expected net edge even before financing, and
+  those are not the ones that persist out of sample.
+
+Conclusion: a short leg does not rescue the strategy on LSE ETFs. The venue only determines how fast
+the costs are paid; the underlying mean-reversion signal does not deliver out of sample.
+
+### A fee-free SIPP (Trading 212 SIPP, InvestEngine SIPP; long-only variants, pairs only)
+
+| account | variant | 1D monthly geo (95% CI) | 1D total | benchmark hold | beta | alpha/yr | trades | costs |
+|---|---|---|---|---|---|---|---|---|
+| InvestEngine SIPP | A basket rotation | +0.78% (+0.19% to +1.42%) | +109% | +143% | 0.83 | +0.3% | 1,367 | £26,649 |
+| InvestEngine SIPP | B cheap leg only | +0.25% (-0.02% to +0.52%) | +28% | +143% | 0.25 | +0.3% | 504 | £14,494 |
+| T212 SIPP | A basket rotation | +0.66% (+0.06% to +1.32%) | +88% | +141% | 0.83 | -1.0% | 1,292 | £34,928 |
+| T212 SIPP | B cheap leg only | +0.15% (-0.13% to +0.42%) | +16% | +141% | 0.23 | -0.7% | 458 | £18,818 |
+
+Removing HL's fixed fee turns the SIPP from a certain loss into a market-tracking portfolio with
+alpha within ±1% a year of zero: the same conclusion as the ISA. Costs are still large in cash
+terms (£15-35k over eight years on £85k) because the spread is paid on every rotation; the cheaper
+way to hold the same exposure is to buy and hold the members.
+
 ## Why the target is out of reach (mechanics, not luck)
 
 1. A cointegrated pair of index trackers has a spread standard deviation of roughly 0.3-1.0% of
