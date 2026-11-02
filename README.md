@@ -49,11 +49,16 @@ uv run cointisa report --interval 1D     # prints results/<run_id>/attainability
 
 ## Status
 
-Results are in [docs/FINDINGS.md](docs/FINDINGS.md) (hourly, daily and weekly timeframes) with full
-tables under `results/<run_id>/`. Short version: statistical cointegration among
-LSE ETFs is abundant and mostly spurious (pass rates rise with group size while out-of-sample
-persistence falls); the relationships that persist are same-index trackers with tiny spreads; and no
-long-only variant produces positive alpha against simply holding the same ETFs once costs are
-included. The best of 108 configurations (daily bars) earns about +0.66%/month, almost all of it market beta;
-hourly trading of the tightest same-index pairs loses money after costs in every account.
-The 5-20%/month target is not attainable in these wrappers.
+Results are in [docs/FINDINGS.md](docs/FINDINGS.md) with full tables under `results/<run_id>/`.
+Short version, two phases:
+
+- **Phase 1 (long-only, ISA and HL SIPP):** statistical cointegration among LSE ETFs is abundant and
+  mostly spurious; the relationships that persist are same-index trackers with tiny spreads; no
+  long-only variant has positive alpha against holding the same ETFs once costs are included. HL's
+  fixed fee rules the SIPP out for active trading.
+- **Phase 2 (following the findings):** a genuine short leg (IG spread betting, IBKR margin,
+  Trading 212 CFD; modelled, no account opened) loses 17-34% over the period at every venue and
+  timeframe because the mean-reversion signal has no gross edge out of sample (12% of entries
+  revert, the rest stop or time out); fee-free SIPPs (Trading 212, InvestEngine) turn the SIPP into
+  a market tracker with zero alpha; FTSE 350 stocks are rarely cointegrated (3% of pair-windows) and
+  lose on every venue. The 5-20%/month target is not attainable with this strategy class.

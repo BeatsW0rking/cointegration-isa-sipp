@@ -6,8 +6,10 @@ Full tables: `results/4f8e5cfd77309dca/attainability.md` and `attainability.csv`
 
 ## Headline
 
-The 5-20% per month target is not attainable with long-only cointegration trading of LSE ETFs in a
-Trading 212 ISA or an HL SIPP, on hourly, daily or weekly bars. The best of 108 account x variant x
+The 5-20% per month target is not attainable with cointegration trading of LSE ETFs or FTSE 350
+stocks: not long-only in a Trading 212 ISA or an HL SIPP, not in a fee-free SIPP, and not
+long/short on a spread-betting, CFD or margin account (modelled, none opened), on hourly, daily or
+weekly bars. The best of 108 account x variant x
 timeframe x parameter configurations (daily bars) earns a geometric mean of **+0.66% per month** (95% bootstrap CI +0.05% to +1.32%) over 93
 months, and that return is almost entirely market exposure: beta 0.81 against an equal-weight hold of
 the same ETFs, annual alpha -0.8%, deflated Sharpe probability 0.37 (indistinguishable from the best
@@ -163,6 +165,42 @@ Removing HL's fixed fee turns the SIPP from a certain loss into a market-trackin
 alpha within ±1% a year of zero: the same conclusion as the ISA. Costs are still large in cash
 terms (£15-35k over eight years on £85k) because the spread is paid on every rotation; the cheaper
 way to hold the same exposure is to buy and hold the members.
+
+### FTSE 350 single stocks (stamp-duty-exempt venues make them tradeable)
+
+Universe: the 350 largest LSE ordinary shares by market cap (306 after excluding investment trusts
+and non-LSE lines; 246 pass the liquidity floor), daily bars, 10 years, 90 rolling windows,
+candidates clustered within sector. Two passes: correlation threshold 0.6 (161 groups, pairs and
+triples) and 0.4 (410 pairs).
+
+- **Single stocks are rarely cointegrated.** 3% of pair-windows pass Johansen + FDR, against 24% for
+  ETF pairs. The textbook pairs are correlated, not cointegrated: Barclays/Lloyds and Anglo
+  American/Rio Tinto pass in 2% of windows, Lloyds/NatWest in 8%. The pairs that do qualify are
+  property, hospitality and insurance names (Safestore/Segro, Whitbread/IHG/Wetherspoon,
+  Prudential/St James's Place), with 9% out-of-sample persistence.
+- Spreads are wide (median formation spread std 7.4%), so the gross move per entry is large (8-12%
+  of gross) and the edge budget looks favourable at every venue. The backtest disagrees because the
+  spreads do not revert: variant D on the three venues loses 17-24% over 78 months at both
+  thresholds (monthly geo -0.24% to -0.36%, every 95% interval below zero), and widening the gate
+  or holding more pairs does not help. The long-only ISA control on the same pairs loses 9-18%
+  while a buy-and-hold of the members made +37-46%.
+
+| tier | venue | monthly geo (95% CI) | total | trades | costs / financing |
+|---|---|---|---|---|---|
+| threshold 0.6 | IG spread bet | -0.24% (-0.47% to -0.05%) | -17.1% | 258 | £2,639 / £444 |
+| threshold 0.6 | IBKR margin | -0.30% (-0.55% to -0.08%) | -20.9% | 258 | £3,426 / £37 |
+| threshold 0.6 | T212 CFD | -0.30% (-0.53% to -0.10%) | -20.9% | 258 | £2,998 / £806 |
+| threshold 0.4 | IG spread bet | -0.28% (-0.47% to -0.10%) | -18.2% | 314 | £3,122 / £599 |
+| threshold 0.4 | IBKR margin | -0.35% (-0.56% to -0.15%) | -22.6% | 314 | £4,053 / £71 |
+| threshold 0.4 | T212 CFD | -0.36% (-0.57% to -0.17%) | -23.9% | 314 | £3,721 / £1,273 |
+
+### Phase 2 conclusion
+
+None of the three directions changes the answer. A real short leg exposes the fact that the
+mean-reversion signal itself has no out-of-sample edge on LSE ETFs or FTSE 350 stocks; a fee-free
+SIPP removes a certain loss but leaves a market-tracking portfolio with zero alpha; single stocks
+are seldom cointegrated and their wide spreads do not revert within the holding horizon. Opening a
+spread-betting, CFD or margin account for this strategy is not supported by the data.
 
 ## Why the target is out of reach (mechanics, not luck)
 
