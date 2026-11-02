@@ -18,6 +18,7 @@ dependencies = [
   "yfinance>=0.2.50",
   "matplotlib>=3.9",
   "rich>=13",
+  "anthropic>=2.3.0",
 ]
 
 [project.optional-dependencies]

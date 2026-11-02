@@ -186,3 +186,147 @@ def show_config() -> None:
 
 if __name__ == "__main__":
     app()
+
+
+@app.command()
+def screen(
+    interval: str = typer.Option("1D"),
+    tier: str = typer.Option("lse_etf"),
+    max_symbols: int = typer.Option(0, help="Debug: cap the number of symbols (0 = all)"),
+    exclude_leveraged: bool = typer.Option(
+        True, help="Drop leveraged/inverse products from candidates"
+    ),
+) -> None:
+    """Candidate generation + Johansen sweep for one timeframe -> results/<run_id>/screen_*.parquet."""
+    from cointisa.data.panel import load_close_panel, load_seed_instruments, load_value_traded
+    from cointisa.runid import run_dir
+    from cointisa.screen.candidates import candidate_groups
+    from cointisa.screen.sweep import SweepConfig, sweep
+
+    rcfg, ucfg = load_research(), load_universe()
+    insts = load_seed_instruments()
+    if exclude_leveraged:
+        insts = {k: v for k, v in insts.items() if abs(v.leverage) == 1.0}
+    # liquidity filter on daily bars
+    mdv = load_value_traded(rcfg.as_of, insts, ucfg.liquidity.lookback_days)
+    liquid = mdv[mdv >= ucfg.liquidity.min_median_daily_value_gbp].index
+    insts = {k: v for k, v in insts.items() if k in set(liquid)}
+    if max_symbols:
+        insts = dict(list(insts.items())[:max_symbols])
+    panel = load_close_panel(
+        rcfg.as_of,
+        interval,
+        insts,
+        min_rows=rcfg.formation_bars[interval] + rcfg.trade_bars[interval],
+    )
+    console.print(
+        f"panel {panel.shape[0]} bars x {panel.shape[1]} symbols ({interval}), {len(liquid)} liquid"
+    )
+    groups, clusters = candidate_groups(
+        panel,
+        threshold=rcfg.candidates["correlation_cluster_threshold"],
+        min_size=rcfg.johansen["min_group_size"],
+        max_size=rcfg.johansen["max_group_size"],
+        cap_per_cluster=rcfg.candidates["max_groups_per_block"],
+    )
+    console.print(f"{len(clusters)} clusters, {len(groups)} candidate groups")
+    scfg = SweepConfig(
+        formation_bars=rcfg.formation_bars[interval],
+        validation_bars=rcfg.trade_bars[interval],
+        roll_step=rcfg.roll_step_bars[interval],
+        det_order=rcfg.johansen["det_order"],
+        max_lag=rcfg.johansen["max_lag"],
+        alpha=rcfg.johansen["trace_alpha"],
+        fdr_q=rcfg.multiple_testing["q"],
+        half_life_min=rcfg.spread_quality["half_life_min_bars"],
+        half_life_max=rcfg.spread_quality["half_life_max_bars"],
+        hurst_max=rcfg.spread_quality["hurst_max"],
+        max_angle_deg=rcfg.spread_quality["hedge_vector_max_angle_deg"],
+        adf_alpha=rcfg.stationarity["adf_alpha"],
+        kpss_alpha=rcfg.stationarity["kpss_alpha"],
+    )
+    res = sweep(panel, groups, scfg)
+    out = run_dir() / f"screen_{interval}_{tier}.parquet"
+    res.to_parquet(out, index=False)
+    clusters_out = run_dir() / f"clusters_{interval}_{tier}.json"
+    clusters_out.write_text(json.dumps({str(k): v for k, v in clusters.items()}, indent=1))
+    if res.empty:
+        console.print("[yellow]no results[/yellow]")
+        return
+    summary = (
+        res.groupby("form_end")[["pass_fdr", "persistent"]]
+        .sum()
+        .astype(int)
+        .assign(tested=res.groupby("form_end").size())
+    )
+    console.print(summary.to_string())
+    top = res[res["persistent"]].sort_values("p_fdr").head(15)
+    console.print(
+        top[
+            ["group", "form_end", "p_fdr", "half_life", "hurst", "val_half_life", "val_angle_deg"]
+        ].to_string()
+    )
+    console.print(f"written {out}")
+
+
+@app.command()
+def judge(
+    interval: str = typer.Option("1D"),
+    tier: str = typer.Option("lse_etf"),
+    backends: str = typer.Option("", help="Comma list; default from research.yaml"),
+    max_groups: int = typer.Option(0, help="Debug cap on distinct groups scored (0 = all)"),
+) -> None:
+    """Score every group that passed FDR in the screen with each judge backend; calibrate."""
+    import pandas as pd
+
+    from cointisa.data.panel import load_seed_instruments
+    from cointisa.judge.calibrate import brier_score, gate_sweep, reliability_table
+    from cointisa.judge.registry import make_judge
+    from cointisa.runid import run_dir
+
+    rcfg = load_research()
+    names = [b for b in (backends.split(",") if backends else rcfg.judge["backends"]) if b]
+    res = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
+    cand = res[res["pass_fdr"] & res["pass_quality"]]
+    groups = sorted(cand["group"].unique().tolist())
+    if max_groups:
+        groups = groups[:max_groups]
+    insts = load_seed_instruments()
+    label = cand.groupby("group")["persistent"].mean().rename("persist_rate")
+    out_rows = []
+    for name in names:
+        j = make_judge(name)
+        if not j.available:
+            console.print(f"[yellow]{name}: credentials missing, skipped[/yellow]")
+            continue
+        for g in groups:
+            members = [insts[s] for s in g.split("|") if s in insts]
+            if len(members) != len(g.split("|")):
+                continue
+            r = j.score(members)
+            out_rows.append(
+                {
+                    "group": g,
+                    "backend": name,
+                    "prob": r.prob,
+                    "tags": ",".join(r.tags),
+                    "rationale": r.rationale,
+                    "cached": r.cached,
+                }
+            )
+        console.print(f"{name}: scored {len(groups)} groups")
+    if not out_rows:
+        raise typer.Exit(1)
+    df = pd.DataFrame(out_rows).merge(label, left_on="group", right_index=True, how="left")
+    df["label"] = (df["persist_rate"] >= 0.5).astype(int)
+    out = run_dir() / f"judge_{interval}_{tier}.parquet"
+    df.to_parquet(out, index=False)
+    for name, sub in df.groupby("backend"):
+        console.print(
+            f"\n[bold]{name}[/bold]  Brier={brier_score(sub['prob'], sub['label']):.3f}  n={len(sub)}"
+        )
+        console.print(
+            reliability_table(sub["prob"].to_numpy(), sub["label"].to_numpy()).to_string()
+        )
+        console.print(gate_sweep(sub["prob"].to_numpy(), sub["label"].to_numpy()).to_string())
+    console.print(f"written {out}")

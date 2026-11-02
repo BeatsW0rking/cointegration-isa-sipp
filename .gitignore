@@ -18,6 +18,7 @@ dist/
 data/raw/
 data/snapshots/
 data/cache/
+!data/judge_cache/
 
 # Results: large artefacts ignored, summary.json per run is committed
 results/*/bars/
