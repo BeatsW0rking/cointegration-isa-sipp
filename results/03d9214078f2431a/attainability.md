@@ -6,20 +6,20 @@ Run `03d9214078f2431a` (as of 2026-10-31), config hash `ea992e15379e`, manifest 
 
 ## Verdict
 
-Best configuration: **t212_isa / C_inverse_etf_leg / 1D** with a geometric mean monthly return of +0.00% (95% CI +0.00% to +0.00%) over 168 months.
+Best configuration: **t212_isa / C_inverse_etf_leg / 1D** with a geometric mean monthly return of -0.08% (95% CI -0.16% to +0.01%) over 93 months.
 
-**Target not met.** The lower 95% bound (+0.00%/month) is below 5%/month. The table below is the achievable return as measured.
+**Target not met.** The lower 95% bound (-0.16%/month) is below 5%/month. The table below is the achievable return as measured.
 
 ## Results (net of costs)
 
 | account   | variant           | interval   |   n_months | monthly_geo   | monthly_geo_ci_lo   | monthly_geo_ci_hi   | p05_month   | prob_month_ge_target   |   monthly_sharpe |   deflated_sharpe_prob | total_return   | benchmark_total_return   |   n_trades | total_costs_gbp   |
 |:----------|:------------------|:-----------|-----------:|:--------------|:--------------------|:--------------------|:------------|:-----------------------|-----------------:|-----------------------:|:---------------|:-------------------------|-----------:|:------------------|
-| hl_sipp   | A_basket_rotation | 1D         |        168 | -1.15%        | -1.62%              | -0.71%              | -5.44%      | +0.00%                 |            -0.55 |                   0    | -85.70%        | +138.93%                 |       2720 | £88,128           |
-| hl_sipp   | B_cheap_leg_only  | 1D         |        168 | -0.63%        | -0.90%              | -0.39%              | -3.04%      | +0.00%                 |            -0.54 |                   0    | -65.54%        | +138.93%                 |       1178 | £71,861           |
-| hl_sipp   | C_inverse_etf_leg | 1D         |        168 | +0.00%        | +0.00%              | +0.00%              | +0.00%      | +0.00%                 |                  |                        | +0.00%         | +138.93%                 |          0 | £0                |
-| t212_isa  | A_basket_rotation | 1D         |        168 | -0.08%        | -0.24%              | +0.08%              | -1.90%      | +0.00%                 |            -0.06 |                   0.02 | -12.23%        | +162.13%                 |       2668 | £6,835            |
-| t212_isa  | B_cheap_leg_only  | 1D         |        168 | -0.09%        | -0.21%              | +0.04%              | -1.58%      | +0.00%                 |            -0.09 |                   0    | -13.46%        | +162.13%                 |       1126 | £4,879            |
-| t212_isa  | C_inverse_etf_leg | 1D         |        168 | +0.00%        | +0.00%              | +0.00%              | +0.00%      | +0.00%                 |                  |                        | +0.00%         | +162.13%                 |          0 | £0                |
+| hl_sipp   | A_basket_rotation | 1D         |         93 | -0.50%        | -1.12%              | +0.16%              | -5.34%      | +5.38%                 |            -0.14 |                   0    | -36.57%        | +102.96%                 |       2146 | £78,341           |
+| hl_sipp   | B_cheap_leg_only  | 1D         |         93 | -0.46%        | -0.84%              | -0.11%              | -3.65%      | +1.08%                 |            -0.24 |                   0    | -34.46%        | +102.96%                 |        822 | £49,041           |
+| hl_sipp   | C_inverse_etf_leg | 1D         |         93 | -0.13%        | -0.22%              | -0.04%              | -1.03%      | +0.00%                 |            -0.24 |                   0    | -11.38%        | +102.96%                 |        200 | £5,485            |
+| t212_isa  | A_basket_rotation | 1D         |         93 | +0.28%        | -0.30%              | +0.91%              | -3.50%      | +8.60%                 |             0.11 |                   0.39 | +30.84%        | +127.52%                 |       2100 | £7,890            |
+| t212_isa  | B_cheap_leg_only  | 1D         |         93 | -0.02%        | -0.34%              | +0.31%              | -2.63%      | +1.08%                 |            -0    |                   0.09 | -1.71%         | +127.52%                 |        808 | £4,687            |
+| t212_isa  | C_inverse_etf_leg | 1D         |         93 | -0.08%        | -0.16%              | +0.01%              | -0.97%      | +0.00%                 |            -0.15 |                   0    | -6.81%         | +127.52%                 |        175 | £289              |
 
 ## Method notes
 
