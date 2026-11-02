@@ -53,6 +53,21 @@ def target_tilt(z: float, state: int, z_entry: float, z_exit: float, z_stop: flo
     return 0 if z >= -z_exit else -1
 
 
+def long_short_weights(beta: np.ndarray, state: int) -> np.ndarray:
+    """Signed weights for a dollar-neutral-by-hedge-ratio long/short position; sum |w| = 1.
+
+    For a pair with beta = (1, -b): spread = log A - b log B, so £1 of A against £b of B tracks the
+    spread. State +1 (spread rich): short A, long B. State -1: long A, short B. Generalises to
+    groups by sign of beta. Zeros when flat.
+    """
+    b = np.asarray(beta, float)
+    if state == 0:
+        return np.zeros_like(b)
+    signed = -np.sign(b) * np.abs(b) if state == 1 else np.sign(b) * np.abs(b)
+    total = np.abs(signed).sum()
+    return signed / total if total > 0 else np.zeros_like(b)
+
+
 def cheap_side_weights(beta: np.ndarray, state: int) -> np.ndarray:
     """Weights (sum 1) on the members that are cheap given the tilt state; zeros if flat.
 

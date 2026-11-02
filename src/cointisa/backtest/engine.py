@@ -13,6 +13,9 @@ Variants
   B_cheap_leg_only : hold only the cheap side when tilted, cash otherwise.
   C_inverse_etf_leg: when tilted, hold the cheap side plus an inverse ETF on the rich side's
                      benchmark where one exists (quasi long/short). Requires `inverse_map`.
+  D_long_short     : genuine pairs trade on a shorting venue (spread bet, CFD, margin): long the
+                     cheap side, short the rich side, hedge-ratio weighted, gross = slice x
+                     `gross_leverage`. Financing accrues every bar. Benchmark is cash.
 """
 
 from __future__ import annotations
@@ -25,7 +28,12 @@ import pandas as pd
 
 from cointisa.costs.model import CostModel
 from cointisa.instruments import Instrument
-from cointisa.signals.spread import SpreadModel, cheap_side_weights, target_tilt
+from cointisa.signals.spread import (
+    SpreadModel,
+    cheap_side_weights,
+    long_short_weights,
+    target_tilt,
+)
 
 log = logging.getLogger(__name__)
 
@@ -43,6 +51,7 @@ class BacktestConfig:
     bars_per_year: int = 252
     min_edge_multiple: float = 0.0  # enter only if |z|*spread_std >= multiple x round-trip cost
     max_group_size: int = 5  # ignore selected groups larger than this
+    gross_leverage: float = 1.0  # variant D: gross exposure per group as a multiple of its slice
 
 
 @dataclass
@@ -89,8 +98,9 @@ class BacktestResult:
 
 
 class Book:
-    def __init__(self, cash: float):
+    def __init__(self, cash: float, allow_short: bool = False):
         self.cash = cash
+        self.allow_short = allow_short
         self.qty: dict[str, float] = {}
         self.trades: list[Trade] = []
         self.cost_rows: list[dict] = []
@@ -99,6 +109,34 @@ class Book:
 
     def value(self, prices: pd.Series) -> float:
         return self.cash + sum(q * prices[s] for s, q in self.qty.items() if q)
+
+    def exposures(self, prices: pd.Series) -> tuple[float, float]:
+        """(long notional, short notional) in GBP, both non-negative."""
+        long = sum(q * prices[s] for s, q in self.qty.items() if q > 0)
+        short = -sum(q * prices[s] for s, q in self.qty.items() if q < 0)
+        return float(long), float(short)
+
+    def accrue_financing(self, bar, time, prices: pd.Series, cm: CostModel, bars_per_year: int):
+        long, short = self.exposures(prices)
+        fin = cm.financing_per_bar(long, short, bars_per_year)
+        if fin:
+            self.cash -= fin
+            self.cost_rows.append(
+                {
+                    "bar": bar,
+                    "time": time,
+                    "symbol": "",
+                    "half_spread": 0.0,
+                    "slippage": 0.0,
+                    "fx_fee": 0.0,
+                    "stamp_duty": 0.0,
+                    "ptm_levy": 0.0,
+                    "fixed_fee": 0.0,
+                    "other": 0.0,
+                    "financing": fin,
+                    "total": fin,
+                }
+            )
 
     def execute(
         self,
@@ -122,15 +160,15 @@ class Book:
         if qty <= 0:
             return
         side = "buy" if delta > 0 else "sell"
-        if side == "sell":
+        if side == "sell" and not self.allow_short:
             qty = min(qty, self.qty.get(symbol, 0.0))
             if qty <= 0:
                 return
         notional = qty * price
         fc = cm.fill_cost(inst, side, notional, spread_pct, self.trades_prev_month)
         if side == "buy":
-            if notional + fc.total > self.cash:
-                # scale down to available cash
+            if not self.allow_short and notional + fc.total > self.cash:
+                # cash account: scale down to available cash (margin venues are funded by margin)
                 notional = max(0.0, self.cash - fc.total)
                 qty = cm.round_quantity(notional / price)
                 if qty <= 0:
@@ -160,18 +198,28 @@ class Book:
                 "ptm_levy": fc.ptm_levy,
                 "fixed_fee": fc.fixed_fee,
                 "other": fc.other,
+                "financing": 0.0,
                 "total": fc.total,
             }
         )
 
 
 def _targets_for_group(
-    og: OpenGroup, variant: str, inverse_map: dict[str, str] | None, insts: dict[str, Instrument]
+    og: OpenGroup,
+    variant: str,
+    inverse_map: dict[str, str] | None,
+    insts: dict[str, Instrument],
+    gross_leverage: float = 1.0,
 ) -> dict[str, float]:
-    """Target weights (fraction of the group's capital) per symbol for the current state."""
+    """Target weights (fraction of the group's capital) per symbol for the current state.
+
+    Weights are signed for variant D (negative = short)."""
     m = og.model
     beta = np.asarray(m.beta)
     n = len(m.members)
+    if variant == "D_long_short":
+        w = long_short_weights(beta, og.state) * gross_leverage
+        return {s: float(x) for s, x in zip(m.members, w, strict=True)}
     if variant == "A_basket_rotation":
         if og.state == 0:
             return dict.fromkeys(m.members, 1.0 / n)
@@ -213,8 +261,13 @@ def run_backtest(
     frame of estimated full proportional spreads aligned to `panel`."""
     logp = np.log(panel)
     capital = cm.acc.capital_gbp
-    book = Book(capital)
-    bench = Book(capital)  # equal-weight hold of every group ever selected, rebalanced on selection
+    is_ls = cfg.variant == "D_long_short"
+    if is_ls and not cm.acc.allow_short:
+        raise ValueError(
+            f"variant D_long_short needs a shorting venue; {cm.account_id} is long-only"
+        )
+    book = Book(capital, allow_short=cm.acc.allow_short)
+    bench = Book(capital)  # equal-weight hold of every group ever selected (cash for variant D)
     open_groups: dict[str, OpenGroup] = {}
     sel_by_start = {s.start: s for s in selections}
     fill_delay = cm.acc.fill_delay_bars
@@ -282,8 +335,8 @@ def run_backtest(
                     model=m, opened=t, capital_gbp=equity_now / cfg.max_groups
                 )
                 bench_members.update(m.members)
-            # benchmark: equal-weight across all members ever selected
-            if bench_members:
+            # benchmark: equal-weight across all members ever selected (variant D: cash)
+            if bench_members and not is_ls:
                 bv = bench.value(marks)
                 for s in bench_members:
                     if np.isfinite(prices[s]):
@@ -319,22 +372,24 @@ def run_backtest(
             if new_state != 0 and og.state == 0 and cfg.min_edge_multiple > 0:
                 # cost-aware entry: expected log-price gap must cover the round trip
                 probe = OpenGroup(model=og.model, opened=og.opened, state=new_state)
-                tgt = _targets_for_group(probe, cfg.variant, inverse_map, insts)
-                buys = [s for s, w in tgt.items() if w > 0]
-                if buys:
-                    slice_gbp = og.capital_gbp * max(tgt.values())
+                tgt = _targets_for_group(probe, cfg.variant, inverse_map, insts, cfg.gross_leverage)
+                legs = [s for s, w in tgt.items() if w != 0]
+                if legs:
+                    slice_gbp = og.capital_gbp * max(abs(w) for w in tgt.values())
+                    # every leg pays a round trip; edge accrues once per unit of gross
                     cost = float(
-                        np.mean(
+                        np.sum(
                             [
                                 cm.round_trip_pct(
                                     insts[s],
                                     max(slice_gbp, 1.0),
                                     spreads.iat[t, spreads.columns.get_loc(s)],
                                 )
-                                for s in buys
+                                * abs(tgt[s])
+                                for s in legs
                             ]
                         )
-                    )
+                    ) / max(sum(abs(w) for w in tgt.values()), 1e-9)
                     if abs(z) * og.model.std < cfg.min_edge_multiple * cost:
                         new_state = 0
             if new_state != og.state:
@@ -345,7 +400,9 @@ def run_backtest(
                     og.tilted_since = None
                     reason = reason or ("stop" if abs(z) >= cfg.z_stop else "exit")
                 og.state = new_state
-                targets = _targets_for_group(og, cfg.variant, inverse_map, insts)
+                targets = _targets_for_group(
+                    og, cfg.variant, inverse_map, insts, cfg.gross_leverage
+                )
                 syms = set(og.model.members) | set(targets)
                 for s in syms:
                     orders.append((s, og.capital_gbp * targets.get(s, 0.0), insts[s], key, reason))
@@ -379,6 +436,9 @@ def run_backtest(
                         )
             else:
                 pending.extend(orders)
+
+        # 5. carry on open exposures (shorting venues only)
+        book.accrue_financing(t, time, marks, cm, cfg.bars_per_year)
 
         equity.append(book.value(marks))
         bench_eq.append(bench.value(marks))
@@ -435,6 +495,9 @@ def summarize(res: BacktestResult, bars_per_year: int) -> dict:
         "n_months": int(len(mr)),
         "n_trades": int(len(res.trades)),
         "total_costs_gbp": float(res.costs["total"].sum()) if len(res.costs) else 0.0,
+        "financing_gbp": float(res.costs["financing"].sum())
+        if len(res.costs) and "financing" in res.costs
+        else 0.0,
         "beta_vs_benchmark": float(beta),
         "alpha_ann_vs_benchmark": float(alpha_ann),
         "benchmark_total_return": float(res.benchmark.iloc[-1] / res.benchmark.iloc[0] - 1),

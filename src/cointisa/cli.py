@@ -200,13 +200,18 @@ def screen(
     max_size: int = typer.Option(0, help="Override johansen.max_group_size (0 = config)"),
 ) -> None:
     """Candidate generation + Johansen sweep for one timeframe -> results/<run_id>/screen_*."""
-    from cointisa.data.panel import load_close_panel, load_seed_instruments, load_value_traded
-    from cointisa.runid import run_dir
+    from cointisa.data.panel import (
+        load_close_panel,
+        load_seed_instruments,
+        load_value_traded,
+        seed_path_for_tier,
+    )
+    from cointisa.runid import run_dir, stage_manifest
     from cointisa.screen.candidates import candidate_groups
     from cointisa.screen.sweep import SweepConfig, sweep
 
     rcfg, ucfg = load_research(), load_universe()
-    insts = load_seed_instruments()
+    insts = load_seed_instruments(seed_path_for_tier(tier))
     if exclude_leveraged:
         insts = {k: v for k, v in insts.items() if abs(v.leverage) == 1.0}
     # liquidity filter on daily bars
@@ -250,6 +255,13 @@ def screen(
     res = sweep(panel, groups, scfg, n_jobs=rcfg.n_jobs)
     out = run_dir() / f"screen_{interval}_{tier}.parquet"
     res.to_parquet(out, index=False)
+    sidecar = stage_manifest(list(panel.columns), rcfg.as_of, interval)
+    sidecar.update(
+        {"n_bars": int(len(panel)), "n_groups": len(groups), "max_size": max_size or None}
+    )
+    (run_dir() / f"screen_{interval}_{tier}.manifest.json").write_text(
+        json.dumps(sidecar, indent=1)
+    )
     clusters_out = run_dir() / f"clusters_{interval}_{tier}.json"
     clusters_out.write_text(json.dumps({str(k): v for k, v in clusters.items()}, indent=1))
     if res.empty:
@@ -281,7 +293,7 @@ def judge(
     """Score every group that passed FDR in the screen with each judge backend; calibrate."""
     import pandas as pd
 
-    from cointisa.data.panel import load_seed_instruments
+    from cointisa.data.panel import load_seed_instruments, seed_path_for_tier
     from cointisa.judge.calibrate import brier_score, gate_sweep, reliability_table
     from cointisa.judge.registry import make_judge
     from cointisa.runid import run_dir
@@ -293,7 +305,7 @@ def judge(
     groups = sorted(cand["group"].unique().tolist())
     if max_groups:
         groups = groups[:max_groups]
-    insts = load_seed_instruments()
+    insts = load_seed_instruments(seed_path_for_tier(tier))
     label = cand.groupby("group")["persistent"].mean().rename("persist_rate")
     out_rows = []
     for name in names:
@@ -351,8 +363,10 @@ def backtest(
         0.0, help="Enter only if expected edge >= k x round-trip cost"
     ),
     gate: float = typer.Option(-1.0, help="Judge gate probability (default from research.yaml)"),
+    capital: float = typer.Option(0.0, help="Override account capital in GBP (0 = costs.yaml)"),
+    gross_leverage: float = typer.Option(1.0, help="Variant D: gross exposure per group / slice"),
 ) -> None:
-    """Walk-forward long-only backtest of screened groups, per account and variant."""
+    """Walk-forward backtest of screened groups, per account and variant (long-only or L/S)."""
     import hashlib
 
     import pandas as pd
@@ -360,12 +374,12 @@ def backtest(
     from cointisa.backtest.engine import BacktestConfig, run_backtest
     from cointisa.backtest.prepare import build_selections, inverse_etf_map, spread_panel
     from cointisa.costs.model import CostModel
-    from cointisa.data.panel import load_close_panel, load_seed_instruments
+    from cointisa.data.panel import load_close_panel, load_seed_instruments, seed_path_for_tier
     from cointisa.judge.registry import make_judge
-    from cointisa.runid import run_dir
+    from cointisa.runid import costs_hash, run_dir
 
     rcfg, ccfg = load_research(), load_costs()
-    insts = load_seed_instruments()
+    insts = load_seed_instruments(seed_path_for_tier(tier))
     screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
     needed = sorted({s for g in screen_df["group"] for s in g.split("|")})
     inv_map = inverse_etf_map(insts)
@@ -393,6 +407,10 @@ def backtest(
         "stability_windows": stability_windows,
         "max_size": max_size,
         "min_edge_multiple": min_edge_multiple,
+        "capital": capital or None,
+        "gross_leverage": gross_leverage,
+        "costs_hash": costs_hash(),
+        "accounts": accounts,
     }
     phash = hashlib.sha256(json.dumps(params, sort_keys=True).encode()).hexdigest()[:8]
     out_dir = run_dir() / f"backtest_{interval}_{tier}_{phash}"
@@ -400,7 +418,15 @@ def backtest(
     (out_dir / "params.json").write_text(json.dumps(params, indent=1))
     for acc in accounts.split(","):
         cm = CostModel(ccfg, acc)
+        if capital:
+            cm.acc = cm.acc.model_copy(update={"capital_gbp": capital})
         for var in variants.split(",") if variants else rcfg.variants:
+            if var == "D_long_short" and not cm.acc.allow_short:
+                console.print(f"[yellow]{acc}: long-only account, skipping {var}[/yellow]")
+                continue
+            if var != "D_long_short" and cm.acc.allow_short:
+                console.print(f"[yellow]{acc}: shorting venue, skipping long-only {var}[/yellow]")
+                continue
             cfg = BacktestConfig(
                 variant=var,
                 z_entry=rcfg.signals["z_entry"],
@@ -412,6 +438,7 @@ def backtest(
                 bars_per_year=bars_per_year,
                 min_edge_multiple=min_edge_multiple,
                 max_group_size=max_size,
+                gross_leverage=gross_leverage,
             )
             res = run_backtest(
                 panel, selections, cm, sub, spreads, cfg, start_bar, inverse_map=inv_map
@@ -422,7 +449,8 @@ def backtest(
             rows.append({"account": acc, "variant": var, **params, **res.stats})
             console.print(
                 f"{tag}: {res.stats['n_trades']} trades, total {res.stats['total_return']:+.1%}, "
-                f"monthly mean {res.stats['monthly_mean']:+.2%}, costs £{res.stats['total_costs_gbp']:,.0f}"
+                f"monthly mean {res.stats['monthly_mean']:+.2%}, costs £{res.stats['total_costs_gbp']:,.0f} "
+                f"(financing £{res.stats['financing_gbp']:,.0f})"
             )
     summary = pd.DataFrame(rows)
     summary.to_csv(out_dir / "summary.csv", index=False)
@@ -468,6 +496,12 @@ def report(interval: str = typer.Option("1D"), tier: str = typer.Option("lse_etf
                     extra = {
                         "n_trades": int(m["n_trades"].iloc[0]),
                         "total_costs_gbp": float(m["total_costs_gbp"].iloc[0]),
+                        "financing_gbp": float(m["financing_gbp"].iloc[0])
+                        if "financing_gbp" in m
+                        else 0.0,
+                        "beta_vs_benchmark": float(m["beta_vs_benchmark"].iloc[0]),
+                        "alpha_ann_vs_benchmark": float(m["alpha_ann_vs_benchmark"].iloc[0]),
+                        "max_drawdown": float(m["max_drawdown"].iloc[0]),
                     }
             rows.append(
                 {"account": acc, "variant": var, "interval": iv, "tier": tr, **params, **a, **extra}
@@ -509,13 +543,13 @@ def signals(
     import pandas as pd
 
     from cointisa.backtest.prepare import build_selections, inverse_etf_map
-    from cointisa.data.panel import load_close_panel, load_seed_instruments
+    from cointisa.data.panel import load_close_panel, load_seed_instruments, seed_path_for_tier
     from cointisa.judge.registry import make_judge
     from cointisa.runid import run_dir
     from cointisa.signals.live import latest_signals
 
     rcfg = load_research()
-    insts = load_seed_instruments()
+    insts = load_seed_instruments(seed_path_for_tier(tier))
     screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
     needed = sorted({s for g in screen_df["group"] for s in g.split("|")})
     inv_map = inverse_etf_map(insts)
@@ -570,14 +604,14 @@ def paper_trade(
     import pandas as pd
 
     from cointisa.backtest.prepare import build_selections, inverse_etf_map
-    from cointisa.data.panel import load_close_panel, load_seed_instruments
+    from cointisa.data.panel import load_close_panel, load_seed_instruments, seed_path_for_tier
     from cointisa.exec.t212_bot import OrderIntent, T212Bot
     from cointisa.judge.registry import make_judge
     from cointisa.runid import run_dir
     from cointisa.signals.live import latest_signals
 
     rcfg = load_research()
-    insts = load_seed_instruments()
+    insts = load_seed_instruments(seed_path_for_tier(tier))
     screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
     needed = sorted({s for g in screen_df["group"] for s in g.split("|")})
     inv_map = inverse_etf_map(insts)
@@ -641,7 +675,7 @@ def hl_report(
 
     from cointisa.backtest.prepare import build_selections, inverse_etf_map
     from cointisa.costs.model import CostModel
-    from cointisa.data.panel import load_close_panel, load_seed_instruments
+    from cointisa.data.panel import load_close_panel, load_seed_instruments, seed_path_for_tier
     from cointisa.exec.hl_report import write_hl_report
     from cointisa.judge.registry import make_judge
     from cointisa.runid import run_dir
@@ -650,7 +684,7 @@ def hl_report(
     rcfg, ccfg = load_research(), load_costs()
     cm = CostModel(ccfg, "hl_sipp")
     capital = capital_gbp or cm.acc.capital_gbp
-    insts = load_seed_instruments()
+    insts = load_seed_instruments(seed_path_for_tier(tier))
     screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
     needed = sorted({s for g in screen_df["group"] for s in g.split("|")})
     inv_map = inverse_etf_map(insts)

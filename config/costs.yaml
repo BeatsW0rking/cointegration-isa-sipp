@@ -47,6 +47,128 @@ accounts:
       - {field: fx_fee_tiers, url: "https://www.hl.co.uk/our-services/sipp/charges", checked: "2026-11-02", verify: true}
       - {field: platform_fee_pct, url: "https://www.hl.co.uk/our-services/sipp/charges", checked: "2026-11-02", verify: true}
 
+  # ---------------------------------------------------------------------------------------
+  # Phase 2: shorting venues (modelled only; no account opened). Financing is annual, accrued
+  # per bar on the gross notional of each leg. benchmark_rate_pct is SONIA, dated below.
+  # ---------------------------------------------------------------------------------------
+  ig_spreadbet:
+    label: "IG spread betting (UK, tax-free)"
+    capital_gbp: 20000
+    base_currency: GBP
+    allow_short: true
+    commission_fixed_gbp: 0.0
+    commission_pct: 0.0
+    spread_markup_bps: 10            # IG's spread over the market spread on UK shares/ETFs
+    stamp_duty_exempt: true          # spread bets pay no SDRT or PTM levy
+    fx_fee_pct: 0.0                  # bets are denominated in GBP per point
+    fractional_shares: true          # stake per point is continuous
+    min_order_gbp: 100.0             # minimum stake equivalent, approximate
+    api_execution: true              # REST API exists; not implemented in this phase
+    order_types_live: [market, limit, stop]
+    fill_delay_bars: 0
+    slippage_pct: 0.0005
+    benchmark_rate_pct: 0.040        # SONIA
+    long_financing_markup_pct: 0.030 # longs pay benchmark + 3%
+    short_financing_markup_pct: 0.030 # shorts receive benchmark - 3% (pay when negative)
+    short_pays_financing: false
+    borrow_fee_pct: 0.005            # typical borrow charge on liquid UK shares/ETFs
+    short_proceeds_rate_pct: 0.0
+    sources:
+      - {field: long_financing_markup_pct, url: "https://www.ig.com/uk/help-and-support/spread-betting-and-cfds/fees-and-charges/why-is-overnight-funding-charged-and-how-is-it-calculated-", checked: "2026-11-02", verify: true, note: "formula nights x (close x size x (benchmark +/- 3%)) / 365; UK page should confirm SONIA"}
+      - {field: spread_markup_bps, url: "https://www.ig.com/uk/spread-betting-cfds-charges/", checked: "2026-11-02", verify: true, note: "UK shares: IG adds spread; non-FTSE 350 spreads widened Dec 2025"}
+      - {field: borrow_fee_pct, url: "https://www.ig.com/uk/spread-betting-cfds-charges/", checked: "2026-11-02", verify: true, note: "IG: shorts incur a borrow charge that can change at short notice"}
+      - {field: benchmark_rate_pct, url: "https://www.bankofengland.co.uk/markets/sonia-benchmark", checked: "2026-11-02", verify: true}
+  ibkr_margin:
+    label: "Interactive Brokers UK margin account (taxable)"
+    capital_gbp: 20000
+    base_currency: GBP
+    allow_short: true
+    commission_fixed_gbp: 0.0
+    commission_pct: 0.0005           # IBKR tiered UK: 0.05% of trade value
+    commission_min_gbp: 1.0
+    spread_markup_bps: 0
+    stamp_duty_exempt: false         # real shares: SDRT applies to UK stock buys
+    fx_fee_pct: 0.00002              # 0.002% FX commission, min $2
+    fractional_shares: false         # whole shares on LSE
+    min_order_gbp: 0.0
+    api_execution: true              # TWS/Client Portal API; not implemented in this phase
+    order_types_live: [market, limit, stop]
+    fill_delay_bars: 0
+    slippage_pct: 0.0005
+    benchmark_rate_pct: 0.040
+    long_financing_markup_pct: null  # at 1x gross the long leg is funded by cash
+    short_financing_markup_pct: null
+    borrow_fee_pct: 0.0075           # general-collateral borrow on liquid names
+    short_proceeds_rate_pct: 0.0     # IBKR pays 0 on short proceeds below GBP 80k
+    sources:
+      - {field: commission_pct, url: "https://www.interactivebrokers.co.uk/en/pricing/commissions-stocks.php", checked: "2026-11-02", verify: true}
+      - {field: borrow_fee_pct, url: "https://interactivebrokers.co.uk/en/pricing/short-sale-cost.php", checked: "2026-11-02", verify: true, note: "borrow fee is name-specific; GC assumption"}
+      - {field: short_proceeds_rate_pct, url: "https://interactivebrokers.co.uk/en/pricing/short-sale-cost.php", checked: "2026-11-02", verify: true, note: "0% on first GBP 80k"}
+  t212_cfd:
+    label: "Trading 212 CFD (manual only; no API)"
+    capital_gbp: 20000
+    base_currency: GBP
+    allow_short: true
+    commission_fixed_gbp: 0.0
+    commission_pct: 0.0
+    spread_markup_bps: 10
+    stamp_duty_exempt: true
+    fx_fee_pct: 0.005                # 0.5% on P&L converted to account currency
+    fx_on_pnl_only: true
+    fractional_shares: true
+    min_order_gbp: 0.0
+    api_execution: false             # CFD not covered by the T212 public API
+    order_types_live: [market, limit, stop]
+    fill_delay_bars: 1               # manual execution
+    slippage_pct: 0.0005
+    benchmark_rate_pct: 0.040
+    long_financing_markup_pct: 0.030
+    short_financing_markup_pct: 0.030
+    short_pays_financing: true       # T212 charges swap on both long and short positions
+    borrow_fee_pct: 0.0
+    short_proceeds_rate_pct: 0.0
+    sources:
+      - {field: short_pays_financing, url: "https://www.trading212.com/legal-documentation/uk/common/Costs-and-Charges-Disclosure_EN.pdf", checked: "2026-11-02", verify: true, note: "swap charged per share, both sides; rates set daily per product"}
+      - {field: fx_fee_pct, url: "https://www.trading212.com/legal-documentation/uk/common/Costs-and-Charges-Disclosure_EN.pdf", checked: "2026-11-02", verify: true}
+
+  # ---------------------------------------------------------------------------------------
+  # Phase 2: fee-free SIPP alternatives to HL (long-only, manual execution, no API)
+  # ---------------------------------------------------------------------------------------
+  t212_sipp:
+    label: "Trading 212 SIPP"
+    capital_gbp: 85000
+    base_currency: GBP
+    commission_fixed_gbp: 0.0
+    commission_pct: 0.0
+    fx_fee_pct: 0.0015
+    fractional_shares: true
+    min_order_gbp: 1.0
+    api_execution: false             # public API covers Invest and ISA only
+    order_types_live: [market, limit]
+    fill_delay_bars: 1
+    slippage_pct: 0.0005
+    platform_fee_pct: 0.0
+    sources:
+      - {field: commission_fixed_gbp, url: "https://www.trading212.com/sipp", checked: "2026-11-02", verify: true}
+      - {field: fx_fee_pct, url: "https://www.trading212.com/sipp", checked: "2026-11-02", verify: true}
+  investengine_sipp:
+    label: "InvestEngine SIPP (ETFs only)"
+    capital_gbp: 85000
+    base_currency: GBP
+    commission_fixed_gbp: 0.0
+    commission_pct: 0.0
+    fx_fee_pct: 0.0
+    fractional_shares: true
+    min_order_gbp: 1.0
+    api_execution: false
+    order_types_live: [market]
+    fill_delay_bars: 1               # orders batch to the next dealing point
+    slippage_pct: 0.0005
+    platform_fee_pct: 0.0
+    sources:
+      - {field: commission_fixed_gbp, url: "https://investengine.com/pricing", checked: "2026-11-02", verify: true}
+      - {field: fx_fee_pct, url: "https://investengine.com/pricing", checked: "2026-11-02", verify: true}
+
 taxes:
   uk_stamp_duty_pct: 0.005          # SDRT on purchases of UK-incorporated shares; ETFs and AIM exempt
   irish_stamp_duty_pct: 0.01        # Irish-incorporated shares (not Irish-domiciled ETFs)

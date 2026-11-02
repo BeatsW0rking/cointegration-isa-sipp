@@ -36,6 +36,18 @@ class AccountCosts(BaseModel):
     slippage_pct: float = 0.0
     platform_fee_pct: float = 0.0
     platform_fee_cap_gbp: float = 0.0
+    # --- shorting venues (spread betting, CFD, margin) ---
+    allow_short: bool = False
+    commission_min_gbp: float = 0.0  # minimum per fill when commission_pct applies
+    spread_markup_bps: float = 0.0  # venue spread on top of the market spread
+    stamp_duty_exempt: bool = False  # derivatives (spread bets, CFDs) pay no SDRT
+    benchmark_rate_pct: float = 0.0  # annual reference rate (SONIA) for financing
+    long_financing_markup_pct: float | None = None  # longs pay benchmark + markup per year
+    short_financing_markup_pct: float | None = None  # shorts receive benchmark - markup
+    short_pays_financing: bool = False  # venue charges shorts benchmark + markup instead
+    borrow_fee_pct: float = 0.0  # annual stock-borrow fee on short notional
+    short_proceeds_rate_pct: float = 0.0  # annual interest earned on short proceeds
+    fx_on_pnl_only: bool = False  # CFD style: FX fee applies to P&L, not notional
     sources: list[dict[str, Any]] = Field(default_factory=list)
 
 

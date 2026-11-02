@@ -104,8 +104,36 @@ def is_hedged(name: str) -> bool:
 class RulesJudge(PlausibilityJudge):
     name = "rules"
 
+    @staticmethod
+    def _score_stocks(instruments: list[Instrument]) -> JudgeResult:
+        """Single stocks: the linkage is shared business exposure. `issuer` carries the industry."""
+        sectors = {(i.sector or "").lower() for i in instruments}
+        industries = {(i.issuer or "").lower() for i in instruments}
+        if "" not in industries and len(industries) == 1:
+            return JudgeResult(
+                prob=0.6,
+                tags=["same_industry"],
+                rationale="Same industry: shared demand, input costs and regulation.",
+                raw={"industry": sorted(industries)},
+            )
+        if "" not in sectors and len(sectors) == 1:
+            return JudgeResult(
+                prob=0.4,
+                tags=["same_sector"],
+                rationale="Same sector, different industries: partial common exposure.",
+                raw={"sector": sorted(sectors)},
+            )
+        return JudgeResult(
+            prob=0.1,
+            tags=["unrelated_stocks"],
+            rationale="Different sectors; co-movement is likely market beta, not a linkage.",
+            raw={"sectors": sorted(sectors)},
+        )
+
     def _score(self, instruments: list[Instrument]) -> JudgeResult:
         tags: list[str] = []
+        if all(i.type == "stock" for i in instruments):
+            return self._score_stocks(instruments)
         benches = {benchmark_key(i.name) for i in instruments}
         issuers = {issuer_key(i.name) for i in instruments}
         hedged = [is_hedged(i.name) for i in instruments]

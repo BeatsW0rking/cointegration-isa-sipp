@@ -100,11 +100,15 @@ class CostModel:
         notional = abs(notional_gbp)
         taxes = self.cfg.taxes
         stamp = 0.0
-        if side == "buy":
+        if side == "buy" and not self.acc.stamp_duty_exempt:
             if inst.uk_stamp_duty:
                 stamp = notional * taxes.uk_stamp_duty_pct
             elif inst.irish_stamp_duty:
                 stamp = notional * taxes.irish_stamp_duty_pct
+        full_spread_pct = full_spread_pct + self.acc.spread_markup_bps / 1e4
+        commission = self.fixed_fee(trades_prior_month)
+        if self.acc.commission_pct:
+            commission += max(notional * self.acc.commission_pct, self.acc.commission_min_gbp)
         other = 0.0
         if side == "sell" and inst.exchange.upper() in {"NYSE", "NASDAQ", "AMEX", "ARCA", "BATS"}:
             other = notional * taxes.us_sec_fee_pct_sell
@@ -116,12 +120,44 @@ class CostModel:
             notional_gbp=notional,
             half_spread=notional * full_spread_pct / 2.0,
             slippage=notional * self.acc.slippage_pct,
-            fx_fee=self.fx_fee(notional, inst),
+            fx_fee=0.0 if self.acc.fx_on_pnl_only else self.fx_fee(notional, inst),
             stamp_duty=stamp,
-            ptm_levy=ptm,
-            fixed_fee=self.fixed_fee(trades_prior_month) + notional * self.acc.commission_pct,
+            ptm_levy=0.0 if self.acc.stamp_duty_exempt else ptm,
+            fixed_fee=commission,
             other=other,
         )
+
+    # ---- financing (shorting venues) ----------------------------------------------------
+    def financing_per_bar(
+        self, long_notional_gbp: float, short_notional_gbp: float, bars_per_year: int
+    ) -> float:
+        """GBP carry charged for holding the given gross exposures for one bar (positive = cost).
+
+        Longs pay (benchmark + markup); shorts receive (benchmark - markup), which can be negative
+        when the markup exceeds the benchmark, unless `short_pays_financing` (then they pay
+        benchmark + markup). Shorts also pay `borrow_fee_pct` and earn `short_proceeds_rate_pct`.
+        Long-only accounts return 0.
+        """
+        acc = self.acc
+        if not acc.allow_short:
+            return 0.0
+        y = 1.0 / bars_per_year
+        cost = 0.0
+        if acc.long_financing_markup_pct is not None:
+            cost += (
+                abs(long_notional_gbp)
+                * (acc.benchmark_rate_pct + acc.long_financing_markup_pct)
+                * y
+            )
+        short = abs(short_notional_gbp)
+        if acc.short_financing_markup_pct is not None:
+            if acc.short_pays_financing:
+                cost += short * (acc.benchmark_rate_pct + acc.short_financing_markup_pct) * y
+            else:
+                cost -= short * (acc.benchmark_rate_pct - acc.short_financing_markup_pct) * y
+        cost += short * acc.borrow_fee_pct * y
+        cost -= short * acc.short_proceeds_rate_pct * y
+        return cost
 
     def round_trip_pct(
         self, inst: Instrument, notional_gbp: float, full_spread_pct: float

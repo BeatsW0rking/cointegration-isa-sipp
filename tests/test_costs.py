@@ -90,3 +90,49 @@ def test_corwin_schultz_positive_and_bounded(synthetic_bars):
     s = corwin_schultz_spread(h, lo).dropna()
     assert (s >= 0).all()
     assert s.median() < 0.02  # a few bps to <2% for a random walk with 30 bps ranges
+
+
+# ---- phase 2: shorting venues and fee-free SIPPs ----------------------------------------------
+
+
+def test_spread_bet_round_trip_and_carry(costs_cfg):
+    cm = CostModel(costs_cfg, "ig_spreadbet")
+    # UK share: no stamp duty, no PTM; spread = market 10 bps + IG 10 bps; slippage 5 bps/side
+    f = cm.fill_cost(UK_STOCK, "buy", 10000, 0.0010)
+    assert f.stamp_duty == 0.0 and f.ptm_levy == 0.0 and f.fixed_fee == 0.0
+    assert f.half_spread == pytest.approx(10000 * 0.0020 / 2)
+    assert cm.round_trip_pct(UK_STOCK, 10000, 0.0010) == pytest.approx(0.0020 + 0.0010)
+    # one year of £10k long / £10k short: long pays 7%, short receives 1%, borrow 0.5%
+    carry = sum(cm.financing_per_bar(10000, 10000, 252) for _ in range(252))
+    assert carry == pytest.approx(10000 * 0.07 - 10000 * 0.01 + 10000 * 0.005, rel=1e-6)
+
+
+def test_ibkr_commission_minimum_and_stamp_duty(costs_cfg):
+    cm = CostModel(costs_cfg, "ibkr_margin")
+    small = cm.fill_cost(UK_STOCK, "buy", 1000, 0.0)
+    assert small.fixed_fee == pytest.approx(1.0)  # minimum beats 0.05% of £1k
+    big = cm.fill_cost(UK_STOCK, "buy", 10000, 0.0)
+    assert big.fixed_fee == pytest.approx(5.0)
+    assert big.stamp_duty == pytest.approx(50.0)  # real shares still pay SDRT
+    carry = sum(cm.financing_per_bar(10000, 10000, 252) for _ in range(252))
+    assert carry == pytest.approx(10000 * 0.0075, rel=1e-6)  # borrow fee only at 1x gross
+
+
+def test_t212_cfd_charges_both_sides(costs_cfg):
+    cm = CostModel(costs_cfg, "t212_cfd")
+    carry = sum(cm.financing_per_bar(10000, 10000, 252) for _ in range(252))
+    assert carry == pytest.approx(2 * 10000 * 0.07, rel=1e-6)
+    assert cm.fill_cost(US_STOCK, "buy", 5000, 0.0).fx_fee == 0.0  # FX only on P&L
+
+
+def test_long_only_accounts_have_no_financing(costs_cfg):
+    for acc in ("t212_isa", "hl_sipp", "t212_sipp", "investengine_sipp"):
+        assert CostModel(costs_cfg, acc).financing_per_bar(10000, 0, 252) == 0.0
+        assert not CostModel(costs_cfg, acc).acc.allow_short
+
+
+def test_fee_free_sipps_round_trip(costs_cfg):
+    t212 = CostModel(costs_cfg, "t212_sipp")
+    ie = CostModel(costs_cfg, "investengine_sipp")
+    assert t212.round_trip_pct(ETF_USD, 5000, 0.0010) == pytest.approx(0.0010 + 0.0010 + 2 * 0.0015)
+    assert ie.round_trip_pct(ETF_USD, 5000, 0.0010) == pytest.approx(0.0010 + 0.0010)

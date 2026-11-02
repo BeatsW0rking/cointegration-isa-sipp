@@ -14,29 +14,44 @@ from cointisa.data.store import bars_to_series, read_bars
 from cointisa.instruments import Instrument
 from cointisa.paths import CONFIG_DIR, DATA_DIR
 
+TIER_SEEDS = {
+    "lse_etf": CONFIG_DIR / "universe_seed.csv",
+    "ftse350": CONFIG_DIR / "universe_seed_stocks.csv",
+}
+
+
+def seed_path_for_tier(tier: str) -> Path:
+    return TIER_SEEDS.get(tier, CONFIG_DIR / "universe_seed.csv")
+
 
 def load_seed_instruments(path: Path | None = None) -> dict[str, Instrument]:
-    """Instrument objects from config/universe_seed.csv (interim until the T212 list exists)."""
+    """Instrument objects from a seed CSV (ETFs: config/universe_seed.csv; stocks:
+    config/universe_seed_stocks.csv). Interim until the T212 instrument list exists.
+
+    Stocks are assumed UK-incorporated (country GB, stamp duty applies on real purchases); the
+    seed has no ISINs, so Irish- or Jersey-incorporated LSE names are treated conservatively.
+    ETFs are assumed Irish-domiciled (no stamp duty)."""
     path = path or CONFIG_DIR / "universe_seed.csv"
     out: dict[str, Instrument] = {}
     with open(path) as fh:
         for r in csv.DictReader(line for line in fh if not line.startswith("#")):
             lev = float(r.get("leverage") or 1.0)
+            is_stock = r.get("type", "etf") == "stock"
             out[r["symbol"]] = Instrument(
                 symbol=r["symbol"],
                 name=r["name"],
                 currency=r["currency"],
                 exchange="LSE",
-                type="inverse_etf"
-                if lev < 0
-                else ("etf" if r.get("type", "etf") != "stock" else "stock"),
-                country="IE",
+                type="inverse_etf" if lev < 0 else ("stock" if is_stock else "etf"),
+                country="GB" if is_stock else "IE",
                 tradingview=r.get("tradingview") or None,
                 yfinance=r.get("yfinance") or None,
                 hedged_to="GBP"
                 if r.get("hedged", "False") == "True" and "GBP" in r["name"]
                 else None,
                 leverage=lev,
+                sector=r.get("sector") or None,
+                issuer=r.get("industry") or None,  # industry stored on the issuer slot for stocks
             )
     return out
 

@@ -1,7 +1,7 @@
 # Findings
 
-Run `03d9214078f2431a`, data as of 2026-10-31, LSE-listed UCITS ETFs, GBP terms, all costs included.
-Full tables: `results/03d9214078f2431a/attainability.md` and `attainability.csv`. Method:
+Run `4f8e5cfd77309dca`, data as of 2026-10-31, LSE-listed UCITS ETFs, GBP terms, all costs included.
+Full tables: `results/4f8e5cfd77309dca/attainability.md` and `attainability.csv`. Method:
 [METHODOLOGY.md](METHODOLOGY.md).
 
 ## Headline
