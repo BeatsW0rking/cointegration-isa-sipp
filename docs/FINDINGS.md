@@ -68,6 +68,28 @@ Buy-and-hold of the same equal-weight members returned +140% over the period (ab
   modestly; raising the judge gate to 0.85 (same-benchmark only) reduces trades but does not create
   alpha.
 
+## Weekly bars (1W), 133 liquid ETFs, 10 years, 97 rolling windows
+
+Statistical screening shows the same size pattern (FDR pass rate 22% for pairs rising to 74% for
+five-asset groups). The out-of-sample persistence diagnostic is uninformative at weekly resolution:
+the 26-bar validation window gives the ADF test no power, so 0% of groups register as persistent.
+This is a limitation of the diagnostic, not evidence that weekly relationships are worse.
+
+Best configuration per account, pairs only, cost-aware entry:
+
+| account | variant | monthly geo | 95% CI | CAGR | max DD | beta vs hold | alpha/yr | trades | costs |
+|---|---|---|---|---|---|---|---|---|---|
+| T212 ISA | A basket rotation | +0.56% | -0.01% to +1.11% | 7.0% | -17% | 0.57 | -0.4% | 572 | £7,998 |
+| T212 ISA | B cheap leg only | +0.09% | n/a | 1.0% | -12% | 0.10 | -0.3% | 132 | £2,946 |
+| T212 ISA | C inverse ETF leg | -0.02% | -0.06% to +0.02% | -0.2% | -3% | -0.01 | 0.0% | 16 | £77 |
+| HL SIPP | A basket rotation | +0.21% | n/a | 2.4% | -17% | 0.56 | -3.9% | 542 | £62,527 |
+| HL SIPP | B cheap leg only | +0.09% | -0.12% to +0.28% | 1.2% | -13% | 0.13 | -0.3% | 106 | £19,486 |
+| HL SIPP | C inverse ETF leg | -0.03% | n/a | -0.3% | -4% | -0.02 | -0.1% | 3 | £176 |
+
+Buy-and-hold of the same members returned +173% over the period. Fewer trades than daily (as
+intended) but no alpha anywhere; the deflated Sharpe probability of the best weekly configuration is
+0.33.
+
 ## Why the target is out of reach (mechanics, not luck)
 
 1. A cointegrated pair of index trackers has a spread standard deviation of roughly 0.3-1.0% of
