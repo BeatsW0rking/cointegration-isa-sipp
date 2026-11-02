@@ -49,27 +49,10 @@ uv run cointisa report --interval 1D     # prints results/<run_id>/attainability
 
 ## Status
 
-See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) for the method and `results/<run_id>/attainability.md`
-for the latest measured outcome. Honest summary of the pilot (40 ETFs, daily bars, 14 years):
-statistical cointegration among LSE ETFs is common (about half of all group-windows pass FDR) but
-only about 7% of those relationships persist six months out of sample with the formation hedge
-vector, and the long-only variants returned roughly -0.1%/month net at Trading 212 and worse at HL,
-where the fixed dealing fee dominates. The full-universe runs will replace these numbers.
-
-## Reproducibility rules
-
-- Dependencies pinned in `uv.lock`; every run config carries `as_of`, windows, thresholds and `seed`.
-- Raw data is never modified in place. Snapshots live under `data/snapshots/<as_of>/` (gitignored);
-  their SHA-256 hashes are committed in `data/manifest.json` and checked by `cointisa verify-data`.
-- Run id = SHA-256 of (config + manifest). `results/<run_id>/summary.json` is committed; a rerun must
-  reproduce it byte for byte (`tests/test_reproducible.py`).
-- Secrets only via environment variables (see `.env.example`); nothing secret is ever committed.
-
-## Accounts and constraints
-
-| Account | Capital | Short selling | Fractional | API | Dealing fee | FX |
-|---|---|---|---|---|---|---|
-| Trading 212 ISA | ~£16k | No | Yes | Yes (market orders) | £0 | 0.15% each way |
-| HL SIPP | ~£85k | No | No | No (manual) | £6.95 (£3.95 if 20+ trades prior month) | ~0.99% tiered |
-
-All cost parameters live in `config/costs.yaml` with a source URL and date per figure.
+Results so far are in [docs/FINDINGS.md](docs/FINDINGS.md) (daily and weekly timeframes; hourly
+pending) with full tables under `results/<run_id>/`. Short version: statistical cointegration among
+LSE ETFs is abundant and mostly spurious (pass rates rise with group size while out-of-sample
+persistence falls); the relationships that persist are same-index trackers with tiny spreads; and no
+long-only variant produces positive alpha against simply holding the same ETFs once costs are
+included. The best of 72 daily configurations earns about +0.66%/month, almost all of it market beta.
+The 5-20%/month target is not attainable in these wrappers.
