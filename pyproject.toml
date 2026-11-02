@@ -19,6 +19,7 @@ dependencies = [
   "matplotlib>=3.9",
   "rich>=13",
   "anthropic>=2.3.0",
+  "tabulate>=0.10.0",
 ]
 
 [project.optional-dependencies]
@@ -44,7 +45,7 @@ select = ["E", "F", "I", "B", "UP", "N", "W"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["E501"]
-"src/cointisa/cli.py" = ["B008"]  # typer.Option defaults are the documented idiom
+"src/cointisa/cli.py" = ["B008", "E501"]  # typer.Option defaults are the documented idiom; glue code
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

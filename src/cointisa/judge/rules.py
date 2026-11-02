@@ -155,7 +155,9 @@ class RulesJudge(PlausibilityJudge):
         ):
             prob = 0.5
             tags.append("economically_linked_assets")
-            rationale = "Distinct assets with a known economic linkage (precious metals; oil vs energy equities)."
+            rationale = (
+                "Distinct assets with a known economic linkage (precious metals; oil vs energy)."
+            )
         elif None in benches:
             prob = 0.15
             tags.append("unclassified_member")

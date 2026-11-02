@@ -20,7 +20,8 @@ ENDPOINT = "https://api.typesafe.ai/v1/systemone"
 QUESTIONS = {
     "same_underlying": {
         "type": "noul",
-        "instructions": "All listed instruments track the same underlying index, commodity or company "
+        "instructions": "All listed instruments track the same underlying index, commodity or "
+        "company "
         "(differences only in issuer, share class, currency, hedging, distribution policy, or "
         "inverse/leverage).",
         "criteria": {
@@ -30,7 +31,8 @@ QUESTIONS = {
     },
     "heavy_overlap": {
         "type": "noul",
-        "instructions": "The instruments' underlying holdings overlap heavily (most of the weight is in "
+        "instructions": "The instruments' underlying holdings overlap heavily (most of the weight "
+        "is in "
         "the same securities), even if the benchmarks differ.",
     },
     "economic_mechanism": {
@@ -41,7 +43,8 @@ QUESTIONS = {
     },
     "unrelated": {
         "type": "noul",
-        "instructions": "These instruments are unrelated: different regions, asset classes or themes "
+        "instructions": "These instruments are unrelated: different regions, asset classes or "
+        "themes "
         "with no structural link; any statistical co-movement is likely coincidental.",
     },
 }

@@ -197,7 +197,7 @@ def screen(
         True, help="Drop leveraged/inverse products from candidates"
     ),
 ) -> None:
-    """Candidate generation + Johansen sweep for one timeframe -> results/<run_id>/screen_*.parquet."""
+    """Candidate generation + Johansen sweep for one timeframe -> results/<run_id>/screen_*."""
     from cointisa.data.panel import load_close_panel, load_seed_instruments, load_value_traded
     from cointisa.runid import run_dir
     from cointisa.screen.candidates import candidate_groups
@@ -323,10 +323,149 @@ def judge(
     df.to_parquet(out, index=False)
     for name, sub in df.groupby("backend"):
         console.print(
-            f"\n[bold]{name}[/bold]  Brier={brier_score(sub['prob'], sub['label']):.3f}  n={len(sub)}"
+            f"\n[bold]{name}[/bold]  Brier={brier_score(sub['prob'], sub['label']):.3f}  "
+            f"n={len(sub)}"
         )
         console.print(
             reliability_table(sub["prob"].to_numpy(), sub["label"].to_numpy()).to_string()
         )
         console.print(gate_sweep(sub["prob"].to_numpy(), sub["label"].to_numpy()).to_string())
     console.print(f"written {out}")
+
+
+@app.command()
+def backtest(
+    interval: str = typer.Option("1D"),
+    tier: str = typer.Option("lse_etf"),
+    accounts: str = typer.Option("t212_isa,hl_sipp"),
+    variants: str = typer.Option("", help="Comma list; default from research.yaml"),
+    judge_backend: str = typer.Option("rules", help="Judge used for the plausibility gate"),
+    max_groups: int = typer.Option(5),
+    stability_windows: int = typer.Option(
+        1, help="Group must also have passed in the N previous rolls"
+    ),
+) -> None:
+    """Walk-forward long-only backtest of screened groups, per account and variant."""
+    import pandas as pd
+
+    from cointisa.backtest.engine import BacktestConfig, run_backtest
+    from cointisa.backtest.prepare import build_selections, inverse_etf_map, spread_panel
+    from cointisa.costs.model import CostModel
+    from cointisa.data.panel import load_close_panel, load_seed_instruments
+    from cointisa.judge.registry import make_judge
+    from cointisa.runid import run_dir
+
+    rcfg, ccfg = load_research(), load_costs()
+    insts = load_seed_instruments()
+    screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
+    needed = sorted({s for g in screen_df["group"] for s in g.split("|")})
+    inv_map = inverse_etf_map(insts)
+    needed += [v for v in inv_map.values() if v in insts]
+    sub = {k: insts[k] for k in dict.fromkeys(needed) if k in insts}
+    panel = load_close_panel(rcfg.as_of, interval, sub, min_rows=50)
+    spreads = spread_panel(rcfg.as_of, interval, sub, ccfg, panel)
+    judge = make_judge(judge_backend)
+    gate = float(rcfg.judge["gate_probability"])
+    selections = build_selections(
+        screen_df, panel, insts, judge, gate, rcfg, interval, stability_windows
+    )
+    console.print(
+        f"{sum(len(s.models) for s in selections)} group-selections across {len(selections)} roll dates"
+    )
+    start_bar = min((s.start for s in selections), default=len(panel))
+    bars_per_year = {"1W": 52, "1D": 252, "4h": 252 * 2, "1h": 252 * 8}[interval]
+    rows = []
+    out_dir = run_dir() / f"backtest_{interval}_{tier}"
+    out_dir.mkdir(exist_ok=True)
+    for acc in accounts.split(","):
+        cm = CostModel(ccfg, acc)
+        for var in variants.split(",") if variants else rcfg.variants:
+            cfg = BacktestConfig(
+                variant=var,
+                z_entry=rcfg.signals["z_entry"],
+                z_exit=rcfg.signals["z_exit"],
+                z_stop=rcfg.signals["z_stop"],
+                time_stop_half_lives=rcfg.signals["time_stop_half_lives"],
+                max_groups=max_groups,
+                trade_bars=rcfg.trade_bars[interval],
+                bars_per_year=bars_per_year,
+            )
+            res = run_backtest(
+                panel, selections, cm, sub, spreads, cfg, start_bar, inverse_map=inv_map
+            )
+            tag = f"{acc}_{var}"
+            res.equity.to_frame().join(res.benchmark).to_parquet(out_dir / f"equity_{tag}.parquet")
+            res.trades.to_parquet(out_dir / f"trades_{tag}.parquet", index=False)
+            rows.append({"account": acc, "variant": var, **res.stats})
+            console.print(
+                f"{tag}: {res.stats['n_trades']} trades, total {res.stats['total_return']:+.1%}, "
+                f"monthly mean {res.stats['monthly_mean']:+.2%}, costs £{res.stats['total_costs_gbp']:,.0f}"
+            )
+    summary = pd.DataFrame(rows)
+    summary.to_csv(out_dir / "summary.csv", index=False)
+    console.print(summary.to_string())
+
+
+@app.command()
+def report(interval: str = typer.Option("1D"), tier: str = typer.Option("lse_etf")) -> None:
+    """Bootstrap confidence intervals and the attainability report for completed backtests."""
+    import pandas as pd
+
+    from cointisa.report.attainability import analyse_equity, write_report
+    from cointisa.runid import run_dir
+
+    rcfg = load_research()
+    rd = run_dir()
+    rows = []
+    bt_dirs = sorted(rd.glob("backtest_*"))
+    for d in bt_dirs:
+        iv, tr = d.name.split("_", 2)[1:]
+        summary = pd.read_csv(d / "summary.csv") if (d / "summary.csv").exists() else pd.DataFrame()
+        n_trials = max(len(summary), 1)
+        for eqf in sorted(d.glob("equity_*.parquet")):
+            tag = eqf.stem[len("equity_") :]
+            acc, var = tag.split("_", 1)
+            eq = pd.read_parquet(eqf)
+            a = analyse_equity(
+                eq["equity"],
+                eq["benchmark"],
+                rcfg.target["monthly_return_min"],
+                rcfg.bootstrap,
+                rcfg.seed,
+                n_trials,
+            )
+            extra = {}
+            if not summary.empty:
+                m = summary[(summary["account"] == acc) & (summary["variant"] == var)]
+                if len(m):
+                    extra = {
+                        "n_trades": int(m["n_trades"].iloc[0]),
+                        "total_costs_gbp": float(m["total_costs_gbp"].iloc[0]),
+                    }
+            rows.append({"account": acc, "variant": var, "interval": iv, "tier": tr, **a, **extra})
+    table = pd.DataFrame(rows)
+    table.to_csv(rd / "attainability.csv", index=False)
+    notes = [
+        "Johansen trace/max-eigenvalue tests on log GBP prices, constant in the cointegrating relation, BIC lags.",
+        "Benjamini-Hochberg FDR (q=%.2f) across all groups tested in each formation window."
+        % rcfg.multiple_testing["q"],
+        "Selection at each roll uses only data before the trading start; the hedge vector and z-score "
+        "normalisation are fixed from the formation window.",
+        "Long-only variants: A basket rotation, B cheap-leg only, C inverse-ETF leg. Benchmark is the "
+        "equal-weight hold of all selected members.",
+        "Costs per fill: half-spread (Corwin-Schultz estimate with floors), slippage, FX, stamp duty, PTM "
+        "levy, fixed dealing fees (HL), whole-share rounding and next-bar fills for the manual account.",
+        "Monthly return CIs: stationary block bootstrap (%d resamples, mean block %d months)."
+        % (rcfg.bootstrap["n_resamples"], rcfg.bootstrap["mean_block_length_months"]),
+        "Deflated Sharpe probability corrects the monthly Sharpe for the number of account/variant trials.",
+    ]
+    meta = json.loads((rd / "run.json").read_text())
+    write_report(
+        table,
+        rd / "attainability.md",
+        rcfg.target["monthly_return_min"],
+        rcfg.target["monthly_return_max"],
+        meta,
+        notes,
+    )
+    console.print((rd / "attainability.md").read_text())
