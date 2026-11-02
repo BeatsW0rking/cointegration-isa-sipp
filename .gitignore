@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+
+# Data: raw and snapshots are reproducible from data/manifest.json + ingestion plan
+data/raw/
+data/snapshots/
+data/cache/
+
+# Results: large artefacts ignored, summary.json per run is committed
+results/*/bars/
+results/*/*.parquet
+results/*/*.html
+results/*/*.png
+
+# Notebooks executed outputs
+notebooks/executed/
+.ipynb_checkpoints/
