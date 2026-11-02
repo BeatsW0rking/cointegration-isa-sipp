@@ -1,0 +1,42 @@
+{
+ "8": [
+  "LSE:500U",
+  "LSE:ACWD",
+  "LSE:AIAG",
+  "LSE:AIAI",
+  "LSE:AUEM",
+  "LSE:CEMA",
+  "LSE:CIBR",
+  "LSE:CSPX",
+  "LSE:DLTM",
+  "LSE:EEDG",
+  "LSE:EEDS",
+  "LSE:EIMI",
+  "LSE:EMIM",
+  "LSE:EMVL",
+  "LSE:EMXC"
+ ],
+ "1": [
+  "LSE:AGGG",
+  "LSE:AGGU",
+  "LSE:CBU0",
+  "LSE:CBU7",
+  "LSE:DTLA",
+  "LSE:EMCA",
+  "LSE:ERNA"
+ ],
+ "7": [
+  "LSE:BNKS",
+  "LSE:CUKX"
+ ],
+ "2": [
+  "LSE:BRNT",
+  "LSE:CMOD",
+  "LSE:CRUD"
+ ],
+ "6": [
+  "LSE:COPA",
+  "LSE:COPG",
+  "LSE:COPX"
+ ]
+}
