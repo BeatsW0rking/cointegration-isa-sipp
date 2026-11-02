@@ -228,6 +228,10 @@ def screen(
     console.print(
         f"panel {panel.shape[0]} bars x {panel.shape[1]} symbols ({interval}), {len(liquid)} liquid"
     )
+    # single stocks: cluster within sector so candidates share an economic block
+    blocks = {
+        s: insts[s].sector for s in panel.columns if insts[s].type == "stock" and insts[s].sector
+    }
     groups, clusters = candidate_groups(
         panel,
         threshold=rcfg.candidates["correlation_cluster_threshold"],
@@ -235,6 +239,7 @@ def screen(
         max_size=max_size or rcfg.johansen["max_group_size"],
         cap_per_cluster=rcfg.candidates["max_groups_per_block"],
         min_overlap=min(200, rcfg.formation_bars[interval] // 2),
+        blocks=blocks if len(blocks) == len(panel.columns) else None,
     )
     console.print(f"{len(clusters)} clusters, {len(groups)} candidate groups")
     scfg = SweepConfig(
@@ -732,5 +737,43 @@ def hl_report(
             )
     out = write_hl_report(
         pd.DataFrame(rows), str(panel.index[-1].date()), run_dir() / "hl_reports", cm.fixed_fee()
+    )
+    console.print(out.read_text())
+
+
+@app.command()
+def edge_budget(
+    interval: str = typer.Option("1D"),
+    tier: str = typer.Option("lse_etf"),
+    accounts: str = typer.Option("t212_isa,ig_spreadbet,ibkr_margin,t212_cfd"),
+    reversion_rate: float = typer.Option(
+        0.12, help="Share of entries that exit on reversion (from the zero-cost variant D run)"
+    ),
+) -> None:
+    """Per-pair capturable edge vs round-trip cost at each venue -> results/<run_id>/edge_budget_*.md."""
+    import pandas as pd
+
+    from cointisa.data.panel import load_seed_instruments, seed_path_for_tier
+    from cointisa.report.edge_budget import edge_budget as _budget
+    from cointisa.report.edge_budget import write_edge_budget
+    from cointisa.runid import run_dir
+
+    rcfg, ccfg = load_research(), load_costs()
+    insts = load_seed_instruments(seed_path_for_tier(tier))
+    screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
+    accs = accounts.split(",")
+    table = _budget(
+        screen_df,
+        insts,
+        ccfg,
+        accs,
+        rcfg.signals["z_entry"],
+        rcfg.signals["z_exit"],
+        reversion_rate,
+    )
+    out = run_dir() / f"edge_budget_{interval}_{tier}.md"
+    table.to_csv(run_dir() / f"edge_budget_{interval}_{tier}.csv", index=False)
+    write_edge_budget(
+        table, accs, out, rcfg.signals["z_entry"], rcfg.signals["z_exit"], reversion_rate
     )
     console.print(out.read_text())

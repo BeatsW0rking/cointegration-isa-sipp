@@ -86,9 +86,28 @@ def candidate_groups(
     max_size: int = 5,
     cap_per_cluster: int = 500,
     min_overlap: int = 200,
+    blocks: dict[str, str] | None = None,
 ) -> tuple[list[tuple[str, ...]], dict[int, list[str]]]:
+    """Candidate groups from correlation clusters.
+
+    With `blocks` (symbol -> block label, e.g. sector), clustering runs within each block so every
+    candidate shares an economic block as well as a statistical cluster. Cluster ids are then
+    unique across blocks.
+    """
     corr = return_correlation(panel, min_overlap)
-    clusters = cluster_symbols(corr, threshold)
+    clusters: dict[int, list[str]] = {}
+    if blocks:
+        next_id = 1
+        for block in sorted(set(blocks.values())):
+            syms = [s for s in corr.columns if blocks.get(s) == block]
+            if len(syms) < 2:
+                continue
+            sub = cluster_symbols(corr.loc[syms, syms], threshold)
+            for members in sub.values():
+                clusters[next_id] = members
+                next_id += 1
+    else:
+        clusters = cluster_symbols(corr, threshold)
     groups: list[tuple[str, ...]] = []
     for _, members in sorted(clusters.items()):
         groups.extend(enumerate_groups(members, corr, min_size, max_size, cap_per_cluster))
