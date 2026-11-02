@@ -78,7 +78,7 @@ def fetch_yf(
     fx_rows = [{"symbol": k, "yfinance": v["yfinance"]} for k, v in ucfg.fx_symbols.items()]
     man = Manifest()
     n = 0
-    for r in rows + fx_rows:
+    for r in fx_rows + rows:  # FX first so later symbols can be valued in GBP
         for iv in intervals.split(","):
             p = snapshot_symbol(r["symbol"], r["yfinance"], iv, ucfg.as_of, man)
             n += p is not None
@@ -213,12 +213,11 @@ def screen(
     insts = {k: v for k, v in insts.items() if k in set(liquid)}
     if max_symbols:
         insts = dict(list(insts.items())[:max_symbols])
-    panel = load_close_panel(
-        rcfg.as_of,
-        interval,
-        insts,
-        min_rows=rcfg.formation_bars[interval] + rcfg.trade_bars[interval],
-    )
+    min_rows = rcfg.formation_bars[interval] + rcfg.trade_bars[interval]
+    panel = load_close_panel(rcfg.as_of, interval, insts, min_rows=min_rows)
+    cap = rcfg.max_history_bars.get(interval)
+    if cap and len(panel) > cap:
+        panel = panel.iloc[-cap:].dropna(axis=1, thresh=min_rows)
     console.print(
         f"panel {panel.shape[0]} bars x {panel.shape[1]} symbols ({interval}), {len(liquid)} liquid"
     )
@@ -245,7 +244,7 @@ def screen(
         adf_alpha=rcfg.stationarity["adf_alpha"],
         kpss_alpha=rcfg.stationarity["kpss_alpha"],
     )
-    res = sweep(panel, groups, scfg)
+    res = sweep(panel, groups, scfg, n_jobs=rcfg.n_jobs)
     out = run_dir() / f"screen_{interval}_{tier}.parquet"
     res.to_parquet(out, index=False)
     clusters_out = run_dir() / f"clusters_{interval}_{tier}.json"
@@ -364,6 +363,8 @@ def backtest(
     sub = {k: insts[k] for k in dict.fromkeys(needed) if k in insts}
     panel = load_close_panel(rcfg.as_of, interval, sub, min_rows=50)
     spreads = spread_panel(rcfg.as_of, interval, sub, ccfg, panel)
+    inv_map = {k: v for k, v in inv_map.items() if v in panel.columns}
+    sub = {k: v for k, v in sub.items() if k in panel.columns}
     judge = make_judge(judge_backend)
     gate = float(rcfg.judge["gate_probability"])
     selections = build_selections(
@@ -393,7 +394,7 @@ def backtest(
             res = run_backtest(
                 panel, selections, cm, sub, spreads, cfg, start_bar, inverse_map=inv_map
             )
-            tag = f"{acc}_{var}"
+            tag = f"{acc}__{var}"
             res.equity.to_frame().join(res.benchmark).to_parquet(out_dir / f"equity_{tag}.parquet")
             res.trades.to_parquet(out_dir / f"trades_{tag}.parquet", index=False)
             rows.append({"account": acc, "variant": var, **res.stats})
@@ -424,7 +425,7 @@ def report(interval: str = typer.Option("1D"), tier: str = typer.Option("lse_etf
         n_trials = max(len(summary), 1)
         for eqf in sorted(d.glob("equity_*.parquet")):
             tag = eqf.stem[len("equity_") :]
-            acc, var = tag.split("_", 1)
+            acc, var = tag.split("__", 1)
             eq = pd.read_parquet(eqf)
             a = analyse_equity(
                 eq["equity"],

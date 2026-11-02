@@ -42,19 +42,41 @@ def enumerate_groups(
     min_size: int = 2,
     max_size: int = 5,
     cap: int = 500,
+    n_neighbours: int = 6,
 ) -> list[tuple[str, ...]]:
-    """Groups within one cluster, best mean pairwise correlation first, capped."""
+    """Groups within one cluster, best mean pairwise correlation first, capped.
+
+    Pairs: every pair in the cluster. Larger groups: for each member, subsets of its
+    `n_neighbours` most correlated cluster-mates, so the count grows linearly in cluster size
+    rather than combinatorially. Deterministic ordering.
+    """
     members = sorted(members)
-    scored: list[tuple[float, tuple[str, ...]]] = []
-    for k in range(min_size, min(max_size, len(members)) + 1):
-        for g in combinations(members, k):
-            sub = corr.loc[list(g), list(g)].to_numpy()
-            iu = np.triu_indices(k, 1)
-            scored.append((float(np.nanmean(sub[iu])), g))
-            if len(scored) > cap * 20:
-                break
-    scored.sort(key=lambda x: (-x[0], x[1]))
-    return [g for _, g in scored[:cap]]
+    m = len(members)
+    c = corr.loc[members, members].to_numpy(dtype=float)
+    c = np.nan_to_num(c, nan=0.0)
+    np.fill_diagonal(c, np.nan)
+    scored: dict[tuple[str, ...], float] = {}
+
+    def score(idx: tuple[int, ...]) -> float:
+        sub = c[np.ix_(idx, idx)]
+        iu = np.triu_indices(len(idx), 1)
+        return float(np.nanmean(sub[iu]))
+
+    if min_size <= 2:
+        for i in range(m):
+            for j in range(i + 1, m):
+                scored[(members[i], members[j])] = float(c[i, j])
+    for k in range(max(3, min_size), min(max_size, m) + 1):
+        for i in range(m):
+            order = np.argsort(-np.nan_to_num(c[i], nan=-9))
+            nbrs = [j for j in order if j != i][:n_neighbours]
+            for combo in combinations(nbrs, k - 1):
+                idx = tuple(sorted((i, *combo)))
+                key = tuple(members[j] for j in idx)
+                if key not in scored:
+                    scored[key] = score(idx)
+    ranked = sorted(scored.items(), key=lambda kv: (-kv[1], kv[0]))
+    return [g for g, _ in ranked[:cap]]
 
 
 def candidate_groups(

@@ -1,5 +1,5 @@
-"""Confidence intervals for monthly returns via the stationary block bootstrap (Politis & Romano 1994)
-and the deflated Sharpe ratio (Bailey & Lopez de Prado 2014) for multiple-trial correction."""
+"""Confidence intervals for monthly returns via the stationary block bootstrap (Politis & Romano
+1994) and the deflated Sharpe ratio (Bailey & Lopez de Prado 2014) for multiple-trial correction."""
 
 from __future__ import annotations
 
@@ -74,8 +74,8 @@ def monthly_return_ci(
 def deflated_sharpe(
     sharpe_obs: float, n_obs: int, n_trials: int, skew: float, kurt: float, sharpe_var_trials: float
 ) -> float:
-    """Probability that the observed (per-period) Sharpe exceeds the expected maximum Sharpe from
-    `n_trials` unskilled strategies. `kurt` is non-excess kurtosis. Returns a probability in [0,1]."""
+    """Probability that the observed (per-period) Sharpe exceeds the expected maximum Sharpe
+    from `n_trials` unskilled strategies. `kurt` is non-excess kurtosis. Returns P in [0, 1]."""
     if n_trials < 1 or n_obs < 3:
         return float("nan")
     gamma = 0.5772156649

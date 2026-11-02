@@ -6,12 +6,14 @@ timeframes: ["1W", "1D", "4h", "1h"]
 formation_bars: {"1W": 104, "1D": 504, "4h": 1000, "1h": 2000}   # ~24 months of trading
 trade_bars:     {"1W": 26,  "1D": 126, "4h": 250,  "1h": 500}    # ~6 months
 roll_step_bars: {"1W": 4,   "1D": 21,  "4h": 42,   "1h": 84}     # ~1 month
+max_history_bars: {"1W": 520, "1D": 2520, "4h": 4000, "1h": 7000}  # ~10y daily; compute bound
+n_jobs: 0             # 0 = all cores for the Johansen sweep
 stationarity:
   adf_alpha: 0.05
   kpss_alpha: 0.05
 johansen:
   det_order: 0          # constant in cointegrating relation
-  max_lag: 6            # lag order chosen by BIC up to this
+  max_lag: 4            # lag order chosen by BIC up to this
   trace_alpha: 0.05
   max_group_size: 5
   min_group_size: 2

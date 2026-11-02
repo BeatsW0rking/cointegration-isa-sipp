@@ -110,7 +110,10 @@ def load_value_traded(
         if sym not in ent:
             continue
         bars = read_bars(ent[sym]["path"]).tail(lookback)
-        close = to_base_currency(bars_to_series(bars, "c"), inst, fx)
+        try:
+            close = to_base_currency(bars_to_series(bars, "c"), inst, fx)
+        except KeyError:
+            continue  # FX series not snapshotted (yet); symbol cannot be valued in GBP
         vol = bars_to_series(bars, "v")
         out[sym] = float(np.nanmedian(close.to_numpy() * vol.to_numpy()))
     return pd.Series(out, name="median_daily_value_gbp")

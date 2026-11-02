@@ -65,9 +65,11 @@ def write_report(
         "# Attainability report",
         "",
         f"Run `{run_meta.get('run_id')}` (as of {run_meta.get('as_of')}), config hash "
-        f"`{str(run_meta.get('config_hash'))[:12]}`, manifest hash `{str(run_meta.get('manifest_hash'))[:12]}`.",
+        f"`{str(run_meta.get('config_hash'))[:12]}`, manifest hash "
+        f"`{str(run_meta.get('manifest_hash'))[:12]}`.",
         "",
-        f"**Target:** {target_lo:.0%}-{target_hi:.0%} per month at 95% confidence, net of all costs.",
+        f"**Target:** {target_lo:.0%}-{target_hi:.0%} per month at 95% confidence, "
+        "net of all costs.",
         "",
         "## Verdict",
         "",
@@ -75,10 +77,13 @@ def write_report(
     if table.empty:
         lines.append("No backtest results available.")
     else:
-        best = table.sort_values("monthly_geo_ci_lo", ascending=False).iloc[0]
+        traded = table[table.get("n_trades", pd.Series(1, index=table.index)) > 0]
+        traded = traded if len(traded) else table
+        best = traded.sort_values("monthly_geo_ci_lo", ascending=False).iloc[0]
         met = best["monthly_geo_ci_lo"] >= target_lo
         lines.append(
-            f"Best configuration: **{best['account']} / {best['variant']} / {best['interval']}** with a "
+            f"Best configuration: **{best['account']} / {best['variant']} / "
+            f"{best['interval']}** with a "
             f"geometric mean monthly return of {best['monthly_geo']:+.2%} "
             f"(95% CI {best['monthly_geo_ci_lo']:+.2%} to {best['monthly_geo_ci_hi']:+.2%}) over "
             f"{int(best['n_months'])} months."
@@ -87,7 +92,8 @@ def write_report(
         lines.append(
             "**Target met at 95% confidence.**"
             if met
-            else f"**Target not met.** The lower 95% bound ({best['monthly_geo_ci_lo']:+.2%}/month) is below "
+            else f"**Target not met.** The lower 95% bound "
+            f"({best['monthly_geo_ci_lo']:+.2%}/month) is below "
             f"{target_lo:.0%}/month. The table below is the achievable return as measured."
         )
     lines += ["", "## Results (net of costs)", ""]

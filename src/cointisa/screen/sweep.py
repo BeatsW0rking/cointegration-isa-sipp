@@ -82,11 +82,13 @@ def test_group(logp: np.ndarray, cfg: SweepConfig) -> dict | None:
     }
 
 
-def sweep(panel: pd.DataFrame, groups: list[tuple[str, ...]], cfg: SweepConfig) -> pd.DataFrame:
-    logp = np.log(panel)
-    n = len(logp)
-    rows = []
-    for end in _window_ends(n, cfg):
+def _sweep_window(
+    logp: pd.DataFrame, groups: list[tuple[str, ...]], cfg: SweepConfig, end: int
+) -> pd.DataFrame | None:
+    """Formation tests, FDR, quality and out-of-sample checks for one window end."""
+    if end <= cfg.formation_bars:
+        return None
+    if True:  # noqa: SIM102 - kept as a block to limit the diff against the sequential version
         start = end - cfg.formation_bars
         i1 = _i1_cache(logp, start, end, cfg)
         form_rows = []
@@ -100,7 +102,7 @@ def sweep(panel: pd.DataFrame, groups: list[tuple[str, ...]], cfg: SweepConfig) 
             r.update({"group": "|".join(g), "size": len(g), "form_start": start, "form_end": end})
             form_rows.append(r)
         if not form_rows:
-            continue
+            return None
         df = pd.DataFrame(form_rows)
         rej, adj = benjamini_hochberg(df["trace_p_approx"].to_numpy(), cfg.fdr_q)
         df["p_fdr"] = adj
@@ -147,8 +149,7 @@ def sweep(panel: pd.DataFrame, groups: list[tuple[str, ...]], cfg: SweepConfig) 
             & (df["val_adf_p"] < 0.10)
             & (df["val_angle_deg"] <= cfg.max_angle_deg)
         )
-        df["form_end_time"] = panel.index[end - 1]
-        rows.append(df)
+        df["form_end_time"] = logp.index[end - 1]
         log.info(
             "window end=%d: %d tested, %d pass FDR, %d persistent",
             end,
@@ -156,6 +157,28 @@ def sweep(panel: pd.DataFrame, groups: list[tuple[str, ...]], cfg: SweepConfig) 
             int(df["pass_fdr"].sum()),
             int(df["persistent"].sum()),
         )
+        return df
+
+
+def sweep(
+    panel: pd.DataFrame, groups: list[tuple[str, ...]], cfg: SweepConfig, n_jobs: int = 1
+) -> pd.DataFrame:
+    """Run `_sweep_window` for every rolling window end, optionally across processes."""
+    logp = np.log(panel)
+    ends = _window_ends(len(logp), cfg)
+    if n_jobs == 1 or len(ends) < 2:
+        frames = [_sweep_window(logp, groups, cfg, e) for e in ends]
+    else:
+        from concurrent.futures import ProcessPoolExecutor
+
+        workers = n_jobs if n_jobs > 0 else None
+        with ProcessPoolExecutor(max_workers=workers) as ex:
+            frames = list(
+                ex.map(
+                    _sweep_window, [logp] * len(ends), [groups] * len(ends), [cfg] * len(ends), ends
+                )
+            )
+    rows = [f for f in frames if f is not None and len(f)]
     if not rows:
         return pd.DataFrame()
     out = pd.concat(rows, ignore_index=True)

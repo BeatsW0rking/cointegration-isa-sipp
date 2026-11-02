@@ -90,6 +90,8 @@ class ResearchConfig(BaseModel):
     formation_bars: dict[str, int]
     trade_bars: dict[str, int]
     roll_step_bars: dict[str, int]
+    max_history_bars: dict[str, int] = Field(default_factory=dict)
+    n_jobs: int = 0
     stationarity: dict[str, float]
     johansen: dict[str, Any]
     multiple_testing: dict[str, Any]
