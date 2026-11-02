@@ -23,16 +23,38 @@ uv run cointisa --help
 ## Pipeline
 
 ```
-cointisa ingest-plan   -> list of TradingView MCP calls to make for the configured universe
+cointisa fetch-yf      -> snapshot 1W/1D/1h bars for config/universe_seed.csv via yfinance (+ FX)
+cointisa ingest-plan   -> list of TradingView MCP calls to fill gaps (4h, symbols Yahoo lacks)
 cointisa verify-data   -> check data/snapshots against data/manifest.json hashes
-cointisa universe      -> build tradeable universe (T212 metadata + HL overlay + liquidity floor)
-cointisa screen        -> Johansen sweep over candidate groups, FDR + persistence filters
-cointisa judge         -> economic-plausibility scores (rules / claude / jev / clairic)
+cointisa t212-cache    -> download the Trading 212 instrument list (needs T212_API_KEY/SECRET)
+cointisa universe      -> build tradeable universe (T212 metadata + HL overlay + tiers)
+cointisa costs         -> round-trip cost table per account for representative instruments
+cointisa screen        -> candidates + parallel Johansen sweep, FDR, quality, OOS persistence
+cointisa judge         -> economic-plausibility scores (rules / claude / jev / clairic) + calibration
 cointisa backtest      -> walk-forward, cost-aware, long-only variants A/B/C, per account
-cointisa report        -> bootstrap CIs and attainability report
-cointisa paper-trade   -> Trading 212 demo execution (later phase)
-cointisa hl-report     -> manual trade list for the HL SIPP (later phase)
+cointisa report        -> bootstrap CIs, deflated Sharpe, attainability.md
+cointisa signals       -> today's eligible groups, z-scores and target weights
+cointisa paper-trade   -> Trading 212 orders (demo + dry-run by default; --live needs T212_ENV=live)
 ```
+
+Typical research run for one timeframe:
+
+```bash
+uv run cointisa fetch-yf                 # once per as_of date (~1h for 737 symbols)
+uv run cointisa screen --interval 1D     # ~40 min on 4 cores for ~240 liquid ETFs
+uv run cointisa judge  --interval 1D
+uv run cointisa backtest --interval 1D
+uv run cointisa report --interval 1D     # prints results/<run_id>/attainability.md
+```
+
+## Status
+
+See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) for the method and `results/<run_id>/attainability.md`
+for the latest measured outcome. Honest summary of the pilot (40 ETFs, daily bars, 14 years):
+statistical cointegration among LSE ETFs is common (about half of all group-windows pass FDR) but
+only about 7% of those relationships persist six months out of sample with the formation hedge
+vector, and the long-only variants returned roughly -0.1%/month net at Trading 212 and worse at HL,
+where the fixed dealing fee dominates. The full-universe runs will replace these numbers.
 
 ## Reproducibility rules
 
