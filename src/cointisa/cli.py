@@ -196,6 +196,7 @@ def screen(
     exclude_leveraged: bool = typer.Option(
         True, help="Drop leveraged/inverse products from candidates"
     ),
+    max_size: int = typer.Option(0, help="Override johansen.max_group_size (0 = config)"),
 ) -> None:
     """Candidate generation + Johansen sweep for one timeframe -> results/<run_id>/screen_*."""
     from cointisa.data.panel import load_close_panel, load_seed_instruments, load_value_traded
@@ -225,7 +226,7 @@ def screen(
         panel,
         threshold=rcfg.candidates["correlation_cluster_threshold"],
         min_size=rcfg.johansen["min_group_size"],
-        max_size=rcfg.johansen["max_group_size"],
+        max_size=max_size or rcfg.johansen["max_group_size"],
         cap_per_cluster=rcfg.candidates["max_groups_per_block"],
         min_overlap=min(200, rcfg.formation_bars[interval] // 2),
     )
