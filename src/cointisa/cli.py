@@ -448,16 +448,14 @@ def report(interval: str = typer.Option("1D"), tier: str = typer.Option("lse_etf
     table.to_csv(rd / "attainability.csv", index=False)
     notes = [
         "Johansen trace/max-eigenvalue tests on log GBP prices, constant in the cointegrating relation, BIC lags.",
-        "Benjamini-Hochberg FDR (q=%.2f) across all groups tested in each formation window."
-        % rcfg.multiple_testing["q"],
+        f"Benjamini-Hochberg FDR (q={rcfg.multiple_testing['q']:.2f}) across all groups tested in each formation window.",
         "Selection at each roll uses only data before the trading start; the hedge vector and z-score "
         "normalisation are fixed from the formation window.",
         "Long-only variants: A basket rotation, B cheap-leg only, C inverse-ETF leg. Benchmark is the "
         "equal-weight hold of all selected members.",
         "Costs per fill: half-spread (Corwin-Schultz estimate with floors), slippage, FX, stamp duty, PTM "
         "levy, fixed dealing fees (HL), whole-share rounding and next-bar fills for the manual account.",
-        "Monthly return CIs: stationary block bootstrap (%d resamples, mean block %d months)."
-        % (rcfg.bootstrap["n_resamples"], rcfg.bootstrap["mean_block_length_months"]),
+        f"Monthly return CIs: stationary block bootstrap ({rcfg.bootstrap['n_resamples']} resamples, mean block {rcfg.bootstrap['mean_block_length_months']} months).",
         "Deflated Sharpe probability corrects the monthly Sharpe for the number of account/variant trials.",
     ]
     meta = json.loads((rd / "run.json").read_text())
@@ -470,3 +468,133 @@ def report(interval: str = typer.Option("1D"), tier: str = typer.Option("lse_etf
         notes,
     )
     console.print((rd / "attainability.md").read_text())
+
+
+@app.command()
+def signals(
+    interval: str = typer.Option("1D"),
+    tier: str = typer.Option("lse_etf"),
+    variant: str = typer.Option("B_cheap_leg_only"),
+    judge_backend: str = typer.Option("rules"),
+) -> None:
+    """Print today's eligible groups, z-scores and target weights (what the bot would do)."""
+    import pandas as pd
+
+    from cointisa.backtest.prepare import build_selections, inverse_etf_map
+    from cointisa.data.panel import load_close_panel, load_seed_instruments
+    from cointisa.judge.registry import make_judge
+    from cointisa.runid import run_dir
+    from cointisa.signals.live import latest_signals
+
+    rcfg = load_research()
+    insts = load_seed_instruments()
+    screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
+    needed = sorted({s for g in screen_df["group"] for s in g.split("|")})
+    inv_map = inverse_etf_map(insts)
+    sub = {k: insts[k] for k in needed + list(inv_map.values()) if k in insts}
+    panel = load_close_panel(rcfg.as_of, interval, sub, min_rows=50)
+    sel = build_selections(
+        screen_df,
+        panel,
+        insts,
+        make_judge(judge_backend),
+        rcfg.judge["gate_probability"],
+        rcfg,
+        interval,
+    )
+    sigs = latest_signals(
+        panel,
+        sel,
+        variant,
+        sub,
+        rcfg.signals["z_entry"],
+        rcfg.signals["z_exit"],
+        rcfg.signals["z_stop"],
+        inv_map,
+    )
+    rows = [
+        {
+            "group": s.group,
+            "z": round(s.z, 2),
+            "half_life": round(s.half_life, 1),
+            "state": s.state,
+            "edge_pct": f"{s.expected_edge_pct:.2%}",
+            "targets": {k: round(v, 2) for k, v in s.targets.items() if v},
+        }
+        for s in sigs
+    ]
+    console.print(
+        f"as of {panel.index[-1].date()} ({len(sigs)} eligible groups, variant {variant})"
+    )
+    console.print(pd.DataFrame(rows).to_string() if rows else "no eligible groups")
+
+
+@app.command()
+def paper_trade(
+    interval: str = typer.Option("1D"),
+    tier: str = typer.Option("lse_etf"),
+    variant: str = typer.Option("B_cheap_leg_only"),
+    max_groups: int = typer.Option(5),
+    dry_run: bool = typer.Option(True, help="Print orders without sending"),
+    live: bool = typer.Option(False, help="Required flag to trade the live environment"),
+) -> None:
+    """Turn today's signals into Trading 212 market orders (demo by default, dry-run by default)."""
+    import pandas as pd
+
+    from cointisa.backtest.prepare import build_selections, inverse_etf_map
+    from cointisa.data.panel import load_close_panel, load_seed_instruments
+    from cointisa.exec.t212_bot import OrderIntent, T212Bot
+    from cointisa.judge.registry import make_judge
+    from cointisa.runid import run_dir
+    from cointisa.signals.live import latest_signals
+
+    rcfg = load_research()
+    insts = load_seed_instruments()
+    screen_df = pd.read_parquet(run_dir() / f"screen_{interval}_{tier}.parquet")
+    needed = sorted({s for g in screen_df["group"] for s in g.split("|")})
+    inv_map = inverse_etf_map(insts)
+    sub = {k: insts[k] for k in needed + list(inv_map.values()) if k in insts}
+    panel = load_close_panel(rcfg.as_of, interval, sub, min_rows=50)
+    sel = build_selections(
+        screen_df, panel, insts, make_judge("rules"), rcfg.judge["gate_probability"], rcfg, interval
+    )
+    sigs = latest_signals(
+        panel,
+        sel,
+        variant,
+        sub,
+        rcfg.signals["z_entry"],
+        rcfg.signals["z_exit"],
+        rcfg.signals["z_stop"],
+        inv_map,
+    )[:max_groups]
+    bot = T212Bot("t212_isa", str(panel.index[-1].date()), live=live)
+    summary = bot.client.account_summary()
+    cash = (
+        float(summary["cash"]["availableToTrade"])
+        if isinstance(summary.get("cash"), dict)
+        else float(summary.get("totalValue", 0))
+    )
+    equity = float(summary.get("totalValue", cash))
+    held = bot.positions()
+    t212_tickers = {i.symbol: i.t212_ticker for i in insts.values() if i.t212_ticker}
+    console.print(
+        f"{bot.env}: equity £{equity:,.0f}, cash £{cash:,.0f}, {len(held)} positions, {len(sigs)} groups"
+    )
+    slice_gbp = equity / max_groups
+    last = panel.iloc[-1]
+    for s in sigs:
+        for sym, w in s.targets.items():
+            ticker = t212_tickers.get(sym) or insts[sym].yfinance.replace(
+                ".L", "l_EQ"
+            )  # fallback guess; verify via t212-cache
+            intent = OrderIntent(
+                group=s.group,
+                symbol=sym,
+                t212_ticker=ticker,
+                target_gbp=slice_gbp * w,
+                current_qty=float(held.get(ticker, 0.0)),
+                price=float(last[sym]),
+                reason=f"state {s.state} z {s.z:+.2f}",
+            )
+            bot.place(intent, dry_run=dry_run)
