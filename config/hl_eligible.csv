@@ -1,0 +1,2 @@
+# ISINs confirmed tradeable in the HL SIPP. Empty file => assume all LSE-listed instruments eligible, US flagged.
+# isin,ticker,confirmed_on

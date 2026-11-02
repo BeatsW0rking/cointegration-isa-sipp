@@ -1,0 +1,66 @@
+# Cost parameters per account. Every figure carries a source and the date it was checked.
+# Figures marked verify=true come from third-party summaries and must be confirmed against the
+# official tariff before live trading. Percentages are decimals (0.0015 = 0.15%).
+accounts:
+  t212_isa:
+    label: "Trading 212 Stocks & Shares ISA"
+    capital_gbp: 16000
+    base_currency: GBP
+    commission_fixed_gbp: 0.0
+    commission_pct: 0.0
+    fx_fee_pct: 0.0015
+    fx_fee_tiers: null
+    fractional_shares: true
+    min_order_gbp: 1.0
+    api_execution: true
+    order_types_live: [market]
+    fill_delay_bars: 0          # bot executes on the signal bar close
+    slippage_pct: 0.0005        # market-order slippage assumption on top of half-spread
+    platform_fee_pct: 0.0
+    platform_fee_cap_gbp: 0.0
+    sources:
+      - {field: fx_fee_pct, url: "https://www.trading212.com/terms/invest", checked: "2026-11-02", verify: true}
+      - {field: commission_fixed_gbp, url: "https://www.trading212.com/pricing", checked: "2026-11-02", verify: true}
+  hl_sipp:
+    label: "Hargreaves Lansdown SIPP"
+    capital_gbp: 85000
+    base_currency: GBP
+    commission_fixed_gbp: 6.95
+    commission_fixed_frequent_gbp: 3.95
+    frequent_trader_threshold: 20     # trades in the previous calendar month
+    commission_pct: 0.0
+    fx_fee_pct: null
+    fx_fee_tiers:                     # applied to the GBP value of each trade, marginal tiers
+      - {upto_gbp: 5000, pct: 0.0099}
+      - {upto_gbp: 20000, pct: 0.0075}
+      - {upto_gbp: null, pct: 0.0050}
+    fractional_shares: false
+    min_order_gbp: 0.0
+    api_execution: false
+    order_types_live: [market, limit]
+    fill_delay_bars: 1          # manual execution: assume fill at next bar open
+    slippage_pct: 0.0005
+    platform_fee_pct: 0.0035
+    platform_fee_cap_gbp: 150.0 # per year, shares/ETFs in SIPP
+    sources:
+      - {field: commission_fixed_gbp, url: "https://www.hl.co.uk/our-services/sipp/charges", checked: "2026-11-02", verify: true}
+      - {field: fx_fee_tiers, url: "https://www.hl.co.uk/our-services/sipp/charges", checked: "2026-11-02", verify: true}
+      - {field: platform_fee_pct, url: "https://www.hl.co.uk/our-services/sipp/charges", checked: "2026-11-02", verify: true}
+
+taxes:
+  uk_stamp_duty_pct: 0.005          # SDRT on purchases of UK-incorporated shares; ETFs and AIM exempt
+  irish_stamp_duty_pct: 0.01        # Irish-incorporated shares (not Irish-domiciled ETFs)
+  ptm_levy_gbp: 1.0                 # UK trades above threshold, buys and sells
+  ptm_levy_threshold_gbp: 10000
+  us_sec_fee_pct_sell: 0.0000278    # SEC section 31 fee on US sells; tiny, included for completeness
+  sources:
+    - {field: uk_stamp_duty_pct, url: "https://www.gov.uk/tax-buy-shares", checked: "2026-11-02", verify: false}
+    - {field: ptm_levy_gbp, url: "https://www.thetakeoverpanel.org.uk/", checked: "2026-11-02", verify: true}
+
+spread:
+  estimator: corwin_schultz         # bid/ask unavailable on delayed feed
+  floor_bps:                        # minimum assumed full spread by instrument type, basis points
+    etf: 5
+    stock: 10
+    inverse_etf: 15
+  calibration_csv: config/spread_calibration.csv

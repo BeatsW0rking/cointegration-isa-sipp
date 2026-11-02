@@ -1,0 +1,2 @@
+# Manual symbol mapping overrides. t212_ticker is the Trading 212 API ticker (e.g. VUSAl_EQ).
+# t212_ticker,tradingview,yfinance,note
