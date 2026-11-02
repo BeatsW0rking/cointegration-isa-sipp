@@ -49,10 +49,11 @@ uv run cointisa report --interval 1D     # prints results/<run_id>/attainability
 
 ## Status
 
-Results so far are in [docs/FINDINGS.md](docs/FINDINGS.md) (daily and weekly timeframes; hourly
-pending) with full tables under `results/<run_id>/`. Short version: statistical cointegration among
+Results are in [docs/FINDINGS.md](docs/FINDINGS.md) (hourly, daily and weekly timeframes) with full
+tables under `results/<run_id>/`. Short version: statistical cointegration among
 LSE ETFs is abundant and mostly spurious (pass rates rise with group size while out-of-sample
 persistence falls); the relationships that persist are same-index trackers with tiny spreads; and no
 long-only variant produces positive alpha against simply holding the same ETFs once costs are
-included. The best of 72 daily configurations earns about +0.66%/month, almost all of it market beta.
+included. The best of 108 configurations (daily bars) earns about +0.66%/month, almost all of it market beta;
+hourly trading of the tightest same-index pairs loses money after costs in every account.
 The 5-20%/month target is not attainable in these wrappers.

@@ -7,8 +7,8 @@ Full tables: `results/03d9214078f2431a/attainability.md` and `attainability.csv`
 ## Headline
 
 The 5-20% per month target is not attainable with long-only cointegration trading of LSE ETFs in a
-Trading 212 ISA or an HL SIPP. The best of 72 account x variant x parameter configurations on daily
-bars earns a geometric mean of **+0.66% per month** (95% bootstrap CI +0.05% to +1.32%) over 93
+Trading 212 ISA or an HL SIPP, on hourly, daily or weekly bars. The best of 108 account x variant x
+timeframe x parameter configurations (daily bars) earns a geometric mean of **+0.66% per month** (95% bootstrap CI +0.05% to +1.32%) over 93
 months, and that return is almost entirely market exposure: beta 0.81 against an equal-weight hold of
 the same ETFs, annual alpha -0.8%, deflated Sharpe probability 0.37 (indistinguishable from the best
 of 72 unskilled trials). Months returning 5% or more occurred 7.5% of the time.
@@ -89,6 +89,36 @@ Best configuration per account, pairs only, cost-aware entry:
 Buy-and-hold of the same members returned +173% over the period. Fewer trades than daily (as
 intended) but no alpha anywhere; the deflated Sharpe probability of the best weekly configuration is
 0.33.
+
+## Hourly bars (1h), 151 liquid ETFs, pairs only, 2.7 years, 47 rolling windows
+
+Hourly data from Yahoo covers about 730 days, so the formation window (2,000 bars, about 11 months)
+leaves 23 months of trading. Only pairs were screened at this resolution: the daily and weekly
+results showed larger groups to be spurious, and the hourly sweep is the most expensive.
+
+- Screening: 21% of pair-windows pass Johansen + FDR, 10% also pass quality, and **8.4% of those
+  persist** out of sample, the highest persistence of the three timeframes, with a median half-life
+  of 4.3 hours. The persistent pairs are again same-index or near-identical trackers: HMWO/V3AB,
+  MIDD/VMID (FTSE 250), CBU0/CBU7 (US Treasuries), VHVG/VWRA, EIMI/IDEM.
+- Trading them is the worst outcome of all: the spreads are tight, the entries are frequent, and
+  the costs compound. With the cost-aware filter, Trading 212 variant A returns +0.19%/month
+  (95% CI -2.0% to +2.3%) with beta 0.97 and alpha -13.7%/year against holding the pair; variant B
+  loses 1.0%/month; variant C loses 0.6%/month. The HL SIPP loses 0.4-0.5%/month even after the
+  filter, and 4-6%/month without it (£75-80k of fees on £85k in 23 months).
+
+| account | variant | monthly geo | 95% CI | beta vs hold | alpha/yr | trades | costs |
+|---|---|---|---|---|---|---|---|
+| T212 ISA | A basket rotation | +0.19% | -2.01% to +2.27% | 0.97 | -13.7% | 2,275 | £7,075 |
+| T212 ISA | B cheap leg only | -1.09% | -2.71% to +0.11% | 0.35 | -17.5% | 1,070 | £6,013 |
+| T212 ISA | C inverse ETF leg | -0.56% | -1.33% to -0.01% | 0.11 | -7.8% | 887 | £2,881 |
+| HL SIPP | A basket rotation | -0.49% | -2.92% to +1.57% | 0.90 | -17.7% | 1,131 | £41,808 |
+| HL SIPP | B cheap leg only | -0.45% | -1.18% to +0.11% | 0.14 | -6.8% | 454 | £13,020 |
+| HL SIPP | C inverse ETF leg | -0.02% | -0.07% to +0.03% | 0.00 | -0.1% | 63 | £992 |
+
+Benchmark hold of the same pairs: +35% (HL) to +43% (T212) over the 23 months.
+
+The 4h timeframe was not run separately: it would be a resample of the same hourly data with a
+quarter of the bars, and it sits between two timeframes that already agree.
 
 ## Why the target is out of reach (mechanics, not luck)
 
