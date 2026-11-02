@@ -198,6 +198,10 @@ def screen(
         True, help="Drop leveraged/inverse products from candidates"
     ),
     max_size: int = typer.Option(0, help="Override johansen.max_group_size (0 = config)"),
+    corr_threshold: float = typer.Option(
+        0.0,
+        help="Override candidates.correlation_cluster_threshold (0 = config); use a tier suffix",
+    ),
 ) -> None:
     """Candidate generation + Johansen sweep for one timeframe -> results/<run_id>/screen_*."""
     from cointisa.data.panel import (
@@ -234,7 +238,7 @@ def screen(
     }
     groups, clusters = candidate_groups(
         panel,
-        threshold=rcfg.candidates["correlation_cluster_threshold"],
+        threshold=corr_threshold or rcfg.candidates["correlation_cluster_threshold"],
         min_size=rcfg.johansen["min_group_size"],
         max_size=max_size or rcfg.johansen["max_group_size"],
         cap_per_cluster=rcfg.candidates["max_groups_per_block"],
@@ -262,7 +266,12 @@ def screen(
     res.to_parquet(out, index=False)
     sidecar = stage_manifest(list(panel.columns), rcfg.as_of, interval)
     sidecar.update(
-        {"n_bars": int(len(panel)), "n_groups": len(groups), "max_size": max_size or None}
+        {
+            "n_bars": int(len(panel)),
+            "n_groups": len(groups),
+            "max_size": max_size or None,
+            "corr_threshold": corr_threshold or None,
+        }
     )
     (run_dir() / f"screen_{interval}_{tier}.manifest.json").write_text(
         json.dumps(sidecar, indent=1)

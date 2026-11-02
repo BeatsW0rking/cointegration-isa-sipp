@@ -21,7 +21,11 @@ TIER_SEEDS = {
 
 
 def seed_path_for_tier(tier: str) -> Path:
-    return TIER_SEEDS.get(tier, CONFIG_DIR / "universe_seed.csv")
+    """Seed CSV for a tier; variants such as 'ftse350_c04' map by prefix to their base tier."""
+    for key, path in sorted(TIER_SEEDS.items(), key=lambda kv: -len(kv[0])):
+        if tier == key or tier.startswith(key + "_"):
+            return path
+    return CONFIG_DIR / "universe_seed.csv"
 
 
 def load_seed_instruments(path: Path | None = None) -> dict[str, Instrument]:
