@@ -6,13 +6,11 @@ import json
 import logging
 from pathlib import Path
 
-import cointisa._threads  # noqa: F401  (must precede numpy imports)
-
-
 import typer
 from rich.console import Console
 from rich.table import Table
 
+import cointisa._threads  # noqa: F401  (must precede numpy imports)
 from cointisa.config import load_costs, load_research, load_universe
 from cointisa.paths import CONFIG_DIR, DATA_DIR, RAW_DIR
 
