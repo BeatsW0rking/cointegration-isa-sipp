@@ -227,8 +227,10 @@ def run_backtest(
     n = len(panel)
     bench_members: set[str] = set()
 
+    valuation = panel.ffill()  # last known price for marking positions when a bar is missing
     for t in range(start_bar, n):
         prices = panel.iloc[t]
+        marks = valuation.iloc[t]
         time = panel.index[t]
         if last_month is not None and months[t] != last_month:
             book.trades_prev_month, book.trades_this_month = book.trades_this_month, 0
@@ -267,7 +269,7 @@ def run_backtest(
                     for s in og.model.members:
                         orders.append((s, 0.0, insts[s], key, "deselected"))
                     del open_groups[key]
-            equity_now = book.value(prices)
+            equity_now = book.value(marks)
             for m in fresh:
                 key = "|".join(m.members)
                 if len(m.members) > cfg.max_group_size:
@@ -282,7 +284,7 @@ def run_backtest(
                 bench_members.update(m.members)
             # benchmark: equal-weight across all members ever selected
             if bench_members:
-                bv = bench.value(prices)
+                bv = bench.value(marks)
                 for s in bench_members:
                     if np.isfinite(prices[s]):
                         bench.execute(
@@ -378,8 +380,8 @@ def run_backtest(
             else:
                 pending.extend(orders)
 
-        equity.append(book.value(prices))
-        bench_eq.append(bench.value(prices))
+        equity.append(book.value(marks))
+        bench_eq.append(bench.value(marks))
         hold_rows.append(
             {
                 "time": time,
