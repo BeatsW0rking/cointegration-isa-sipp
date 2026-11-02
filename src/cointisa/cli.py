@@ -4,7 +4,13 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from pathlib import Path
+
+# One BLAS thread per process: the sweep parallelises across processes, and multithreaded BLAS in
+# every worker oversubscribes the cores (observed 10x slowdown). Must run before numpy is imported.
+for _var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
+    os.environ.setdefault(_var, "1")
 
 import typer
 from rich.console import Console
