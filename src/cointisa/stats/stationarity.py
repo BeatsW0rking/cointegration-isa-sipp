@@ -26,8 +26,9 @@ def integration_order(
 ) -> IntegrationResult:
     """Classify a series as I(0), I(1) or other.
 
-    I(0): ADF rejects a unit root OR KPSS fails to reject stationarity (lenient on levels).
-    I(1): levels fail ADF and KPSS rejects, while first differences pass ADF.
+    I(0): ADF rejects a unit root AND KPSS fails to reject stationarity (both tests agree).
+    I(1): otherwise, if first differences pass ADF. When ADF and KPSS both reject on levels the
+    series is treated as I(1); a lone 5% ADF rejection is too noisy to discard a random walk.
     """
     x = np.asarray(x, dtype=float)
     x = x[np.isfinite(x)]
@@ -38,10 +39,19 @@ def integration_order(
         adf_dif = adfuller(np.diff(x), regression="c", autolag="AIC")[1]
     if adf_lvl < adf_alpha and kpss_lvl > kpss_alpha:
         order = 0
-    elif adf_lvl >= adf_alpha and adf_dif < adf_alpha:
+    elif adf_dif < adf_alpha:
         order = 1
-    elif adf_lvl < adf_alpha:
-        order = 0
     else:
         order = 2
     return IntegrationResult(adf_lvl, kpss_lvl, adf_dif, order)
+
+
+def spread_adf_p(spread: np.ndarray) -> float:
+    """ADF p-value (constant, AIC lags) of a spread; used as the out-of-sample reversion check."""
+    x = np.asarray(spread, float)
+    x = x[np.isfinite(x)]
+    if len(x) < 20:
+        return 1.0
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        return float(adfuller(x, regression="c", autolag="AIC")[1])
