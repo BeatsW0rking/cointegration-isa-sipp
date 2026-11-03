@@ -1,0 +1,2 @@
+account,variant,judge,gate,max_groups,stability_windows,max_size,min_edge_multiple,capital,gross_leverage,costs_hash,accounts,total_return,cagr,ann_vol,sharpe,max_drawdown,monthly_mean,monthly_std,n_months,n_trades,total_costs_gbp,financing_gbp,beta_vs_benchmark,alpha_ann_vs_benchmark,benchmark_total_return
+ig_spreadbet,D_long_short,rules,0.3,8,1,2,1.5,,1.0,837e27156a73,ig_spreadbet,-0.17739053892420686,-0.028172191746889674,0.03078719385120481,-0.9133080399092515,-0.1858387928923524,-0.0023738856416913004,0.008281973733293074,81,701,4343.066303326462,627.944089517274,,,0.0

@@ -1,0 +1,307 @@
+symbol,tradingview,yfinance,name,currency,close,avg_volume_30d,market_cap,sector,industry,leverage,hedged,type
+LSE:SHEL,LSE:SHEL,SHEL.L,Shell Plc,GBX,3921,8494233.366666667,229298536207,Energy Minerals,Integrated Oil,1.0,False,stock
+LSE:HSBA,LSE:HSBA,HSBA.L,HSBC Holdings Plc,GBX,1283.4,20412784.033333346,218809917336,Finance,Major Banks,1.0,False,stock
+LSE:AZN,LSE:AZN,AZN.L,AstraZeneca PLC,GBX,13860,2450896.6,216506453802,Health Technology,Pharmaceuticals: Major,1.0,False,stock
+LSE:TTE,LSE:TTE,TTE.L,TotalEnergies SE,EUR,85,1457659.8,158892316978.4035,Energy Minerals,Integrated Oil,1.0,False,stock
+LSE:BHP,LSE:BHP,BHP.L,BHP Group Ltd,GBX,3005,1118054.5999999852,153611705712.94452,Non-Energy Minerals,Steel,1.0,False,stock
+LSE:BNC,LSE:BNC,BNC.L,"Banco Santander, S.A.",GBX,863,171879.06666670192,122588356039.24313,Finance,Major Banks,1.0,False,stock
+LSE:RIO,LSE:RIO,RIO.L,Rio Tinto plc,GBX,6196,2309929.333333331,105217475260,Non-Energy Minerals,Other Metals/Minerals,1.0,False,stock
+LSE:ULVR,LSE:ULVR,ULVR.L,Unilever PLC,GBX,4901,2892884.633333336,104926543382,Consumer Non-Durables,Household/Personal Care,1.0,False,stock
+LSE:RR.,LSE:RR.,RR-.L,Rolls-Royce Holdings plc,GBX,1276.2,19311333.93333336,102488503973,Electronic Technology,Aerospace & Defense,1.0,False,stock
+LSE:BATS,LSE:BATS,BATS.L,British American Tobacco p.l.c.,GBX,4574,2882200.7,98701594306,Consumer Non-Durables,Tobacco,1.0,False,stock
+LSE:BP.,LSE:BP.,BP-.L,BP PLC,GBX,600,42484614.86666667,96955335117,Energy Minerals,Integrated Oil,1.0,False,stock
+LSE:BVA,LSE:BVA,BVA.L,"Banco Bilbao Vizcaya Argentaria, S.A.",EUR,21.72,4879818.666666667,96451139306.71587,Finance,Major Banks,1.0,False,stock
+LSE:GSK,LSE:GSK,GSK.L,GSK plc,GBX,1824.5,7268951.266666666,74365656231,Health Technology,Pharmaceuticals: Major,1.0,False,stock
+LSE:NG.,LSE:NG.,NG-.L,National Grid plc,GBX,1252,9185243.56666667,63062576043,Utilities,Electric Utilities,1.0,False,stock
+LSE:GLEN,LSE:GLEN,GLEN.L,Glencore plc,GBX,519,29413633.866666667,60875478750,Distribution Services,Wholesale Distributors,1.0,False,stock
+LSE:BA.,LSE:BA.,BA-.L,BAE Systems plc,GBX,2073,4162767.1,60550205967,Electronic Technology,Aerospace & Defense,1.0,False,stock
+LSE:BARC,LSE:BARC,BARC.L,Barclays PLC,GBX,424.1,41850785.466666654,55198080780,Finance,Investment Banks/Brokers,1.0,False,stock
+LSE:LLOY,LSE:LLOY,LLOY.L,Lloyds Banking Group plc,GBX,95.22,154637915.0666667,53459008632,Finance,Major Banks,1.0,False,stock
+LSE:REL,LSE:REL,REL.L,RELX PLC,GBX,2998,3670488.8333333335,51930327457,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:NWG,LSE:NWG,NWG.L,NatWest Group Plc,GBX,592.2,19973799.93333333,45795401643,Finance,Major Banks,1.0,False,stock
+LSE:LSEG,LSE:LSEG,LSEG.L,London Stock Exchange Group plc,GBX,9524,1364304.0333333334,45520207192,Commercial Services,Financial Publishing/Services,1.0,False,stock
+LSE:STAN,LSE:STAN,STAN.L,Standard Chartered PLC,GBX,2055,4928699.633333328,44522421235,Finance,Major Banks,1.0,False,stock
+LSE:CPG,LSE:CPG,CPG.L,Compass Group PLC,USD,34.49,1950080.6333333105,42803219870.72071,Consumer Services,Restaurants,1.0,False,stock
+LSE:AAL,LSE:AAL,AAL.L,Anglo American plc,GBX,3824,3560385.333333334,39971487297,Non-Energy Minerals,Other Metals/Minerals,1.0,False,stock
+LSE:DGE,LSE:DGE,DGE.L,Diageo plc,GBX,1805.5,4597327.133333334,39103445583,Consumer Non-Durables,Beverages: Alcoholic,1.0,False,stock
+LSE:CCEP,LSE:CCEP,CCEP.L,Coca-Cola Europacific Partners plc,GBX,8570,188984.7,37473750708.68494,Consumer Non-Durables,Beverages: Non-Alcoholic,1.0,False,stock
+LSE:RKT,LSE:RKT,RKT.L,Reckitt Benckiser Group plc,GBX,5574,1454434.8333333333,34251831901.999996,Consumer Non-Durables,Household/Personal Care,1.0,False,stock
+LSE:TSCO,LSE:TSCO,TSCO.L,Tesco PLC,GBX,545,13576277.6,33459950982.000004,Retail Trade,Food Retail,1.0,False,stock
+LSE:SSE,LSE:SSE,SSE.L,SSE PLC,GBX,2602,2475620.4,31886569527,Utilities,Electric Utilities,1.0,False,stock
+LSE:ANTO,LSE:ANTO,ANTO.L,Antofagasta plc,GBX,3253,1133338.4333333333,30817880338,Non-Energy Minerals,Other Metals/Minerals,1.0,False,stock
+LSE:HLN,LSE:HLN,HLN.L,Haleon PLC,GBX,323.2,35535603.9,28092119005,Health Technology,Pharmaceuticals: Major,1.0,False,stock
+LSE:VOD,LSE:VOD,VOD.L,Vodafone Group Public Limited Company,GBX,116.85,52419163.500000015,27592201375,Communications,Wireless Telecommunications,1.0,False,stock
+LSE:EXPN,LSE:EXPN,EXPN.L,Experian PLC,GBX,3023,2290126.566666667,26165632139,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:SUNB,LSE:SUNB,SUNB.L,Sunbelt Rentals Holdings Inc,GBX,6318,367244.6,25590797431.857216,Finance,Finance/Rental/Leasing,1.0,False,stock
+LSE:PRU,LSE:PRU,PRU.L,Prudential plc,GBX,933.2,9880420.933333365,22484519346,Finance,Multi-Line Insurance,1.0,False,stock
+LSE:BT.A,LSE:BT.A,BT-A.L,BT Group plc,GBX,227.7,18452381.466666665,22140817997,Communications,Major Telecommunications,1.0,False,stock
+LSE:IMB,LSE:IMB,IMB.L,Imperial Brands PLC,GBX,2979,2998386.666666649,21982027863,Consumer Non-Durables,Tobacco,1.0,False,stock
+LSE:AV.,LSE:AV.,AV-.L,Aviva plc,GBX,730.2,4730743.8,21948326514,Finance,Multi-Line Insurance,1.0,False,stock
+LSE:IHG,LSE:IHG,IHG.L,InterContinental Hotels Group PLC,USD,171.4,304703.13333333336,18237829518.535282,Consumer Services,Hotels/Resorts/Cruise lines,1.0,False,stock
+LSE:NXT,LSE:NXT,NXT.L,Next plc,GBX,15415,375630.2,17528048214,Consumer Non-Durables,Apparel/Footwear,1.0,False,stock
+LSE:IAG,LSE:IAG,IAG.L,International Consolidated Airlines Group SA,GBX,417.9,9905820.933333334,17495551222,Transportation,Airlines,1.0,False,stock
+LSE:CCH,LSE:CCH,CCH.L,Coca-Cola HBC AG,GBX,4808,634204.5333333333,17144413664,Consumer Non-Durables,Beverages: Non-Alcoholic,1.0,False,stock
+LSE:FRES,LSE:FRES,FRES.L,Fresnillo PLC,GBX,2337,731434.5,16469571228,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:LGEN,LSE:LGEN,LGEN.L,Legal & General Group Plc,GBX,305.7,19159536.56666663,16213069321,Finance,Multi-Line Insurance,1.0,False,stock
+LSE:ABF,LSE:ABF,ABF.L,Associated British Foods plc,GBX,1943,688025,13438223637,Consumer Non-Durables,Food: Major Diversified,1.0,False,stock
+LSE:HLMA,LSE:HLMA,HLMA.L,Halma plc,GBX,3500,874390.7666666667,13023154122,Electronic Technology,Electronic Equipment/Instruments,1.0,False,stock
+LSE:KYGA,LSE:KYGA,KYGA.L,Kerry Group Plc Class A,EUR,99.4,90906.56666666667,12913442217.40048,Process Industries,Chemicals: Specialty,1.0,False,stock
+LSE:VALT,LSE:VALT,VALT.L,Valterra Platinum Limited,GBX,5025,77516.46666666666,12580782924.22,Non-Energy Minerals,Other Metals/Minerals,1.0,False,stock
+LSE:SGRO,LSE:SGRO,SGRO.L,SEGRO plc,GBX,914.8,2819808.466666667,12342123552,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:ADM,LSE:ADM,ADM.L,Admiral Group plc,GBX,3882,732183.1333333333,11827504106,Finance,Property/Casualty Insurance,1.0,False,stock
+LSE:UU.,LSE:UU.,UU-.L,United Utilities Group PLC,GBX,1541,1674082.6333333333,11395534083,Utilities,Water Utilities,1.0,False,stock
+LSE:INF,LSE:INF,INF.L,Informa Plc,GBX,847.4,5111504.866666666,11232135539,Technology Services,Internet Software/Services,1.0,False,stock
+LSE:SGE,LSE:SGE,SGE.L,Sage Group plc,GBX,1179,2858797.466666667,10478581763,Technology Services,Packaged Software,1.0,False,stock
+LSE:S32,LSE:S32,S32.L,South32 Ltd.,GBX,228.6,366286.43333333335,10188224965.924128,Non-Energy Minerals,Other Metals/Minerals,1.0,False,stock
+LSE:SVT,LSE:SVT,SVT.L,Severn Trent Plc,GBX,3308,615889.4,9986563998,Utilities,Water Utilities,1.0,False,stock
+LSE:DPLM,LSE:DPLM,DPLM.L,Diploma PLC,GBX,7265,401481.36666666664,9648123950,Distribution Services,Wholesale Distributors,1.0,False,stock
+LSE:WISE,LSE:WISE,WISE.L,Wise Group plc Class A,GBX,810.4,1708536.6666666667,9431153791.352402,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:AAF,LSE:AAF,AAF.L,Airtel Africa Plc,GBX,267.4,3423559.8666666667,9369064804,Communications,Wireless Telecommunications,1.0,False,stock
+LSE:SDLF,LSE:SDLF,SDLF.L,Standard Life plc,GBX,932,3346537.066666667,9275824430,Finance,Life/Health Insurance,1.0,False,stock
+LSE:SN.,LSE:SN.,SN-.L,Smith & Nephew plc,GBX,1105,2924705.5,9270135805,Health Technology,Medical Specialties,1.0,False,stock
+LSE:ITRK,LSE:ITRK,ITRK.L,Intertek Group plc,GBX,5940,998709.9,9103873673,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:MICC,LSE:MICC,MICC.L,Magnum Ice Cream Co. N.V.,GBX,1504,211035.86666666667,9029644996.184473,Consumer Non-Durables,Food: Meat/Fish/Dairy,1.0,False,stock
+LSE:EDV,LSE:EDV,EDV.L,Endeavour Mining PLC,GBX,3734,535017.8333333334,8988621815.302816,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:BNZL,LSE:BNZL,BNZL.L,Bunzl plc,GBX,2892,1325839.5333333334,8929300313,Distribution Services,Wholesale Distributors,1.0,False,stock
+LSE:RTO,LSE:RTO,RTO.L,Rentokil Initial plc,GBX,356.9,10462496.766666668,8800603524,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:MKS,LSE:MKS,MKS.L,Marks and Spencer Group plc,GBX,416.3,6839936.766666611,8524282781,Retail Trade,Department Stores,1.0,False,stock
+LSE:PSON,LSE:PSON,PSON.L,Pearson PLC,GBX,1293.5,1536708.8333333333,7788944763,Consumer Services,Publishing: Books/Magazines,1.0,False,stock
+LSE:MNG,LSE:MNG,MNG.L,M&G Plc,GBX,322.8,4483332.266666667,7611975797,Finance,Financial Conglomerates,1.0,False,stock
+LSE:SBRY,LSE:SBRY,SBRY.L,J Sainsbury plc,GBX,350.5,8580381.066666666,7519268606,Retail Trade,Food Retail,1.0,False,stock
+LSE:SMIN,LSE:SMIN,SMIN.L,Smiths Group Plc,GBX,2736,1149233.8333333333,7393108263,Producer Manufacturing,Electrical Products,1.0,False,stock
+LSE:CNA,LSE:CNA,CNA.L,Centrica plc,GBX,149.9,13355331.800000004,6915924440,Utilities,Gas Distributors,1.0,False,stock
+LSE:IMI,LSE:IMI,IMI.L,IMI plc,GBX,2900,701828.2666666667,6747202754,Producer Manufacturing,Industrial Machinery,1.0,False,stock
+LSE:WEIR,LSE:WEIR,WEIR.L,Weir PLC,GBX,2664,1070597.6,6593236496,Producer Manufacturing,Trucks/Construction/Farm Machinery,1.0,False,stock
+LSE:HSX,LSE:HSX,HSX.L,Hiscox Ltd,GBX,1883,1304307.5666666667,5907865753,Finance,Multi-Line Insurance,1.0,False,stock
+LSE:MRO,LSE:MRO,MRO.L,Melrose Industries PLC,GBX,475.8,4414725.299999998,5860396789,Electronic Technology,Aerospace & Defense,1.0,False,stock
+LSE:KGF,LSE:KGF,KGF.L,Kingfisher Plc,GBX,366.6,5903305.866666666,5706185039,Retail Trade,Home Improvement Chains,1.0,False,stock
+LSE:MTLN,LSE:MTLN,MTLN.L,Metlen Energy & Metals PLC,EUR,47.58,107630.5,5679775629.822728,Industrial Services,Engineering & Construction,1.0,False,stock
+LSE:SPX,LSE:SPX,SPX.L,Spirax Group plc.,GBX,7600,182493.03333333333,5513096508,Producer Manufacturing,Industrial Machinery,1.0,False,stock
+LSE:DCC,LSE:DCC,DCC.L,DCC Energy Plc,GBX,6450,503508.9666666667,5507187136,Utilities,Gas Distributors,1.0,False,stock
+LSE:LAND,LSE:LAND,LAND.L,Land Securities Group PLC,GBX,684,4382840.433333334,5497151155,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:INVP,LSE:INVP,INVP.L,Investec plc,GBX,606.5,1395640.2666666666,5391887244,Finance,Investment Banks/Brokers,1.0,False,stock
+LSE:HBR,LSE:HBR,HBR.L,Harbour Energy Plc,GBX,294.6,5172302.499999999,5367187273,Energy Minerals,Oil & Gas Production,1.0,False,stock
+LSE:SEPL,LSE:SEPL,SEPL.L,Seplat Energy PLC,GBX,874,562025.5333333333,5327507940,Energy Minerals,Oil & Gas Production,1.0,False,stock
+LSE:ICG,LSE:ICG,ICG.L,ICG plc,GBX,1904,1208108.2666666666,5311522972,Finance,Investment Managers,1.0,False,stock
+LSE:GAW,LSE:GAW,GAW.L,Games Workshop Group PLC,GBX,15920,73760.03333333334,5211255065,Consumer Durables,Recreational Products,1.0,False,stock
+LSE:CCC,LSE:CCC,CCC.L,Computacenter Plc,GBX,4990,250023.63333333333,5178882829,Technology Services,Information Technology Services,1.0,False,stock
+LSE:BGEO,LSE:BGEO,BGEO.L,Lion Finance Group PLC,GBX,12050,85243.13333333333,5170678098,Finance,Major Banks,1.0,False,stock
+LSE:STJ,LSE:STJ,STJ.L,St. James's Place Plc,GBX,1087,1604249.4333333333,5143457429,Finance,Life/Health Insurance,1.0,False,stock
+LSE:EZJ,LSE:EZJ,EZJ.L,easyJet plc,GBX,679.8,3674383.566666669,5132922933,Transportation,Airlines,1.0,False,stock
+LSE:CRDA,LSE:CRDA,CRDA.L,Croda International Plc,GBX,3668,428775.13333333336,5086688744,Process Industries,Chemicals: Specialty,1.0,False,stock
+LSE:ITH,LSE:ITH,ITH.L,Ithaca Energy PLC,GBX,284.8,1683846.2,5007502335,Energy Minerals,Integrated Oil,1.0,False,stock
+LSE:BAB,LSE:BAB,BAB.L,Babcock International Group PLC,GBX,1031.5,1743521.9333333333,4993446763,Producer Manufacturing,Trucks/Construction/Farm Machinery,1.0,False,stock
+LSE:CTEC,LSE:CTEC,CTEC.L,ConvaTec Group Plc,GBX,245.6,8640645.4,4672521075,Health Technology,Medical Specialties,1.0,False,stock
+LSE:WTB,LSE:WTB,WTB.L,Whitbread PLC,GBX,2808,624934.4666666667,4588962526,Consumer Services,Hotels/Resorts/Cruise lines,1.0,False,stock
+LSE:LMP,LSE:LMP,LMP.L,LondonMetric Property Plc,GBX,187.6,6669686.933333334,4497556473,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:BTRW,LSE:BTRW,BTRW.L,Barratt Redrow plc,GBX,334.6,6028618.666666665,4398140473,Consumer Durables,Homebuilding,1.0,False,stock
+LSE:WPP,LSE:WPP,WPP.L,WPP Plc,GBX,408,5314525,4375465209,Commercial Services,Advertising/Marketing Services,1.0,False,stock
+LSE:BLND,LSE:BLND,BLND.L,British Land Company PLC,GBX,436.6,3247643,4357330658,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:JD.,LSE:JD.,JD-.L,JD Sports Fashion Plc,GBX,96.32,12968804.366666673,4329227783,Retail Trade,Apparel/Footwear Retail,1.0,False,stock
+LSE:HWDN,LSE:HWDN,HWDN.L,Howden Joinery Group PLC,GBX,835,1167974.6666666667,4321575430,Consumer Durables,Electronics/Appliances,1.0,False,stock
+LSE:GLB,LSE:GLB,GLB.L,Glanbia Plc,EUR,20.8,86061.26666666666,4129741516.816608,Consumer Non-Durables,Food: Meat/Fish/Dairy,1.0,False,stock
+LSE:AUTO,LSE:AUTO,AUTO.L,Autotrader Group PLC,GBX,546.4,3832080.8666666667,4093474718,Technology Services,Internet Software/Services,1.0,False,stock
+LSE:ROR,LSE:ROR,ROR.L,Rotork plc,GBX,493,3759031.2,4023311648,Producer Manufacturing,Industrial Machinery,1.0,False,stock
+LSE:BBY,LSE:BBY,BBY.L,Balfour Beatty plc,GBX,875,1743116.9666666666,4002448516,Industrial Services,Engineering & Construction,1.0,False,stock
+LSE:PSN,LSE:PSN,PSN.L,Persimmon Plc,GBX,1284,1980993.7666666666,4000118139,Consumer Durables,Homebuilding,1.0,False,stock
+LSE:ZEG,LSE:ZEG,ZEG.L,Zegona Communications Plc,GBX,1758,428291.0333333333,3958520655,Finance,Financial Conglomerates,1.0,False,stock
+LSE:ABDN,LSE:ABDN,ABDN.L,Aberdeen Group plc,GBX,224.8,4171676.7333333334,3939107629,Finance,Investment Managers,1.0,False,stock
+LSE:RSW,LSE:RSW,RSW.L,Renishaw plc,GBX,5240,130648.76666666666,3877971832,Producer Manufacturing,Industrial Machinery,1.0,False,stock
+LSE:FRAS,LSE:FRAS,FRAS.L,Frasers Group PLC,GBX,913,208269.43333333332,3850839571,Retail Trade,Specialty Stores,1.0,False,stock
+LSE:BRBY,LSE:BRBY,BRBY.L,Burberry Group plc,GBX,1065.5,2112247.533333333,3801913797,Consumer Non-Durables,Apparel/Footwear,1.0,False,stock
+LSE:N91,LSE:N91,N91.L,Ninety One Plc,GBX,202.6,620373.7333333333,3777162049,Finance,Investment Managers,1.0,False,stock
+LSE:RMV,LSE:RMV,RMV.L,Rightmove plc,GBX,533.6,4292485.866666666,3739825511,Technology Services,Internet Software/Services,1.0,False,stock
+LSE:BPT,LSE:BPT,BPT.L,Bridgepoint Group Plc,GBX,423.2,2187453.7666666666,3722712494,Finance,Investment Managers,1.0,False,stock
+LSE:EMG,LSE:EMG,EMG.L,Man Group PLC,GBX,336.4,3405668.500000028,3691991870,Finance,Investment Managers,1.0,False,stock
+LSE:RS1,LSE:RS1,RS1.L,RS Group PLC,GBX,785.5,882519.4,3589465160,Distribution Services,Wholesale Distributors,1.0,False,stock
+LSE:HIK,LSE:HIK,HIK.L,Hikma Pharmaceuticals Plc,GBX,1748,421267.06666666665,3582617594,Health Technology,Pharmaceuticals: Generic,1.0,False,stock
+LSE:SCT,LSE:SCT,SCT.L,Softcat Plc,GBX,1620,701439.1333333333,3508264310,Technology Services,Information Technology Services,1.0,False,stock
+LSE:MNDI,LSE:MNDI,MNDI.L,Mondi plc,GBX,771.2,1268859.5333333334,3347198892,Process Industries,Containers/Packaging,1.0,False,stock
+LSE:GGP,LSE:GGP,GGP.L,Greatland Resources Limited,GBX,506,1742352.2999999984,3326508078,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:ROSE,LSE:ROSE,ROSE.L,Rosebank Industries Plc,GBX,320,1923150.0666666678,3162947899,Producer Manufacturing,Electrical Products,1.0,False,stock
+LSE:IGG,LSE:IGG,IGG.L,IG Group Holdings plc,GBX,954.5,1953044.5,3155754877,Finance,Investment Banks/Brokers,1.0,False,stock
+LSE:BKG,LSE:BKG,BKG.L,Berkeley Group Holdings plc,GBX,3640,361350.7,3131290508,Consumer Durables,Homebuilding,1.0,False,stock
+LSE:ENT,LSE:ENT,ENT.L,Entain PLC,GBX,480.6,3481121.6666666665,2981716441,Consumer Services,Casinos/Gaming,1.0,False,stock
+LSE:JMAT,LSE:JMAT,JMAT.L,Johnson Matthey Plc,GBX,2420,362441,2973829830,Process Industries,Chemicals: Major Diversified,1.0,False,stock
+LSE:CWK,LSE:CWK,CWK.L,Cranswick plc,GBX,5430,174169.3,2868116404,Consumer Non-Durables,Food: Meat/Fish/Dairy,1.0,False,stock
+LSE:SHC,LSE:SHC,SHC.L,Shaftesbury Capital PLC,GBX,149.9,2410129.3333333335,2856926185,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:OMU,LSE:OMU,OMU.L,Old Mutual Ltd.,GBX,64,385603.3,2776583302.2108884,Finance,Life/Health Insurance,1.0,False,stock
+LSE:BME,LSE:BME,BME.L,B&M European Value Retail PLC,GBX,283.8,4926112.966666667,2770269459,Retail Trade,Discount Stores,1.0,False,stock
+LSE:TW.,LSE:TW.,TW-.L,Taylor Wimpey plc,GBX,84.18,20954371.333333325,2766233275,Consumer Durables,Homebuilding,1.0,False,stock
+LSE:SRP,LSE:SRP,SRP.L,Serco Group plc,GBX,294,1524876.0666666746,2748935442,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:QQ.,LSE:QQ.,QQ-.L,QinetiQ Group plc,GBX,543.5,1361667.8333333333,2747691316,Electronic Technology,Aerospace & Defense,1.0,False,stock
+LSE:DRX,LSE:DRX,DRX.L,Drax Group plc,GBX,809,668256.7333333333,2721310587,Utilities,Electric Utilities,1.0,False,stock
+LSE:OCDO,LSE:OCDO,OCDO.L,Ocado Group PLC,GBX,335.4,2748145.3,2695451084,Retail Trade,Food Retail,1.0,False,stock
+LSE:MTO,LSE:MTO,MTO.L,MITIE Group PLC,GBX,209.4,5602530.633333334,2650671220,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:PAF,LSE:PAF,PAF.L,Pan African Resources PLC,GBX,104.9,5733144.933333334,2545946968,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:TBCG,LSE:TBCG,TBCG.L,TBC Bank Group Plc,GBX,4536,74208.83333333333,2534454447,Finance,Major Banks,1.0,False,stock
+LSE:JET2,LSE:JET2,JET2.L,Jet2 PLC,GBX,1464,495870.73333333334,2510533119,Consumer Services,Other Consumer Services,1.0,False,stock
+LSE:TATE,LSE:TATE,TATE.L,Tate & Lyle PLC,GBX,565,1213622.4999999972,2491638953,Consumer Non-Durables,Food: Specialty/Candy,1.0,False,stock
+LSE:PHP,LSE:PHP,PHP.L,Primary Health Properties PLC,GBX,96.15,11293472.033333333,2449820831,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:UTG,LSE:UTG,UTG.L,UNITE Group plc,GBX,490.6,2150821.933333333,2448051037,Finance,Real Estate Development,1.0,False,stock
+LSE:BWY,LSE:BWY,BWY.L,Bellway p.l.c.,GBX,2292,663140.9,2431897845,Consumer Durables,Homebuilding,1.0,False,stock
+LSE:PNN,LSE:PNN,PNN.L,Pennon Group Plc,GBX,346.4,3999346.1087438567,2403580731,Utilities,Water Utilities,1.0,False,stock
+LSE:QLT,LSE:QLT,QLT.L,Quilter Plc,GBX,186.6,2451843.53333333,2396556655,Finance,Investment Managers,1.0,False,stock
+LSE:GNC,LSE:GNC,GNC.L,Greencore Group Plc,GBX,300.2,2104449.2333333334,2349239347,Consumer Non-Durables,Food: Specialty/Candy,1.0,False,stock
+LSE:ITV,LSE:ITV,ITV.L,ITV PLC,GBX,65.9,9152312.7,2343925967,Consumer Services,Movies/Entertainment,1.0,False,stock
+LSE:GRG,LSE:GRG,GRG.L,Greggs plc,GBX,2374,555148.6333333333,2343876242,Consumer Non-Durables,Food: Specialty/Candy,1.0,False,stock
+LSE:GTCO,LSE:GTCO,GTCO.L,Guaranty Trust Holding Company Plc,USD,0.088,4978997.1,2302098830.3995266,Finance,Regional Banks,1.0,False,stock
+LSE:HILS,LSE:HILS,HILS.L,Hill & Smith PLC,GBX,3035,216732.6,2301625332,Producer Manufacturing,Miscellaneous Manufacturing,1.0,False,stock
+LSE:PLUS,LSE:PLUS,PLUS.L,Plus500 Ltd.,GBX,3240,162749.43333333332,2298555911,Finance,Investment Banks/Brokers,1.0,False,stock
+LSE:AJB,LSE:AJB,AJB.L,AJ Bell Plc,GBX,591,833552.3,2276435922,Finance,Investment Managers,1.0,False,stock
+LSE:TCAP,LSE:TCAP,TCAP.L,TP ICAP Group plc,GBX,321.8,1594282.4000000006,2264723629,Finance,Investment Banks/Brokers,1.0,False,stock
+LSE:HOC,LSE:HOC,HOC.L,Hochschild Mining plc,GBX,446.2,1410767.1333333333,2216286983,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:ONT,LSE:ONT,ONT.L,Oxford Nanopore Technologies Plc,GBX,213,3316096.966666667,2178021237,Electronic Technology,Electronic Equipment/Instruments,1.0,False,stock
+LSE:CAN,LSE:CAN,CAN.L,Canal+ SA,GBX,230.6,565529.3666666667,2166532090,Consumer Services,Cable/Satellite TV,1.0,False,stock
+LSE:KLR,LSE:KLR,KLR.L,Keller Group plc,GBX,3244,195180.83333333334,2127403049,Industrial Services,Engineering & Construction,1.0,False,stock
+LSE:INCH,LSE:INCH,INCH.L,Inchcape plc,GBX,636.5,1201404,2104123928,Distribution Services,Wholesale Distributors,1.0,False,stock
+LSE:HTWS,LSE:HTWS,HTWS.L,Helios Towers Plc,GBX,204.8,2645565.6333333333,2101099354.9999998,Communications,Specialty Telecommunications,1.0,False,stock
+LSE:DLN,LSE:DLN,DLN.L,Derwent London plc,GBX,1946,307744.7,2090770990,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:HMSO,LSE:HMSO,HMSO.L,Hammerson plc,GBX,363.2,1077872.5999999994,2057973587,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:CMCX,LSE:CMCX,CMCX.L,CMC Markets Plc,GBX,705,399181.4,1937021196,Finance,Investment Banks/Brokers,1.0,False,stock
+LSE:MAB,LSE:MAB,MAB.L,Mitchells & Butlers plc,GBX,330.5,526307.4666666663,1912837637,Consumer Services,Restaurants,1.0,False,stock
+LSE:MGNS,LSE:MGNS,MGNS.L,Morgan Sindall Group plc,GBX,4136,126411.53333333334,1888695372,Industrial Services,Engineering & Construction,1.0,False,stock
+LSE:GFTU,LSE:GFTU,GFTU.L,Grafton Group Plc,GBX,1025.6,295093.5333333333,1844018253,Distribution Services,Wholesale Distributors,1.0,False,stock
+LSE:BYG,LSE:BYG,BYG.L,Big Yellow Group PLC,GBX,952.5,401957.1,1840995707,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:SVS,LSE:SVS,SVS.L,Savills plc,GBX,1140,685707.7,1818528540,Finance,Real Estate Development,1.0,False,stock
+LSE:IWG,LSE:IWG,IWG.L,International Workplace Group PLC,GBX,197.3,4438305.566666666,1778220896,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:RAT,LSE:RAT,RAT.L,Rathbones Group PLC,GBX,1762,167164.76666666666,1766463349,Finance,Investment Managers,1.0,False,stock
+LSE:PFD,LSE:PFD,PFD.L,Premier Foods plc,GBX,204.8,1277696.6,1751735364,Consumer Non-Durables,Food: Specialty/Candy,1.0,False,stock
+LSE:DNLM,LSE:DNLM,DNLM.L,Dunelm Group plc,GBX,902,558715.9,1748056089,Retail Trade,Specialty Stores,1.0,False,stock
+LSE:WOSG,LSE:WOSG,WOSG.L,Watches of Switzerland Group PLC,GBX,772.5,472383.73333333334,1738097028,Retail Trade,Specialty Stores,1.0,False,stock
+LSE:LRE,LSE:LRE,LRE.L,Lancashire Holdings Limited,GBX,688,573015.4333333333,1669721908,Finance,Property/Casualty Insurance,1.0,False,stock
+LSE:COA,LSE:COA,COA.L,Coats Group plc,GBX,85.25,2346203.4,1614899341,Process Industries,Textiles,1.0,False,stock
+LSE:OSB,LSE:OSB,OSB.L,OSB Group PLC,GBX,487,827310.0666666667,1596302570,Finance,Major Banks,1.0,False,stock
+LSE:CKN,LSE:CKN,CKN.L,Clarkson PLC,GBX,4976,54379.23333333333,1566751309,Transportation,Marine Shipping,1.0,False,stock
+LSE:SRE,LSE:SRE,SRE.L,Sirius Real Estate Limited,GBX,99.45,3869801.8666666667,1553811325,Finance,Real Estate Development,1.0,False,stock
+LSE:BOY,LSE:BOY,BOY.L,Bodycote plc,GBX,916.5,1563478.6333333333,1550186087,Electronic Technology,Aerospace & Defense,1.0,False,stock
+LSE:CHG,LSE:CHG,CHG.L,Chemring Group PLC,GBX,565,950912.7333333333,1532675006,Electronic Technology,Aerospace & Defense,1.0,False,stock
+LSE:KNOS,LSE:KNOS,KNOS.L,Kainos Group PLC,GBX,1292,294425.63333333336,1492826152,Technology Services,Information Technology Services,1.0,False,stock
+LSE:GNS,LSE:GNS,GNS.L,Genus plc,GBX,2420,219734.96666666667,1482393047,Process Industries,Agricultural Commodities/Milling,1.0,False,stock
+LSE:ASHM,LSE:ASHM,ASHM.L,Ashmore Group plc,GBX,228.2,1460960.2333333334,1481926259,Finance,Investment Managers,1.0,False,stock
+LSE:CURY,LSE:CURY,CURY.L,Currys PLC,GBX,143.1,1790160.3333333333,1463179533,Distribution Services,Wholesale Distributors,1.0,False,stock
+LSE:SHAW,LSE:SHAW,SHAW.L,Shawbrook Group Plc,GBX,281.5,431777.3333333333,1426541458,Finance,Savings Banks,1.0,False,stock
+LSE:CRN,LSE:CRN,CRN.L,Cairn Homes PLC,GBX,232,705016.4333333332,1424707693.0001566,Consumer Durables,Homebuilding,1.0,False,stock
+LSE:OXIG,LSE:OXIG,OXIG.L,Oxford Instruments plc,GBX,2588,160043.1,1406553953,Electronic Technology,Electronic Equipment/Instruments,1.0,False,stock
+LSE:SSPG,LSE:SSPG,SSPG.L,SSP Group Plc,GBX,190.7,1580438.633333336,1384963553,Consumer Services,Restaurants,1.0,False,stock
+LSE:GPE,LSE:GPE,GPE.L,Great Portland Estates plc,GBX,352,800455.8000000003,1380351447,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:SRC,LSE:SRC,SRC.L,SigmaRoc Plc,GBX,130,6682186.9,1374615634,Non-Energy Minerals,Construction Materials,1.0,False,stock
+LSE:ENOG,LSE:ENOG,ENOG.L,Energean Plc,GBX,713,318816.8333333333,1373363134,Energy Minerals,Oil & Gas Production,1.0,False,stock
+LSE:PTSB,LSE:PTSB,PTSB.L,permanent tsb Group Holdings PLC,EUR,3,76509.1,1339595354.527416,Finance,Financial Conglomerates,1.0,False,stock
+LSE:GRI,LSE:GRI,GRI.L,Grainger plc,GBX,185.9,2623580.966666667,1338066210,Finance,Real Estate Development,1.0,False,stock
+LSE:YCA,LSE:YCA,YCA.L,Yellow Cake Plc,GBX,533,1412516.0666666667,1333231966,Non-Energy Minerals,Other Metals/Minerals,1.0,False,stock
+LSE:TPK,LSE:TPK,TPK.L,Travis Perkins plc,GBX,636.5,804483.2000000003,1305939975,Distribution Services,Wholesale Distributors,1.0,False,stock
+LSE:PAG,LSE:PAG,PAG.L,Paragon Banking Group PLC,GBX,735.5,322704.8333333333,1286688997,Finance,Regional Banks,1.0,False,stock
+LSE:KIE,LSE:KIE,KIE.L,Kier Group plc,GBX,320.2,1190192.3666666667,1273863650,Industrial Services,Engineering & Construction,1.0,False,stock
+LSE:RSG,LSE:RSG,RSG.L,Resolute Mining Limited,GBX,56,77053.86666666667,1267973314.4119184,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:ATYM,LSE:ATYM,ATYM.L,Atalaya Mining Copper SA,GBX,862.5,667937.1333333333,1266159214,Non-Energy Minerals,Other Metals/Minerals,1.0,False,stock
+LSE:FAN,LSE:FAN,FAN.L,Volution Group plc,GBX,655,657563.8333333334,1265208252,Producer Manufacturing,Industrial Machinery,1.0,False,stock
+LSE:FRMI,LSE:FRMI,FRMI.L,Fermi Inc.,USD,2.48,157902.26666666666,1249859810.0287402,Finance,Real Estate Development,1.0,False,stock
+LSE:SAGA,LSE:SAGA,SAGA.L,Saga plc,GBX,903,510038.1,1246540146,Consumer Services,Other Consumer Services,1.0,False,stock
+LSE:SAFE,LSE:SAFE,SAFE.L,Safestore Holdings plc,GBX,564.5,802384.8333333334,1205678217,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:VSVS,LSE:VSVS,VSVS.L,Vesuvius Plc,GBX,474.6,964731.6,1149765322,Producer Manufacturing,Miscellaneous Manufacturing,1.0,False,stock
+LSE:BREE,LSE:BREE,BREE.L,Breedon Group PLC,GBX,342.6,929547,1145452461,Non-Energy Minerals,Construction Materials,1.0,False,stock
+LSE:SUPR,LSE:SUPR,SUPR.L,Supermarket Income REIT Plc,GBX,84.4,3410958.8,1144628863,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:FGP,LSE:FGP,FGP.L,FirstGroup plc,GBX,232.2,1549727.7666666666,1111533485,Transportation,Other Transportation,1.0,False,stock
+LSE:ELM,LSE:ELM,ELM.L,Elementis plc,GBX,190,1345355.4,1055983144.9999999,Process Industries,Chemicals: Specialty,1.0,False,stock
+LSE:PETS,LSE:PETS,PETS.L,Pets At Home Group Plc,GBX,255,1220599.2,1050047143.9999999,Retail Trade,Specialty Stores,1.0,False,stock
+LSE:MTRO,LSE:MTRO,MTRO.L,Metro Bank Holdings Plc,GBX,153.8,755713.8,1041438973,Finance,Finance/Rental/Leasing,1.0,False,stock
+LSE:ZIG,LSE:ZIG,ZIG.L,ZIGUP PLC,GBX,467,388196.6666666658,1041432415,Finance,Finance/Rental/Leasing,1.0,False,stock
+LSE:BYIT,LSE:BYIT,BYIT.L,Bytes Technology Group Plc,GBX,453.6,644008.2666666667,1040553521,Technology Services,Information Technology Services,1.0,False,stock
+LSE:JDW,LSE:JDW,JDW.L,J D Wetherspoon plc,GBX,1078,300598.86666666664,1035323347.9999999,Consumer Services,Restaurants,1.0,False,stock
+LSE:MONY,LSE:MONY,MONY.L,Mony Group PLC,GBX,206.2,1175198.1333333333,1031478460,Technology Services,Internet Software/Services,1.0,False,stock
+LSE:RPI,LSE:RPI,RPI.L,Raspberry PI Holdings plc,GBX,526,544430.2666666667,1028240442,Electronic Technology,Computer Processing Hardware,1.0,False,stock
+LSE:SER,LSE:SER,SER.L,Serica Energy PLC,GBX,252.4,1295839.2333333334,1021703602,Energy Minerals,Oil & Gas Production,1.0,False,stock
+LSE:VLX,LSE:VLX,VLX.L,Volex plc,GBX,567,985146.8,1017600129,Producer Manufacturing,Electrical Products,1.0,False,stock
+LSE:WIZZ,LSE:WIZZ,WIZZ.L,Wizz Air Holdings Plc,GBX,1027,637364.1666666666,1009953235,Transportation,Airlines,1.0,False,stock
+LSE:PTEC,LSE:PTEC,PTEC.L,Playtech PLC,GBX,366.4,381614.9666666667,1009861578,Technology Services,Packaged Software,1.0,False,stock
+LSE:FEVR,LSE:FEVR,FEVR.L,Fevertree Drinks PLC,GBX,943.5,556190.9,1004705339,Consumer Non-Durables,Beverages: Non-Alcoholic,1.0,False,stock
+LSE:SPI,LSE:SPI,SPI.L,Spire Healthcare Group PLC,GBX,248,2265532.2666666666,1001904787,Health Services,Hospital/Nursing Management,1.0,False,stock
+LSE:GLV,LSE:GLV,GLV.L,Glenveagh Properties Plc,EUR,2.46,87902.66666666667,996265745.282808,Consumer Durables,Homebuilding,1.0,False,stock
+LSE:GAMA,LSE:GAMA,GAMA.L,Gamma Communications PLC,GBX,1097,1407863.1666666667,974993080,Communications,Major Telecommunications,1.0,False,stock
+LSE:TRST,LSE:TRST,TRST.L,Trustpilot Group Plc,GBX,261.4,1582408.8666666667,959550290,Technology Services,Internet Software/Services,1.0,False,stock
+LSE:MPE,LSE:MPE,MPE.L,M.P. Evans Group PLC,GBX,1770,63954.36666666667,945433378,Process Industries,Agricultural Commodities/Milling,1.0,False,stock
+LSE:HAS,LSE:HAS,HAS.L,Hays plc,GBX,61.5,4888000.966666618,940076870,Commercial Services,Personnel Services,1.0,False,stock
+LSE:CVSG,LSE:CVSG,CVSG.L,CVS Group plc,GBX,1360,426877.4666666667,885447037,Health Services,Hospital/Nursing Management,1.0,False,stock
+LSE:DOM,LSE:DOM,DOM.L,Domino's Pizza Group plc,GBX,233,1079717.2333333334,867012646,Consumer Services,Restaurants,1.0,False,stock
+LSE:TGA,LSE:TGA,TGA.L,Thungela Resources Limited,GBX,567,315411.6666666667,851290044.8526623,Utilities,Alternative Power Generation,1.0,False,stock
+LSE:PRN,LSE:PRN,PRN.L,Princes Group Plc,GBX,352,105929.83333333333,844225214,Consumer Non-Durables,Beverages: Non-Alcoholic,1.0,False,stock
+LSE:VTY,LSE:VTY,VTY.L,Vistry Group PLC,GBX,284,2528085.1666666665,827683132,Consumer Durables,Homebuilding,1.0,False,stock
+LSE:RNWH,LSE:RNWH,RNWH.L,Renew Holdings plc,GBX,1056,143113.66666666666,824883813,Industrial Services,Engineering & Construction,1.0,False,stock
+LSE:MOON,LSE:MOON,MOON.L,Moonpig Group Plc,GBX,285.8,1087050.8666666667,813739828,Technology Services,Internet Software/Services,1.0,False,stock
+LSE:DSCV,LSE:DSCV,DSCV.L,discoverIE Group PLC,GBX,836,359801.5,793960761,Producer Manufacturing,Electrical Products,1.0,False,stock
+LSE:CSN,LSE:CSN,CSN.L,Chesnara Plc,GBX,345,426815.9000000001,791558172,Finance,Multi-Line Insurance,1.0,False,stock
+LSE:VCT,LSE:VCT,VCT.L,Victrex plc,GBX,914,250557.8,786600044,Process Industries,Chemicals: Major Diversified,1.0,False,stock
+LSE:BCG,LSE:BCG,BCG.L,Baltic Classifieds Group Plc,EUR,2.3,1054286.0666666667,786422015.392776,Technology Services,Internet Software/Services,1.0,False,stock
+LSE:AVON,LSE:AVON,AVON.L,Avon Technologies PLC,GBX,2540,124516.3,761881622,Electronic Technology,Aerospace & Defense,1.0,False,stock
+LSE:APN,LSE:APN,APN.L,Applied Nutrition PLC,GBX,299,422868.5,732500017,Health Technology,Pharmaceuticals: Other,1.0,False,stock
+LSE:EWG,LSE:EWG,EWG.L,W.A.G. Payment Solutions Plc,GBX,102.6,669272.9333333333,725167422,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:MGAM,LSE:MGAM,MGAM.L,Morgan Advanced Materials plc,GBX,265.5,830873.8333333334,721442652,Process Industries,Industrial Specialties,1.0,False,stock
+LSE:POLR,LSE:POLR,POLR.L,Polar Capital Holdings Plc,GBX,704,356201.3,718921227,Finance,Investment Managers,1.0,False,stock
+LSE:XPS,LSE:XPS,XPS.L,XPS Pensions Group Plc,GBX,349.5,815913.1,708156947,Finance,Investment Managers,1.0,False,stock
+LSE:TRN,LSE:TRN,TRN.L,Trainline Plc,GBX,212,1543430.8333333333,690903811,Consumer Services,Other Consumer Services,1.0,False,stock
+LSE:TEP,LSE:TEP,TEP.L,Telecom Plus PLC,GBX,911,281466.9666666667,686577942,Utilities,Electric Utilities,1.0,False,stock
+LSE:GFRD,LSE:GFRD,GFRD.L,Galliford Try Holdings PLC,GBX,723,371040.93333333335,680502329,Industrial Services,Engineering & Construction,1.0,False,stock
+LSE:PAGE,LSE:PAGE,PAGE.L,Michael Page PLC,GBX,221.8,759378.5,675229834,Commercial Services,Personnel Services,1.0,False,stock
+LSE:RKH,LSE:RKH,RKH.L,Rockhopper Exploration plc,GBX,61.9,4198504.9,668893595,Energy Minerals,Oil & Gas Production,1.0,False,stock
+LSE:WKP,LSE:WKP,WKP.L,Workspace Group PLC,GBX,356.2,436504.23333333334,664524252,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:GEN,LSE:GEN,GEN.L,Genuit Group PLC,GBX,274,1216957.3,662993629,Producer Manufacturing,Miscellaneous Manufacturing,1.0,False,stock
+LSE:COST,LSE:COST,COST.L,Costain Group PLC,GBX,261.5,1487526.3,660155190,Industrial Services,Engineering & Construction,1.0,False,stock
+LSE:OXB,LSE:OXB,OXB.L,Oxford BioMedica plc,GBX,532,378700.2,652288801,Health Technology,Biotechnology,1.0,False,stock
+LSE:CHRT,LSE:CHRT,CHRT.L,Cohort plc,GBX,1390,143987.7,652042531,Electronic Technology,Aerospace & Defense,1.0,False,stock
+LSE:CRE,LSE:CRE,CRE.L,Conduit Holdings Ltd.,GBX,440,333452.6666666667,646754949,Finance,Specialty Insurance,1.0,False,stock
+LSE:BAG,LSE:BAG,BAG.L,A.G. BARR p.l.c.,GBX,594,373689.7,646350082,Consumer Non-Durables,Beverages: Non-Alcoholic,1.0,False,stock
+LSE:HFG,LSE:HFG,HFG.L,Hilton Food Group plc,GBX,734,186230.06666666668,646170103,Consumer Non-Durables,Food: Meat/Fish/Dairy,1.0,False,stock
+LSE:IPO,LSE:IPO,IPO.L,IP Group plc,GBX,74.9,1715078.4333333333,644902174,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:THG,LSE:THG,THG.L,THG Plc,GBX,41.96,5363548.866666666,642705838,Retail Trade,Internet Retail,1.0,False,stock
+LSE:SMWH,LSE:SMWH,SMWH.L,WH Smith PLC,GBX,437,660371.8,642361104,Retail Trade,Food Retail,1.0,False,stock
+LSE:HAN,LSE:HAN,HAN.L,Hansa Investment Company Ltd,GBX,342,84814.1,631107963,Finance,Investment Managers,1.0,False,stock
+LSE:HANA,LSE:HANA,HANA.L,Hansa Investment Company Ltd Registered A Non-Voting,GBX,327,142650.5,631107963,Finance,Investment Managers,1.0,False,stock
+LSE:DOCS,LSE:DOCS,DOCS.L,Dr. Martens Plc,GBX,65,806793.4333333333,627965346,Consumer Non-Durables,Apparel/Footwear,1.0,False,stock
+LSE:HWG,LSE:HWG,HWG.L,Harworth Group PLC,GBX,191,4713764.233333333,621014487,Finance,Real Estate Development,1.0,False,stock
+LSE:YNGA,LSE:YNGA,YNGA.L,"Young & Co.'s Brewery, P.L.C. Class A",GBX,1202,134589.13333333333,611807805,Distribution Services,Food Distributors,1.0,False,stock
+LSE:AMS,LSE:AMS,AMS.L,Advanced Medical Solutions Group plc,GBX,282.5,841580.1666666666,611341804,Health Technology,Medical Specialties,1.0,False,stock
+LSE:ENQ,LSE:ENQ,ENQ.L,EnQuest PLC,GBX,29.75,8892265.866666667,593684984,Energy Minerals,Oil & Gas Production,1.0,False,stock
+LSE:AEP,LSE:AEP,AEP.L,AEP Plantations Plc,GBX,152.8,451968.6666666667,588875435,Process Industries,Agricultural Commodities/Milling,1.0,False,stock
+LSE:ATG,LSE:ATG,ATG.L,Auction Technology Group PLC,GBX,488,289129.23333333334,585590111,Technology Services,Internet Software/Services,1.0,False,stock
+LSE:EVPL,LSE:EVPL,EVPL.L,Everplay Group Plc,GBX,404.5,776453.3,577771426,Technology Services,Packaged Software,1.0,False,stock
+LSE:FCH,LSE:FCH,FCH.L,Funding Circle Holdings Plc,GBX,208,791078.9,571826553,Finance,Finance/Rental/Leasing,1.0,False,stock
+LSE:CBG,LSE:CBG,CBG.L,Close Brothers Group plc,GBX,386.8,534756.5333333333,566392716,Finance,Regional Banks,1.0,False,stock
+LSE:JHD,LSE:JHD,JHD.L,James Halstead plc,GBX,137,636952.8666666667,561451510,Producer Manufacturing,Building Products,1.0,False,stock
+LSE:CWR,LSE:CWR,CWR.L,Ceres Power Holdings plc,GBX,261.8,2580015.4,558993842,Electronic Technology,Electronic Production Equipment,1.0,False,stock
+LSE:BUR,LSE:BUR,BUR.L,Burford Capital Limited,GBX,274.8,224427.4,557557350.4592637,Finance,Finance/Rental/Leasing,1.0,False,stock
+LSE:HFD,LSE:HFD,HFD.L,Halfords Group Plc,GBX,258.5,920859.8666666667,554498804,Retail Trade,Specialty Stores,1.0,False,stock
+LSE:HTG,LSE:HTG,HTG.L,Hunting PLC,GBX,375.5,404736.1,546222457,Industrial Services,Oilfield Services/Equipment,1.0,False,stock
+LSE:GFM,LSE:GFM,GFM.L,Griffin Mining Limited,GBX,312,52958.46666666667,542390917,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:POLN,LSE:POLN,POLN.L,Pollen Street Group Limited,GBX,926,152847.23333333334,540062092,Finance,Investment Managers,1.0,False,stock
+LSE:RWS,LSE:RWS,RWS.L,RWS Holdings plc,GBX,144.5,1533346.5333333334,527051869,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:TBTG,LSE:TBTG,TBTG.L,Beauty Tech Group Plc,GBX,502,615690.6333333333,520665121,Electronic Technology,Electronic Equipment/Instruments,1.0,False,stock
+LSE:ITM,LSE:ITM,ITM.L,ITM Power PLC,GBX,76.85,2632372.3666666667,519591300.00000006,Producer Manufacturing,Electrical Products,1.0,False,stock
+LSE:WIX,LSE:WIX,WIX.L,Wickes Group Plc,GBX,241.5,380790.5,517863160,Retail Trade,Specialty Stores,1.0,False,stock
+LSE:BMY,LSE:BMY,BMY.L,Bloomsbury Publishing Plc,GBX,656,494202.8,514687232,Consumer Services,Publishing: Books/Magazines,1.0,False,stock
+LSE:ASC,LSE:ASC,ASC.L,ASOS Plc,GBX,417.5,660578.9,514489584.00000006,Retail Trade,Internet Retail,1.0,False,stock
+LSE:TUN,LSE:TUN,TUN.L,Tungsten West Plc,GBX,29.7,3237433.3,508105925,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:JSG,LSE:JSG,JSG.L,Johnson Service Group PLC,GBX,150.6,2025306.3666666667,500977619,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:FTC,LSE:FTC,FTC.L,Filtronic plc,GBX,235,1879008.5,500135623,Electronic Technology,Telecommunications Equipment,1.0,False,stock
+LSE:AO.,LSE:AO.,AO-.L,AO World Plc,GBX,92.2,938302.1333333333,497543112,Retail Trade,Internet Retail,1.0,False,stock
+LSE:ALFA,LSE:ALFA,ALFA.L,Alfa Financial Software Holdings Plc,GBX,166.6,1003381.8666666667,496911815,Technology Services,Packaged Software,1.0,False,stock
+LSE:AT.,LSE:AT.,AT-.L,Ashtead Technology Holdings PLC,GBX,608,1802699,493146256,Industrial Services,Oilfield Services/Equipment,1.0,False,stock
+LSE:XPP,LSE:XPP,XPP.L,XP Power Ltd.,GBX,1714,77399.93333333333,484600568,Producer Manufacturing,Electrical Products,1.0,False,stock
+LSE:MTL,LSE:MTL,MTL.L,Metals Exploration plc,GBX,15.6,4127947.7333333334,482574703,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:IQE,LSE:IQE,IQE.L,IQE plc,GBX,32.65,15090164.3,459162408,Producer Manufacturing,Industrial Machinery,1.0,False,stock
+LSE:AMRQ,LSE:AMRQ,AMRQ.L,Amaroq Ltd.,GBX,97.4,1292873,457046581.3102412,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:GKP,LSE:GKP,GKP.L,Gulf Keystone Petroleum Limited,GBX,205,681923.7333333333,456841079,Energy Minerals,Oil & Gas Production,1.0,False,stock
+LSE:BOWL,LSE:BOWL,BOWL.L,Hollywood Bowl Group Plc,GBX,284.5,548783.2,456516379,Consumer Services,Movies/Entertainment,1.0,False,stock
+LSE:AAZ,LSE:AAZ,AAZ.L,Anglo Asian Mining PLC,GBX,395,75179.16666666667,447025907,Non-Energy Minerals,Precious Metals,1.0,False,stock
+LSE:MSLH,LSE:MSLH,MSLH.L,Marshalls plc,GBX,179.5,1278518.8333333335,438425427,Non-Energy Minerals,Construction Materials,1.0,False,stock
+LSE:MNO,LSE:MNO,MNO.L,Meridian Mining PLC,GBX,89.2,639465.8,434565503.21141064,Non-Energy Minerals,Other Metals/Minerals,1.0,False,stock
+LSE:DATA,LSE:DATA,DATA.L,GlobalData Plc,GBX,65.4,1322183.6666666667,421658760,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:PAY,LSE:PAY,PAY.L,PayPoint plc,GBX,729.5,170409.9,421451607,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:MEGP,LSE:MEGP,MEGP.L,ME Group International plc,GBX,113,963290.3666666667,418850550,Retail Trade,Specialty Stores,1.0,False,stock
+LSE:SBRE,LSE:SBRE,SBRE.L,Sabre Insurance Group Plc,GBX,174.4,557871.8333333334,415754325,Finance,Property/Casualty Insurance,1.0,False,stock
+LSE:AC8,LSE:AC8,AC8.L,Acceler8 Ventures Plc,GBX,54,189232.86666666664,413607179,Finance,Financial Conglomerates,1.0,False,stock
+LSE:TAM,LSE:TAM,TAM.L,Tatton Asset Management Plc,GBX,680,107209.43333333333,407951061,Finance,Investment Managers,1.0,False,stock
+LSE:SREI,LSE:SREI,SREI.L,Schroder Real Estate Investment Trust Ltd,GBX,43.5,4246590.366666666,406894446,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:RST,LSE:RST,RST.L,Restore PLC,GBX,305,232747.26666666666,405763273,Commercial Services,Miscellaneous Commercial Services,1.0,False,stock
+LSE:CREI,LSE:CREI,CREI.L,Custodian Property Income REIT plc,GBX,83.1,552329.2,400826231,Finance,Real Estate Investment Trusts,1.0,False,stock
+LSE:PZC,LSE:PZC,PZC.L,PZ Cussons Plc,GBX,97.1,518092.26666666666,400176614,Consumer Non-Durables,Household/Personal Care,1.0,False,stock

@@ -1,0 +1,29 @@
+# Universe construction. Tiers are researched in order.
+as_of: "2026-10-31"
+base_currency: GBP
+liquidity:
+  min_median_daily_value_gbp: 1000000   # median of close*volume over lookback
+  lookback_days: 60
+  min_history_days: 750                 # need > 3y daily history for 24m formation + validation
+tiers:
+  - id: lse_etf
+    description: "LSE-listed UCITS ETFs (no stamp duty)"
+    exchange: LSE
+    types: [etf]
+  - id: ftse350
+    description: "FTSE 350 single stocks (0.5% stamp duty on buys)"
+    exchange: LSE
+    types: [stock]
+  - id: us
+    description: "US stocks and ETFs incl. dual listings vs LSE lines"
+    exchange: [NYSE, NASDAQ, AMEX]
+    types: [stock, etf]
+  - id: all_t212
+    description: "Everything else in the T212 ISA instrument list"
+    exchange: null
+    types: [stock, etf]
+hl_eligibility_csv: config/hl_eligible.csv   # ISIN list exported/confirmed by hand; empty = assume LSE ok
+symbol_overrides_csv: config/symbol_overrides.csv
+fx_symbols:
+  GBPUSD: {tradingview: "FX_IDC:GBPUSD", yfinance: "GBPUSD=X"}
+  GBPEUR: {tradingview: "FX_IDC:GBPEUR", yfinance: "GBPEUR=X"}

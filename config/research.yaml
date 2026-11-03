@@ -1,0 +1,47 @@
+# Research run configuration. Everything that affects results lives here; the run id hashes this file
+# together with data/manifest.json.
+as_of: "2026-10-31"
+seed: 20261031
+timeframes: ["1W", "1D", "4h", "1h"]
+formation_bars: {"1W": 104, "1D": 504, "4h": 1000, "1h": 2000}   # ~24 months of trading
+trade_bars:     {"1W": 26,  "1D": 126, "4h": 250,  "1h": 500}    # ~6 months
+roll_step_bars: {"1W": 4,   "1D": 21,  "4h": 42,   "1h": 84}     # ~1 month
+max_history_bars: {"1W": 520, "1D": 2520, "4h": 4000, "1h": 7000}  # ~10y daily; compute bound
+n_jobs: 0             # 0 = all cores for the Johansen sweep
+stationarity:
+  adf_alpha: 0.05
+  kpss_alpha: 0.05
+johansen:
+  det_order: 0          # constant in cointegrating relation
+  max_lag: 4            # lag order chosen by BIC up to this
+  trace_alpha: 0.05
+  max_group_size: 5
+  min_group_size: 2
+multiple_testing:
+  method: benjamini_hochberg
+  q: 0.05
+spread_quality:
+  half_life_min_bars: 2
+  half_life_max_bars: 30
+  hurst_max: 0.5
+  hedge_vector_max_angle_deg: 20
+candidates:
+  correlation_cluster_threshold: 0.6
+  max_groups_per_block: 500
+judge:
+  backends: [rules, claude]          # jev, clairic activate when credentials exist
+  gate_probability: 0.5
+signals:
+  z_window_bars: 60
+  z_entry: 2.0
+  z_exit: 0.5
+  z_stop: 4.0
+  time_stop_half_lives: 2.0
+variants: [A_basket_rotation, B_cheap_leg_only, C_inverse_etf_leg]
+bootstrap:
+  n_resamples: 5000
+  mean_block_length_months: 3
+  ci: 0.95
+target:
+  monthly_return_min: 0.05
+  monthly_return_max: 0.20

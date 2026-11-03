@@ -23,31 +23,42 @@ uv run cointisa --help
 ## Pipeline
 
 ```
-cointisa ingest-plan   -> list of TradingView MCP calls to make for the configured universe
+cointisa fetch-yf      -> snapshot 1W/1D/1h bars for config/universe_seed.csv via yfinance (+ FX)
+cointisa ingest-plan   -> list of TradingView MCP calls to fill gaps (4h, symbols Yahoo lacks)
 cointisa verify-data   -> check data/snapshots against data/manifest.json hashes
-cointisa universe      -> build tradeable universe (T212 metadata + HL overlay + liquidity floor)
-cointisa screen        -> Johansen sweep over candidate groups, FDR + persistence filters
-cointisa judge         -> economic-plausibility scores (rules / claude / jev / clairic)
+cointisa t212-cache    -> download the Trading 212 instrument list (needs T212_API_KEY/SECRET)
+cointisa universe      -> build tradeable universe (T212 metadata + HL overlay + tiers)
+cointisa costs         -> round-trip cost table per account for representative instruments
+cointisa screen        -> candidates + parallel Johansen sweep, FDR, quality, OOS persistence
+cointisa judge         -> economic-plausibility scores (rules / claude / jev / clairic) + calibration
 cointisa backtest      -> walk-forward, cost-aware, long-only variants A/B/C, per account
-cointisa report        -> bootstrap CIs and attainability report
-cointisa paper-trade   -> Trading 212 demo execution (later phase)
-cointisa hl-report     -> manual trade list for the HL SIPP (later phase)
+cointisa report        -> bootstrap CIs, deflated Sharpe, attainability.md
+cointisa signals       -> today's eligible groups, z-scores and target weights
+cointisa paper-trade   -> Trading 212 orders (demo + dry-run by default; --live needs T212_ENV=live)
 ```
 
-## Reproducibility rules
+Typical research run for one timeframe:
 
-- Dependencies pinned in `uv.lock`; every run config carries `as_of`, windows, thresholds and `seed`.
-- Raw data is never modified in place. Snapshots live under `data/snapshots/<as_of>/` (gitignored);
-  their SHA-256 hashes are committed in `data/manifest.json` and checked by `cointisa verify-data`.
-- Run id = SHA-256 of (config + manifest). `results/<run_id>/summary.json` is committed; a rerun must
-  reproduce it byte for byte (`tests/test_reproducible.py`).
-- Secrets only via environment variables (see `.env.example`); nothing secret is ever committed.
+```bash
+uv run cointisa fetch-yf                 # once per as_of date (~1h for 737 symbols)
+uv run cointisa screen --interval 1D     # ~40 min on 4 cores for ~240 liquid ETFs
+uv run cointisa judge  --interval 1D
+uv run cointisa backtest --interval 1D
+uv run cointisa report --interval 1D     # prints results/<run_id>/attainability.md
+```
 
-## Accounts and constraints
+## Status
 
-| Account | Capital | Short selling | Fractional | API | Dealing fee | FX |
-|---|---|---|---|---|---|---|
-| Trading 212 ISA | ~£16k | No | Yes | Yes (market orders) | £0 | 0.15% each way |
-| HL SIPP | ~£85k | No | No | No (manual) | £6.95 (£3.95 if 20+ trades prior month) | ~0.99% tiered |
+Results are in [docs/FINDINGS.md](docs/FINDINGS.md) with full tables under `results/<run_id>/`.
+Short version, two phases:
 
-All cost parameters live in `config/costs.yaml` with a source URL and date per figure.
+- **Phase 1 (long-only, ISA and HL SIPP):** statistical cointegration among LSE ETFs is abundant and
+  mostly spurious; the relationships that persist are same-index trackers with tiny spreads; no
+  long-only variant has positive alpha against holding the same ETFs once costs are included. HL's
+  fixed fee rules the SIPP out for active trading.
+- **Phase 2 (following the findings):** a genuine short leg (IG spread betting, IBKR margin,
+  Trading 212 CFD; modelled, no account opened) loses 17-34% over the period at every venue and
+  timeframe because the mean-reversion signal has no gross edge out of sample (12% of entries
+  revert, the rest stop or time out); fee-free SIPPs (Trading 212, InvestEngine) turn the SIPP into
+  a market tracker with zero alpha; FTSE 350 stocks are rarely cointegrated (3% of pair-windows) and
+  lose on every venue. The 5-20%/month target is not attainable with this strategy class.

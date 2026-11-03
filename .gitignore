@@ -18,12 +18,13 @@ dist/
 data/raw/
 data/snapshots/
 data/cache/
+!data/judge_cache/
 
 # Results: large artefacts ignored, summary.json per run is committed
 results/*/bars/
-results/*/*.parquet
-results/*/*.html
-results/*/*.png
+results/**/*.parquet
+results/**/*.html
+results/**/*.png
 
 # Notebooks executed outputs
 notebooks/executed/

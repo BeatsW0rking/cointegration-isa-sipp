@@ -1,0 +1,2 @@
+# Live full spreads observed in the Trading 212 app, used to calibrate the Corwin-Schultz estimator.
+# symbol,date,time_utc,bid,ask,currency

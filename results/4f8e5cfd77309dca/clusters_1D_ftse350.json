@@ -1,0 +1,93 @@
+{
+ "1": [
+  "LSE:EXPN",
+  "LSE:REL"
+ ],
+ "2": [
+  "LSE:HAS",
+  "LSE:PAGE"
+ ],
+ "3": [
+  "LSE:BKG",
+  "LSE:BTRW",
+  "LSE:BWY",
+  "LSE:PSN",
+  "LSE:VTY"
+ ],
+ "4": [
+  "LSE:BATS",
+  "LSE:IMB"
+ ],
+ "5": [
+  "LSE:IHG",
+  "LSE:WTB"
+ ],
+ "6": [
+  "LSE:GFTU",
+  "LSE:TPK"
+ ],
+ "7": [
+  "LSE:HSBA",
+  "LSE:STAN"
+ ],
+ "8": [
+  "LSE:BARC",
+  "LSE:LLOY",
+  "LSE:NWG"
+ ],
+ "9": [
+  "LSE:ABDN",
+  "LSE:LGEN",
+  "LSE:PRU",
+  "LSE:SDLF"
+ ],
+ "10": [
+  "LSE:BLND",
+  "LSE:DLN",
+  "LSE:GPE",
+  "LSE:GRI",
+  "LSE:LAND",
+  "LSE:LMP",
+  "LSE:SGRO",
+  "LSE:SHC",
+  "LSE:UTG"
+ ],
+ "11": [
+  "LSE:BPT",
+  "LSE:ICG"
+ ],
+ "12": [
+  "LSE:BYG",
+  "LSE:SAFE"
+ ],
+ "13": [
+  "LSE:OSB",
+  "LSE:PAG"
+ ],
+ "14": [
+  "LSE:AAL",
+  "LSE:ANTO",
+  "LSE:BHP",
+  "LSE:RIO"
+ ],
+ "15": [
+  "LSE:FRES",
+  "LSE:HOC"
+ ],
+ "16": [
+  "LSE:IMI",
+  "LSE:WEIR"
+ ],
+ "17": [
+  "LSE:AUTO",
+  "LSE:RMV"
+ ],
+ "18": [
+  "LSE:EZJ",
+  "LSE:IAG"
+ ],
+ "19": [
+  "LSE:PNN",
+  "LSE:SVT"
+ ]
+}

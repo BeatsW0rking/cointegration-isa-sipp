@@ -1,0 +1,189 @@
+{
+ "1": [
+  "LSE:EXPN",
+  "LSE:ITRK",
+  "LSE:REL",
+  "LSE:RTO"
+ ],
+ "2": [
+  "LSE:HAS",
+  "LSE:PAGE"
+ ],
+ "3": [
+  "LSE:BT.A",
+  "LSE:VOD"
+ ],
+ "4": [
+  "LSE:BKG",
+  "LSE:BTRW",
+  "LSE:BWY",
+  "LSE:HWDN",
+  "LSE:PSN",
+  "LSE:VTY"
+ ],
+ "5": [
+  "LSE:RKT",
+  "LSE:ULVR"
+ ],
+ "6": [
+  "LSE:BATS",
+  "LSE:IMB"
+ ],
+ "7": [
+  "LSE:CCEP",
+  "LSE:CCH"
+ ],
+ "8": [
+  "LSE:ABF",
+  "LSE:NXT"
+ ],
+ "9": [
+  "LSE:CPG",
+  "LSE:IHG",
+  "LSE:JDW",
+  "LSE:JET2",
+  "LSE:SSPG",
+  "LSE:WTB"
+ ],
+ "10": [
+  "LSE:DPLM",
+  "LSE:RS1"
+ ],
+ "11": [
+  "LSE:GFTU",
+  "LSE:TPK"
+ ],
+ "12": [
+  "LSE:BOY",
+  "LSE:MRO"
+ ],
+ "13": [
+  "LSE:ENOG",
+  "LSE:ENQ",
+  "LSE:GKP",
+  "LSE:HBR",
+  "LSE:SHEL"
+ ],
+ "14": [
+  "LSE:ITH",
+  "LSE:SER"
+ ],
+ "15": [
+  "LSE:ABDN",
+  "LSE:ASHM",
+  "LSE:BARC",
+  "LSE:BNC",
+  "LSE:BPT",
+  "LSE:EMG",
+  "LSE:HSBA",
+  "LSE:ICG",
+  "LSE:INVP",
+  "LSE:LGEN",
+  "LSE:LLOY",
+  "LSE:MNG",
+  "LSE:NWG",
+  "LSE:OSB",
+  "LSE:PAG",
+  "LSE:PRU",
+  "LSE:QLT",
+  "LSE:SDLF",
+  "LSE:STAN",
+  "LSE:STJ"
+ ],
+ "16": [
+  "LSE:BLND",
+  "LSE:BYG",
+  "LSE:DLN",
+  "LSE:GPE",
+  "LSE:GRI",
+  "LSE:HMSO",
+  "LSE:LAND",
+  "LSE:LMP",
+  "LSE:PHP",
+  "LSE:SAFE",
+  "LSE:SGRO",
+  "LSE:SHC",
+  "LSE:SRE",
+  "LSE:SUPR",
+  "LSE:SVS",
+  "LSE:UTG"
+ ],
+ "17": [
+  "LSE:HSX",
+  "LSE:LRE"
+ ],
+ "18": [
+  "LSE:BGEO",
+  "LSE:TBCG"
+ ],
+ "19": [
+  "LSE:N91",
+  "LSE:RAT"
+ ],
+ "20": [
+  "LSE:CMCX",
+  "LSE:IGG"
+ ],
+ "21": [
+  "LSE:AZN",
+  "LSE:GSK"
+ ],
+ "22": [
+  "LSE:BBY",
+  "LSE:MGNS"
+ ],
+ "23": [
+  "LSE:AAL",
+  "LSE:ANTO",
+  "LSE:BHP",
+  "LSE:RIO"
+ ],
+ "24": [
+  "LSE:EDV",
+  "LSE:FRES",
+  "LSE:HOC"
+ ],
+ "25": [
+  "LSE:JMAT",
+  "LSE:VCT"
+ ],
+ "26": [
+  "LSE:IMI",
+  "LSE:ROR",
+  "LSE:SMIN",
+  "LSE:SPX",
+  "LSE:VSVS",
+  "LSE:WEIR"
+ ],
+ "27": [
+  "LSE:SBRY",
+  "LSE:TSCO"
+ ],
+ "28": [
+  "LSE:KGF",
+  "LSE:MKS"
+ ],
+ "29": [
+  "LSE:ASC",
+  "LSE:THG"
+ ],
+ "30": [
+  "LSE:BYIT",
+  "LSE:CCC",
+  "LSE:SCT"
+ ],
+ "31": [
+  "LSE:AUTO",
+  "LSE:RMV"
+ ],
+ "32": [
+  "LSE:EZJ",
+  "LSE:IAG",
+  "LSE:WIZZ"
+ ],
+ "33": [
+  "LSE:PNN",
+  "LSE:SSE",
+  "LSE:SVT"
+ ]
+}
